@@ -2,7 +2,7 @@
   <h1>{{ section.settings.title }}</h1>
   <div class="homepage-product-collection-items">
     {% for collection in section.settings['homepage-product-collection-list'] %}
-      <div>
+      <div class="homepage-product-collection-items-data">
         <a href="{{ collection.url }}">
           {{ collection.image | image_url: width: 200 | image_tag }}
           <h4>{{ collection.title }}</h4>

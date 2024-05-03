@@ -1,0 +1,78 @@
+slideshow-component .slideshow__controls {
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  z-index: 9;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  border: unset;
+}
+.slider-counter.slider-counter--dots {
+  padding: 640px 0px 0px 0px;
+}
+slideshow-component .slideshow__controls .slider-button {
+  width: 64px;
+  height: 84px;
+}
+slideshow-component .slideshow__controls .slider-button .icon {
+  height: 1.6rem;
+}
+@media (max-width: 749px) {
+  slideshow-component .slideshow__controls {
+    top: 30%;
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+  margin-bottom: 20px;
+}
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+textarea {
+  height: 100px;
+}
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}

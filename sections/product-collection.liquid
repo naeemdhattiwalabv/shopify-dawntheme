@@ -1,0 +1,35 @@
+{% if section.settings['homepage-product-collection-list'] != blank %}
+  <h1>{{ section.settings.title }}</h1>
+  <div class="homepage-product-collection-items">
+    {% for collection in section.settings['homepage-product-collection-list'] %}
+      <div>
+        <a href="{{ collection.url }}">
+          {{ collection.image | image_url: width: 200 | image_tag }}
+          <h4>{{ collection.title }}</h4>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Product Collection",
+  "tag": "section",
+  "class": "homepage-product-collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Product Collection"
+    },
+    {
+      "type": "collection_list",
+      "id": "homepage-product-collection-list",
+      "label": "Product Collection List",
+      "limit": 6
+    }
+  ]
+}
+{% endschema %}

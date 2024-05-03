@@ -1,0 +1,45 @@
+{{ 'custom.css' | asset_url | stylesheet_tag }}
+<div class="container">
+  <h2>Product Information Form</h2>
+  <form id="contactForm">
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="select-product">Select Product</label>
+      <select id="products" name="products" required>
+        <option value="">Select Subject</option>
+        {% for product in collections.all.products %}
+          <option value="{{ product.id }}">{{ product.title }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required></textarea>
+    </div>
+    <div class="form-group">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('contactForm').addEventListener('submit', function(event) {
+          event.preventDefault();
+          var formData = new FormData(this);
+          var formObject = {};
+          formData.forEach(function(value, key){
+              formObject[key] = value;
+          });
+          console.log(formObject);
+          // You can send the form data to a server using AJAX here
+      });
+  });
+</script>

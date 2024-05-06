@@ -90,9 +90,11 @@
 <div class="slideshow-container">
   {% for banner in section.blocks %}
     {% if banner.settings.image != blank %}
-      <a href="{{ banner.settings.link }}">
-        <div class="mySlides fade">{{ banner.settings.image | image_url: width: 100 | image_tag }}</div>
-      </a>
+      <div class="mySlides fade">
+        <a href="{{ banner.settings.link }}">
+          {{ banner.settings.image | image_url: width: 200 | image_tag }}
+        </a>
+      </div>
     {% endif %}
   {% endfor %}
 </div>

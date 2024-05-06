@@ -1,12 +1,16 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
-  .mySlides {display:none;}
+  .mySlides {
+    display:none;
+    width:100% !important;
+    height: 100% !important;
+  }
 </style>
 <div class="slideshow-container">
   {% for banner in section.blocks %}
     {% if banner.settings.image != blank %}
       <a href="{{ banner.settings.link }}">
-        {{ banner.settings.image | image_url | image_tag: class: 'mySlides' }}
+        {{ banner.settings.image | image_url: width: 1000 | image_tag: class: 'mySlides' }}
       </a>
     {% endif %}
   {% endfor %}

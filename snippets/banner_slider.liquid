@@ -1,3 +1,5 @@
 {% for banner in section.blocks %}
-  <img src="{{ banner.settings.image }}" height="100" width="100">
+  <a href="{{ banner.settings.image }}">
+    <img src="{{ banner.settings.image }}" height="100" width="100">
+  </a>
 {% endfor %}

@@ -3,9 +3,13 @@
 <div class="slideshow-container">
   {% for banner in section.blocks %}
     {% if banner.settings.image != blank %}
-      <a href="{{ banner.settings.link }}">
-        {{ banner.settings.image | image_url: width: 1000 | image_tag: class: 'mySlides' }}
-      </a>
+      {% if banner.settings.link != blank %}
+        <a href="{{ banner.settings.link }}">
+      {% endif %}
+      {{ banner.settings.image | image_url: width: 1000 | image_tag: class: 'mySlides' }}
+      {% if banner.settings.link != blank %}
+        </a>
+      {% endif %}
     {% endif %}
   {% endfor %}
   <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>

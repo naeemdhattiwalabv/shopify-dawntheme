@@ -90,34 +90,29 @@
 <div class="slideshow-container">
   {% for banner in section.blocks %}
     {% if banner.settings.image != blank %}
-      <div class="mySlides fade">
-        <a href="{{ banner.settings.link }}">
-          {{ banner.settings.image | image_url: width: 200 | image_tag }}
-        </a>
-      </div>
+      <a href="{{ banner.settings.link }}">
+        {{ banner.settings.image | image_url: width: 200 | image_tag: class: 'mySlides' }}
+      </a>
     {% endif %}
   {% endfor %}
 </div>
 
 <script>
-     let slideIndex = [1,1];
-  /* Class the members of each slideshow group with different CSS classes */
-  let slideId = ["mySlides1", "mySlides2"]
-  showSlides(1, 0);
-  showSlides(1, 1);
+       var slideIndex = 1;
+  showDivs(slideIndex);
 
-  function plusSlides(n, no) {
-    showSlides(slideIndex[no] += n, no);
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
   }
 
-  function showSlides(n, no) {
-    let i;
-    let x = document.getElementsByClassName(slideId[no]);
-    if (n > x.length) {slideIndex[no] = 1}
-    if (n < 1) {slideIndex[no] = x.length}
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length} ;
     for (i = 0; i < x.length; i++) {
       x[i].style.display = "none";
     }
-    x[slideIndex[no]-1].style.display = "block";
+    x[slideIndex-1].style.display = "block";
   }
 </script>

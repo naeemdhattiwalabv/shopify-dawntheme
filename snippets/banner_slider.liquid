@@ -1,7 +1,7 @@
 {% for banner in section.blocks %}
   {% if banner.settings.image != blank %}
-    <a href="{{ banner.settings.image }}">
-      {{ banner.settings.link | image_url: width: 200 | image_tag }}
+    <a href="{{ banner.settings.link }}">
+      {{ banner.settings.image | image_url: width: 200 | image_tag }}
     </a>
   {% endif %}
 {% endfor %}

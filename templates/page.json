@@ -1,15 +1,43 @@
 {
   "sections": {
+    "banner_slider": {
+      "type": "banner_slider",
+      "blocks": {
+        "slide_bVHCdi": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/theme_cover_image.jpg",
+            "link": "shopify:\/\/products\/the-inventory-not-tracked-snowboard"
+          }
+        },
+        "slide_3k4XyD": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/theme_cover_image.jpg",
+            "link": "shopify:\/\/products\/the-collection-snowboard-hydrogen"
+          }
+        },
+        "slide_kB7iJD": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/theme_cover_image.jpg",
+            "link": "shopify:\/\/products\/the-collection-snowboard-liquid"
+          }
+        }
+      },
+      "block_order": [
+        "slide_bVHCdi",
+        "slide_3k4XyD",
+        "slide_kB7iJD"
+      ],
+      "settings": {
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
-      }
-    },
-    "banner_slider": {
-      "type": "banner_slider",
-      "settings": {
       }
     }
   },

@@ -1,11 +1,5 @@
 {{ 'custom_banner.css' | asset_url | stylesheet_tag }}
-<style>
-  .mySlides {
-    display:none;
-    width:100% !important;
-    height: 100% !important;
-  }
-</style>
+
 <div class="slideshow-container">
   {% for banner in section.blocks %}
     {% if banner.settings.image != blank %}
@@ -14,8 +8,8 @@
       </a>
     {% endif %}
   {% endfor %}
-  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+  <button class="button left-button" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button right-button" onclick="plusDivs(1)">&#10095;</button>
 </div>
 
 <script>

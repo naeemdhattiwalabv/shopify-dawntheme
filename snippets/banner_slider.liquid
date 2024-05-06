@@ -6,7 +6,7 @@
   {% for banner in section.blocks %}
     {% if banner.settings.image != blank %}
       <a href="{{ banner.settings.link }}">
-        {{ banner.settings.image | image_url: width: 1000 | image_tag: class: 'mySlides' }}
+        {{ banner.settings.image | image_url: width: 500 | image_tag: class: 'mySlides' }}
       </a>
     {% endif %}
   {% endfor %}

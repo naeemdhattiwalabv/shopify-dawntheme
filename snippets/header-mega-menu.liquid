@@ -66,8 +66,9 @@
                     </li>
                   {%- endfor -%}
                   <li>
-                    {{- link.title | escape -}}
-                    {{ section.settings.menuImage | image_url: width: 200 | image_tag }}
+                    {% if link.title == 'collection' %}
+                      {{ section.settings.menuImage | image_url: width: 200 | image_tag }}
+                    {% endif %}
                   </li>
                 </ul>
               </div>

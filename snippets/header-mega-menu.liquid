@@ -65,11 +65,11 @@
                       {%- endif -%}
                     </li>
                   {%- endfor -%}
-                  <li>
-                    {% if link.title == 'collection' %}
+                  {% if link.title == 'collection' %}
+                    <li>
                       {{ section.settings.menuImage | image_url: width: 200 | image_tag }}
-                    {% endif %}
-                  </li>
+                    </li>
+                  {% endif %}
                 </ul>
               </div>
             </details>

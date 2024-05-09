@@ -297,7 +297,7 @@
     "featured_blog_rndP88": {
       "type": "featured-blog",
       "settings": {
-        "heading": "Blog posts",
+        "heading": "Blog",
         "heading_size": "h1",
         "blog": "news",
         "post_limit": 3,

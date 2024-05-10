@@ -296,6 +296,8 @@
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
+    {% section 'custom-footer' %}
+
     {% sections 'footer-group' %}
 
     <ul hidden>

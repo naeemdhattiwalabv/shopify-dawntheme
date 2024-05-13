@@ -24,25 +24,14 @@
 </ul>
 {% schema %}
 {
-  "name": "Custom Footer",
-  "blocks": [
-  {
-    "type": "slide",
-    "name": "Custom Footer",
-    "limit": 4,
-    "settings": [
-      {
-        "type": "richtext",
-        "id": "Text-Heading",
-        "label": "Add Heading"
-      },
-      {
-        "type": "text",
-        "id": "footer-text",
-        "label": "Footer Text"
-      }
-    ]
-  }
-]
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "liquid",
+      "id": "custom_liquid",
+      "label": "t:sections.custom-liquid.settings.custom_liquid.label",
+      "info": "t:sections.custom-liquid.settings.custom_liquid.info"
+    }
+  ]
 }
 {% endschema %}

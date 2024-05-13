@@ -164,6 +164,12 @@
         ],
         "settings": {
         }
+      },
+      "custom-footer": {
+        "type": "custom-footer",
+        "settings": {
+          "footer_logo": "shopify:\/\/shop_images\/logo-footer.png"
+        }
       }
     },
     "content_for_index": [

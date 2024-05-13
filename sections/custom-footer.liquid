@@ -5,6 +5,18 @@
       <a href="{{ link.url }}">{{ link.title }}</a>
     </li>
   {% endfor %}
+  <h1>{{ linklists.company.title }}</h1>
+  {% for link in linklists.company.links %}
+    <li>
+      <a href="{{ link.url }}">{{ link.title }}</a>
+    </li>
+  {% endfor %}
+  <h1>{{ linklists.product.title }}</h1>
+  {% for link in linklists.product.links %}
+    <li>
+      <a href="{{ link.url }}">{{ link.title }}</a>
+    </li>
+  {% endfor %}
 </ul>
 {% schema %}
 {

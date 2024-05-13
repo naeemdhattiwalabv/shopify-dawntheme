@@ -1,6 +1,8 @@
 <div style="">
   <ul>
-    {{ linklists.title }}
+    {% for link2 in linklists %}
+      {{ link2.title }}
+    {% endfor %}
     <h1 style="color:white">{{ linklists.blogs.title }}</h1>
     {% for link in linklists.blogs.links %}
       <li>

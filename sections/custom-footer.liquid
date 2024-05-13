@@ -1,7 +1,9 @@
 <div style="">
   <ul>
-    {% for link2 in linklists %}
-      {{ link2.handle }}
+    {% for linklist in linklists %}
+      {% if linklist != 'main-menu' %}
+        {{ linklist.handle }}
+      {% endif %}
     {% endfor %}
     <h1 style="color:white">{{ linklists.blogs.title }}</h1>
     {% for link in linklists.blogs.links %}

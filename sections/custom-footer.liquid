@@ -2,7 +2,7 @@
   <ul>
     {% for linklist in linklists %}
       {% if linklist.handle != 'main-menu' and linklist.handle != 'footer' %}
-        <h1 style="color:black">{{ linklist.label }}</h1>
+        <h1 style="color:black">{{ linklists.blogs.label }}</h1>
         {% for link in linklists.blogs.links %}
           <li>
             <a href="{{ link.url }}">{{ link.title }}</a>

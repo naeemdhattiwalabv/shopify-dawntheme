@@ -1,7 +1,7 @@
 <div style="">
   <ul>
     {% for linklist in linklists %}
-      {% if linklist.handle == "blogs" or linklist.handle == "company" or linklist.handle == "products" %}
+      {% if linklist.handle == 'blogs' or linklist.handle == 'company' or linklist.handle == 'products' %}
         {% assign menu_handle_name = linklist.handle %}
         <h1 style="color:black">{{ linklists.blogs.title }}</h1>
         {% for link in linklists.blogs.links %}

@@ -1,7 +1,7 @@
 <div style="">
   <ul>
     {% for linklist in linklists %}
-      {% if linklist != 'main-menu' %}
+      {% if linklist.handle != 'main-menu' %}
         {{ linklist.handle }}
       {% endif %}
     {% endfor %}

@@ -22,16 +22,13 @@
     </li>
   {% endfor %}
 </ul>
+{% if section.settings.footer_logo != blank %}
+  {{ section.settings.footer_logo | image_url: width: 300 | image_tag }}
+{% endif %}
 {% schema %}
 {
   "name": "Footer",
   "settings": [
-    {
-      "type": "liquid",
-      "id": "custom_liquid",
-      "label": "t:sections.custom-liquid.settings.custom_liquid.label",
-      "info": "t:sections.custom-liquid.settings.custom_liquid.info"
-    },
     {
       "type": "image_picker",
       "id": "footer_logo",

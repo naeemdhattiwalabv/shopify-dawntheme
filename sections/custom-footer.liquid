@@ -3,7 +3,7 @@
     {% for linklist in linklists %}
       {% if linklist.handle != 'main-menu' and linklist.handle != 'footer' %}
         {% assign test = linklist.handle %}
-        <h1>{{ "test" }}</h1>
+        <h1>{{ 'test' }}</h1>
         <h1 style="color:black">{{ linklists.blogs.title }}</h1>
         {% for link in linklists.blogs.links %}
           <li>

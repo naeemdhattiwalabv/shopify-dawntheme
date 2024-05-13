@@ -2,15 +2,14 @@
   <ul>
     {% for linklist in linklists %}
       {% if linklist.handle != 'main-menu' and linklist.handle != 'footer' %}
-        {{ linklist.handle }}
+        <h1 style="color:white">{{ linklists.linklist.handle.title }}</h1>
+        {% for link in linklists.linklist.handle.links %}
+          <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+        {% endfor -%}
       {% endif %}
     {% endfor %}
-    <h1 style="color:white">{{ linklists.blogs.title }}</h1>
-    {% for link in linklists.blogs.links %}
-      <li>
-        <a href="{{ link.url }}">{{ link.title }}</a>
-      </li>
-    {% endfor -%}
   </ul>
   {% if section.settings.footer_logo != blank %}
     {{ section.settings.footer_logo | image_url: width: 300 | image_tag }}

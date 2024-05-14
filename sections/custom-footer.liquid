@@ -3,8 +3,7 @@
     {% for linklist in linklists %}
       {% if linklist.handle == 'blogs' or linklist.handle == 'company' or linklist.handle == 'product' %}
         {% assign menu_handle_name = 'linklists.' | append: linklist.handle | append: '.title' %}
-        <h1>{{ menu_handle_name }}</h1>
-        <h1 style="color:black">{{ linklists.blogs.title }}</h1>
+        <h1 style="color:black">{{ menu_handle_name }}</h1>
         {% for link in linklists.blogs.links %}
           <li>
             <a href="{{ link.url }}">{{ link.title }}</a>

@@ -2,7 +2,7 @@
   <ul>
     {% for linklist in linklists %}
       {% if linklist.handle == 'blogs' or linklist.handle == 'company' or linklist.handle == 'product' %}
-        <h1 style="color:black">{{ linklists.linklist.handle.title }}</h1>
+        <h1 style="color:black">{{ linklist.handle.title }}</h1>
         {% for link in linklists.blogs.links %}
           <li>
             <a href="{{ link.url }}">{{ link.title }}</a>

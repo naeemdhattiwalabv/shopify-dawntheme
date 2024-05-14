@@ -26,7 +26,7 @@
   {% if section.settings.footer_logo != blank %}
     {{ section.settings.footer_logo | image_url: width: 300 | image_tag }}
   {% endif %}
-  {%- if section.settings.show_social and has_social_icons -%}
+  {%- if section.settings.show_social -%}
     {%- render 'social-icons', class: 'footer__list-social' -%}
   {%- endif -%}
 </div>

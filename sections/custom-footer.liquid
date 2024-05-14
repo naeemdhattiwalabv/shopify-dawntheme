@@ -1,4 +1,4 @@
-<div style="background-color:#002941">
+<div style="background-color:#002941;">
   <ul>
     <h1>{{ linklists.blogs.title }}</h1>
     {% for link in linklists.blogs.links %}
@@ -23,20 +23,57 @@
       </li>
     {% endfor %}
   </ul>
-  {% if section.settings.footer_logo != blank %}
-    {{ section.settings.footer_logo | image_url: width: 300 | image_tag }}
-  {% endif %}
-  <div class="footer__payment">
-    <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
-    <ul class="list list-payment" role="list">
-      {%- for type in shop.enabled_payment_types -%}
-        <li class="list-payment__item">
-          {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-        </li>
-      {%- endfor -%}
-    </ul>
+  <div class="accordion">
+    <button class="accordion__btn">{{ 'sections.footer.payment' | t }}</button>
+    <div class="accordion__content">
+      <ul class="list list-payment" role="list">
+        {%- for type in shop.enabled_payment_types -%}
+          <li class="list-payment__item">
+            {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
   </div>
+  {% if section.settings.footer_logo != blank %}
+    <img src="{{ section.settings.footer_logo | img_url: '300x' }}" alt="Footer Logo">
+  {% endif %}
 </div>
+
+<style>
+  .accordion__content {
+    display: none;
+    padding: 0 20px;
+  }
+
+  .accordion__btn {
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+
+  .accordion__btn.active, .accordion__btn:hover {
+    background-color: #777;
+  }
+</style>
+
+<script>
+  const accordions = document.querySelectorAll('.accordion__btn');
+
+  accordions.forEach(accordion => {
+    accordion.addEventListener('click', () => {
+      const panel = accordion.nextElementSibling;
+      panel.style.display === 'block' ? panel.style.display = 'none' : panel.style.display = 'block';
+      accordion.classList.toggle('active');
+    });
+  });
+</script>
 
 {% schema %}
 {

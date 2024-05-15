@@ -22,8 +22,7 @@
 </style>
 <div>
   <div class="accordion">
-    <button class="accordion__btn">{{ 'sections.footer.payment' | t }}</button>
-    <h1>{{ linklists.blogs.title }}</h1>
+    <button class="accordion__btn">{{ linklists.blogs.title | t }}</button>
     <div class="accordion__content">
       <ul>
         {% for link in linklists.blogs.links %}

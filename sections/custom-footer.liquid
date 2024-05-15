@@ -49,20 +49,8 @@
       </li>
     {% endfor %}
   </ul>
-  <div class="accordion">
-    <button class="accordion__btn">{{ 'sections.footer.payment' | t }}</button>
-    <div class="accordion__content">
-      <ul class="list list-payment" role="list">
-        {%- for type in shop.enabled_payment_types -%}
-          <li class="list-payment__item">
-            {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-          </li>
-        {%- endfor -%}
-      </ul>
-    </div>
-  </div>
   {% if section.settings.footer_logo != blank %}
-    <img src="{{ section.settings.footer_logo | img_url: '300x' }}" alt="Footer Logo">
+    {{ section.settings.footer_logo | image_url: width: 300 | image_tag }}
   {% endif %}
 </div>
 

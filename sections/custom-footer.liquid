@@ -1,3 +1,25 @@
+<style>
+  .accordion__content {
+    display: none;
+    padding: 0 20px;
+  }
+
+  .accordion__btn {
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+
+  .accordion__btn.active, .accordion__btn:hover {
+    background-color: #777;
+  }
+</style>
 <div style="background-color:#002941;">
   <ul>
     <h1>{{ linklists.blogs.title }}</h1>
@@ -39,29 +61,6 @@
     <img src="{{ section.settings.footer_logo | img_url: '300x' }}" alt="Footer Logo">
   {% endif %}
 </div>
-
-<style>
-  .accordion__content {
-    display: none;
-    padding: 0 20px;
-  }
-
-  .accordion__btn {
-    background-color: #555;
-    color: white;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-  }
-
-  .accordion__btn.active, .accordion__btn:hover {
-    background-color: #777;
-  }
-</style>
 
 <script>
   const accordions = document.querySelectorAll('.accordion__btn');

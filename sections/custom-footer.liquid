@@ -64,7 +64,6 @@
 
 <script>
   const accordions = document.querySelectorAll('.accordion__btn');
-
   accordions.forEach(accordion => {
     accordion.addEventListener('click', () => {
       const panel = accordion.nextElementSibling;
@@ -76,7 +75,7 @@
 
 {% schema %}
 {
-  "name": "Footer",
+  "name": "Custom Footer",
   "settings": [
     {
       "type": "image_picker",

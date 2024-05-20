@@ -13,13 +13,13 @@
     {% if banner.settings.video.media_type == 'video' %}
       {{
         banner.settings.video
-        | video_tag: class: 'mySlides', image_size: '400x', autoplay: true, loop: true, muted: true, controls: true
+        | video_tag: class: 'mySlides', image_size: '400px', autoplay: true, loop: true, muted: true, controls: true
       }}
     {% endif %}
     <iframe
       class="mySlides"
-      width="560"
-      height="500px"
+      width="460"
+      height="1500px"
       src="https://www.youtube.com/embed/668nUCeBHyY?si=5UpMNvC_aGvmWq36"
       title="YouTube video player"
       frameborder="0"

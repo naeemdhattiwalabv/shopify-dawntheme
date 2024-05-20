@@ -10,8 +10,8 @@
         </a>
       {% endif %}
     {% endif %}
+    {{ banner.settings.video }}
     <video width="320" height="240" controls>
-      {{ banner.settings.video }}
       <source src="{{ banner.settings.video }}" type="video/mp4">
     </video>
   {% endfor %}

@@ -11,6 +11,10 @@
       {% endif %}
     {% endif %}
     {% if banner.settings.video.media_type == 'video' %}
+      {{
+        banner.settings.video
+        | video_tag: class: 'mySlides', image_size: '400x', autoplay: true, loop: true, muted: true, controls: true
+      }}
       <video
         playsinline="playsinline"
         class="mySlides"

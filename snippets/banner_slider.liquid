@@ -16,6 +16,17 @@
         | video_tag: class: 'mySlides', image_size: '400x', autoplay: true, loop: true, muted: true, controls: true
       }}
     {% endif %}
+    <iframe
+      class="mySlides"
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/668nUCeBHyY?si=5UpMNvC_aGvmWq36"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
   {% endfor %}
   <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
   <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>

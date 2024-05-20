@@ -11,7 +11,7 @@
       {% endif %}
     {% endif %}
     {% if banner.settings.video.media_type == 'video' %}
-      {{ banner.settings.video | video_tag: class: 'mySlides' }}
+      {{ banner.settings.video | video_tag: class: 'mySlides', image_size: '400x' }}
     {% endif %}
   {% endfor %}
   <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>

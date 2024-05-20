@@ -10,6 +10,7 @@
         </a>
       {% endif %}
     {% endif %}
+    {{ banner.settings.video.media_type }}
     {{ banner.settings.video | video_tag }}
   {% endfor %}
   <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>

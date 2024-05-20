@@ -11,10 +11,6 @@
       {% endif %}
     {% endif %}
     {% if banner.settings.video.media_type == 'video' %}
-      {{
-        banner.settings.video
-        | video_tag: class: 'mySlides', image_size: '400x', autoplay: true, loop: true, muted: true, controls: true
-      }}
       <video
         playsinline="playsinline"
         class="mySlides"
@@ -23,7 +19,7 @@
         style="display: block;"
       >
         <source
-          src="https://cdn.shopify.com/videos/c/vp/4fa724adb8ac454aab3502ec05e925ab/4fa724adb8ac454aab3502ec05e925ab.HD-720p-1.6Mbps-29361976.mp4"
+          src="{{ banner.settings.video }}"
           type="video/mp4"
         >
       </video>

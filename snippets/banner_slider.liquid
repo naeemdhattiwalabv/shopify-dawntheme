@@ -6,9 +6,6 @@
         <a href="{{ banner.settings.link }}">
       {% endif %}
       {{ banner.settings.image | image_url: width: 1000 | image_tag: class: 'mySlides' }}
-      {% if banner.settings.video != blank %}
-        <video>{{ banner.settings.video }}</video>
-      {% endif %}
       {% if banner.settings.link != blank %}
         </a>
       {% endif %}

@@ -1,3 +1,3 @@
-function wishlist() {
-    alert('Hello');
+function wishlist(val) {
+    alert(val);
   }

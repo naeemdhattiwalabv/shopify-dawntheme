@@ -60,7 +60,6 @@
         "wishlist": {
           "type": "text",
           "settings": {
-            "text": "Add to Wishlist",
             "text_style": "body"
           }
         }

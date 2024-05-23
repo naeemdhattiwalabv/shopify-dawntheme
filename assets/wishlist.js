@@ -1,4 +1,4 @@
 function wishlist(val) {
-    var addedQty = document.getElementByclass('quantity__input').value;
+    var addedQty = document.getElementByClass('quantity__input').value;
     console.log(addedQty);
 }

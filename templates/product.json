@@ -57,10 +57,10 @@
             "text_style": "body"
           }
         },
-        "text_ycMk4r2": {
+        "Wishlist": {
           "type": "text",
           "settings": {
-            "text": "Wishlist",
+            "text": "Add to Wishlist",
             "text_style": "body"
           }
         }
@@ -72,7 +72,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "text_ycMk4r2",
+        "Wishlist",
         "description",
         "share",
         "text_ycMk4r"

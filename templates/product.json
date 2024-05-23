@@ -32,13 +32,6 @@
           "settings": {
           }
         },
-        "text_GdAHRJ": {
-          "type": "text",
-          "settings": {
-            "text": "Wishlist",
-            "text_style": "body"
-          }
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -63,6 +56,13 @@
             "text": "<strong>Warrenty<\/strong>  {{ product.metafields.custom.warrenty.value }}",
             "text_style": "body"
           }
+        },
+        "text_ycMk4r2": {
+          "type": "text",
+          "settings": {
+            "text": "Wishlist",
+            "text_style": "body"
+          }
         }
       },
       "block_order": [
@@ -71,8 +71,8 @@
         "price",
         "variant_picker",
         "quantity_selector",
-        "text_GdAHRJ",
         "buy_buttons",
+        "text_ycMk4r2",
         "description",
         "share",
         "text_ycMk4r"

@@ -39,13 +39,6 @@
             "show_gift_card_recipient": true
           }
         },
-        "wishlist": {
-          "type": "text",
-          "settings": {
-            "text": "Wishlist",
-            "text_style": "body"
-          }
-        },
         "description": {
           "type": "description",
           "settings": {
@@ -63,6 +56,11 @@
             "text": "<strong>Warrenty<\/strong>  {{ product.metafields.custom.warrenty.value }}",
             "text_style": "body"
           }
+        },
+        "wishlist": {
+          "type": "text",
+          "settings": {
+          }
         }
       },
       "block_order": [
@@ -72,7 +70,6 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "wishlist",
         "description",
         "share",
         "text_ycMk4r"

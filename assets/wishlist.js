@@ -1,5 +1,5 @@
 function wishlist(val) {
-    let qtyId = 'Quantity-template--'+val+'__main';
+    let qtyId = `Quantity-template--${val}__main`;
     console.log(qtyId);
     var addedQty = document.getElementById(qtyId).value;
     localStorage.setItem("proId", val);

@@ -3,5 +3,5 @@ function wishlist(val) {
     var addedQty = document.getElementById('Quantity-template--22655669600555__main').value;
     localStorage.setItem("proId", val);
     localStorage.setItem("qty", addedQty);
-    console.log(localStorage.getItem("proId"));
+    console.log(localStorage.getItem("proId")+localStorage.getItem("qty"));
 }

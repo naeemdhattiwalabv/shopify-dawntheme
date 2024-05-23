@@ -1,5 +1,5 @@
-function wishlist(val) {
-    qtyId = 'Quantity-template--'+val+'__main';
-    var addQty = document.getElementById(qtyId).value;    
-    console.log(addQty);
+function wishlist(productId) {
+    qtyId = 'Quantity-template--'+productId+'__main';
+    var qty = document.getElementById(qtyId).value;    
+    console.log(qty);
 }

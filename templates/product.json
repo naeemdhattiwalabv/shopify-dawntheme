@@ -39,6 +39,13 @@
             "show_gift_card_recipient": true
           }
         },
+        "wishlist": {
+          "type": "text",
+          "settings": {
+            "text": "Wishlist",
+            "text_style": "body"
+          }
+        },
         "description": {
           "type": "description",
           "settings": {
@@ -54,12 +61,6 @@
           "type": "text",
           "settings": {
             "text": "<strong>Warrenty<\/strong>  {{ product.metafields.custom.warrenty.value }}",
-            "text_style": "body"
-          }
-        },
-        "wishlist": {
-          "type": "text",
-          "settings": {
             "text_style": "body"
           }
         }

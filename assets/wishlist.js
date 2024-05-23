@@ -5,5 +5,5 @@ function wishlist(val) {
     console.log(addedQty);
     localStorage.setProductData("Id", val);
     localStorage.setProductData("qty", addedQty);
-
+    console.log(localStorage.getProductData(Id));
 }

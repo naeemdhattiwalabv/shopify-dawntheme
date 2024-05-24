@@ -8,10 +8,12 @@ function wishlist(proId) {
 
     if (wishlist_productData) {
         var proIds = wishlist_productData.map(item => item.proId);
-        console.log(proIds[0]);
-        product = [
             { proId: proId, addedQty: addedQty }
-        ];
+        if (proIds[0] == proId) {
+            product = [
+                { proId: proId, addedQty: addedQty }
+            ];
+        }
         console.log(product);
     }
 

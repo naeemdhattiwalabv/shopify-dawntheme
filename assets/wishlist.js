@@ -20,5 +20,6 @@ function wishlist(proId) {
         product = [
             { proId: proId, addedQty: newQty}
         ];
+        console.log(product);
     }
 }

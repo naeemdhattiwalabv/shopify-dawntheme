@@ -12,6 +12,7 @@ function wishlist(proId) {
         product = [
             { proId: proId, addedQty: addedQty }
         ];
+        console.log(product);
     }
 
     localStorage.setItem("wishlist_product", JSON.stringify(product));

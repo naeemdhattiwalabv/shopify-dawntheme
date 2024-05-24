@@ -17,3 +17,7 @@ function wishlist(val) {
         console.error('Element with ID ' + qtyId + ' not found.');
     }
 }
+
+function myStopFunction() {
+    clearTimeout(myTimeout);
+  }

@@ -14,5 +14,8 @@ function wishlist(proId) {
         ];
         console.log(product);
         localStorage.setItem("wishlist_product", JSON.stringify(product));
+    } else {
+        qty = wishlist_productData.map(item => item.addedQty);
+        console.log(qty[0]);
     }
 }

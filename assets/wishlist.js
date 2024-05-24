@@ -7,5 +7,5 @@ function wishlist(proId) {
     var productJSON = JSON.stringify(product);
     console.log(productJSON);
     localStorage.setItem("wishlist_product", productJSON);
-    console.log(localStorage.getItem("wishlist_product"));
+    console.log(JSON.parse(localStorage.getItem("wishlist_product")));
 }

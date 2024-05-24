@@ -5,12 +5,13 @@ function wishlist(proId) {
     var productJSON = '';
     wishlist_productData =  JSON.parse(localStorage.getItem("wishlist_product"));
     var proIds = wishlist_productData.map(item => item.proId);
-    if (proIds[0] != proId){
-        product = [
-            { proId: proId, addedQty: addedQty }
-        ];
-        var productJSON = JSON.stringify(product);
-        console.log(productJSON );
-        localStorage.setItem("wishlist_product", productJSON);
-    }
+    console.log(proIds[0]);
+    // if (proIds[0] != proId){
+    //     product = [
+    //         { proId: proId, addedQty: addedQty }
+    //     ];
+    //     var productJSON = JSON.stringify(product);
+    //     console.log(productJSON );
+    //     localStorage.setItem("wishlist_product", productJSON);
+    // }
 }

@@ -6,8 +6,8 @@ function wishlist(proId) {
         var product = [];
         product.push({ proId: proId, addedQty: addedQty });
     } else {
-        console.log(product);
-        //product.push({ proId: proId, addedQty: addedQty });
+        wishlist_productData.push({ proId: proId, addedQty: addedQty });
+        console.log(wishlist_productData);
     }
     // if (proIds[0] != proId) {
     //     product = [

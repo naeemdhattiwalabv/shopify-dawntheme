@@ -13,3 +13,15 @@ function wishlist(proId) {
     console.log(product);
     localStorage.setItem("wishlist_product", JSON.stringify(product));
 }
+
+function mergeObjects(array) {
+    return array.reduce((merged, obj) => {
+        const existing = merged.find(item => item.proId === obj.proId);
+        if (existing) {
+            existing.addedQty += obj.addedQty; // Merge the addedQty values
+        } else {
+            merged.push(obj); // Add the object if it doesn't exist in the merged array
+        }
+        return merged;
+    }, []);
+}

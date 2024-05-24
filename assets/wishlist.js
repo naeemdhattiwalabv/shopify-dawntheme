@@ -8,7 +8,9 @@ function wishlist(proId) {
             { proId: proId, addedQty: addedQty }
         ];
     } else {
-        product.push({ proId: proId, addedQty: addedQty });
+        product.push (
+            { proId: proId, addedQty: addedQty }
+        );
     }
     // if (proIds[0] != proId) {
     //     product = [

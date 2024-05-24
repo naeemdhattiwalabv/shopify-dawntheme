@@ -4,11 +4,11 @@ function wishlist(proId) {
     var product = [];
     if (!wishlist_productData) {
         product = [
-            { proId: proId, addedQty: addedQty }
+            { proId: proId, addedQty: newQty }
         ];
-        localStorage.setItem("wishlist_product", JSON.stringify(product)); 
+        localStorage.setItem("wishlist_product", JSON.stringify(product));
     } else {
-         product = 'test';
+        product = 'test';
     }
     // if (proIds[0] != proId) {
     //     product = [

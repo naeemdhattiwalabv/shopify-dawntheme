@@ -1,13 +1,11 @@
 function wishlist(proId) {
     let addedQty = document.querySelectorAll('[name="quantity"]')[0].value;
-    var wishlist_productData = [];
-     wishlist_productData = JSON.parse(localStorage.getItem("wishlist_product"));
-    var product = [];
+    var wishlist_productData = product = [];
+    wishlist_productData = JSON.parse(localStorage.getItem("wishlist_product"));
     if (!wishlist_productData) {
         product = [
             { proId: proId, addedQty: newQty }
         ];
-        localStorage.setItem("wishlist_product", JSON.stringify(product));
     } else {
         console.log(wishlist_productData);
     }
@@ -23,4 +21,5 @@ function wishlist(proId) {
     //     ];
     // }
     console.log(product);
+    localStorage.setItem("wishlist_product", JSON.stringify(product));
 }

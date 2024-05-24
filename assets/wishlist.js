@@ -10,6 +10,6 @@ function wishlist(proId) {
         product = wishlist_productData;
         product.push({ proId: proId, addedQty: parseInt(addedQty) });
     }
-    console.log(product);
+    console.log(product[proId]);
     localStorage.setItem("wishlist_product", JSON.stringify(product));
 }

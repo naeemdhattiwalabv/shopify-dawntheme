@@ -16,7 +16,7 @@ function wishlist(proId) {
     //     var productJSON = JSON.stringify(product);
     //     console.log(productJSON );
     // }
-    localStorage.setItem("product", product);
+    localStorage.setItem("product", JSON.stringify(product));
     console.log(JSON.parse(localStorage.getItem("product")));
     
 }

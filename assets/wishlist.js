@@ -5,15 +5,14 @@ function wishlist(proId) {
     var wishlist_productData = [];
 
     wishlist_productData = JSON.parse(localStorage.getItem("wishlist_product"));
-    
+
     if (wishlist_productData) {
         var proIds = wishlist_productData.map(item => item.proId);
         console.log(proIds[0]);
+        product = [
+            { proId: proId, addedQty: addedQty }
+        ];
     }
-
-    product = [
-        { proId: proId, addedQty: addedQty }
-    ];
 
     localStorage.setItem("wishlist_product", JSON.stringify(product));
     

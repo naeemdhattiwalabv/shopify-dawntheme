@@ -1,5 +1,5 @@
 setTimeout(() => {
-    wishlist(val);
+    wishlist();
 }, 1000);
 
 function wishlist(val) {

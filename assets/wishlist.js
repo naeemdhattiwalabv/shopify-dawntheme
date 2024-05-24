@@ -4,9 +4,7 @@ function wishlist(proId) {
 
     if (wishlist_productData.length == 0) {
         var product = [];
-        product = [
-            { proId: proId, addedQty: addedQty }
-        ];
+        product.push({ proId: proId, addedQty: addedQty });
     } else {
         product.push (
             { proId: proId, addedQty: addedQty }

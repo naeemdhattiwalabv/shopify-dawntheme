@@ -8,8 +8,7 @@ function wishlist(proId) {
 
     if (wishlist_productData) {
         var proIds = wishlist_productData.map(item => item.proId);
-            { proId: proId, addedQty: addedQty }
-        if (proIds[0] == proId) {
+        if (proIds[0] != proId) {
             product = [
                 { proId: proId, addedQty: addedQty }
             ];

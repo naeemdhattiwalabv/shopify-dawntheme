@@ -1,3 +1,7 @@
+setTimeout(() => {
+    wishlist(val);
+}, 1000);
+
 function wishlist(val) {
     let qtyId = 'Quantity-template--' + val + '__main';
     console.log(qtyId);

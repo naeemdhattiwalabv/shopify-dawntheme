@@ -4,16 +4,17 @@ function wishlist(proId) {
     var product = [];
     var wishlist_productData = [];
 
-    wishlist_productData =  JSON.parse(localStorage.getItem("wishlist_product"));
-    var proIds = wishlist_productData.map(item => item.proId);
+    wishlist_productData = JSON.parse(localStorage.getItem("wishlist_product"));
     
-    console.log(proIds[0]);
+    if (wishlist_productData) {
+        var proIds = wishlist_productData.map(item => item.proId);
+        console.log(proIds[0]);
+    }
 
     product = [
         { proId: proId, addedQty: addedQty }
     ];
 
     localStorage.setItem("wishlist_product", JSON.stringify(product));
-    console.log((localStorage.getItem("product")));
     
 }

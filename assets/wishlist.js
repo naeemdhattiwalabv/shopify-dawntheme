@@ -10,7 +10,7 @@ function wishlist(proId) {
         product = wishlist_productData;
         product.push({ proId: proId, addedQty: parseInt(addedQty) });
     }
-    product = groupByField(products, 'proId');
+    product = groupByField(product, 'proId');
     console.log(product);
     localStorage.setItem("wishlist_product", JSON.stringify(product));
 }

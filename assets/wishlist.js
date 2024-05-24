@@ -11,19 +11,20 @@ function wishlist(proId) {
         product.push({ proId: proId, addedQty: parseInt(addedQty) });
     }
     console.log(product);
-    const mergedData = mergeObjects(product);
+    const mergedProducts = Object.values(mergeObjectsWithSameKey(products));
     console.log(mergedData);
     localStorage.setItem("wishlist_product", JSON.stringify(product));
 }
 
-function mergeObjects(array) {
-    return array.reduce((merged, obj) => {
-        const existing = merged.find(item => item.proId === obj.proId);
-        if (existing) {
-            existing.addedQty += obj.addedQty; 
+function mergeObjectsWithSameKey(array) {
+    return array.reduce((groups, item) => {
+        const key = item.proId;
+        if (!groups[key]) {
+            groups[key] = item;
         } else {
-            merged.push(obj);
+            // Merge the current object with the existing object
+            groups[key].addedQty += item.addedQty;
         }
-        return merged;
-    }, []);
-}
+        return groups;
+    }, {});
+}   

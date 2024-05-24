@@ -3,6 +3,6 @@ function wishlist(proId) {
     var product = [];
     product[proId] = addedQty;
     console.log(product);
-    localStorage.setItem("wishlist_product", product);
+    localStorage.setItem("wishlist_product", JSON.stringify(product));
     console.log(localStorage.getItem("wishlist_product"));
 }

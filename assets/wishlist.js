@@ -1,6 +1,7 @@
 function wishlist(proId) {
     let addedQty =  document.querySelectorAll('[name="quantity"]')[0].value;
     var product = [];
+    console.log(product['id']);
     if (product['id'] != proId) {
         product['id'] = proId;
         product['qty'] = addedQty;

@@ -5,14 +5,10 @@ var proId = wishlist_productData.map(item => item.proId);
 var qty = wishlist_productData.map(item => item.addedQty);
 console.log(proId);
 console.log(qty);
-
-
-
- {% for product in collections.all.products %}
+ </script>
+  {% for product in collections.all.products %}
        {% if product.id == 2 %}
             {% assign my_product = product %} 
             {{ product.id }}
       {% endif %}
  {% endfor %}
-
- </script>

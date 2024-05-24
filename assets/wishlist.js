@@ -1,6 +1,6 @@
-setTimeout(() => {
-    wishlist();
-}, 1000);
+
+const myTimeout = setTimeout(wishlist, 5000);
+
 
 function wishlist(val) {
     let qtyId = 'Quantity-template--' + val + '__main';

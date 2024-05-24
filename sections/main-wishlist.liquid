@@ -7,8 +7,6 @@ console.log(proId);
 console.log(qty);
  </script>
   {% for product in collections.all.products %}
-       {% if product.id == 2 %}
             {% assign my_product = product %} 
             {{ product.id }}
-      {% endif %}
  {% endfor %}

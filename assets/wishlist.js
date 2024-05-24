@@ -11,7 +11,9 @@ function wishlist(proId) {
         product.push({ proId: proId, addedQty: parseInt(addedQty) });
     }
     console.log(product);
-    const mergedProducts = Object.values(mergeObjectsWithSameKey(product[product.length - 1]));
+    var data = product[product.length - 1];
+    console.log(data);
+    const mergedProducts = Object.values(mergeObjectsWithSameKey(product[array.length - 1]));
     console.log(mergedProducts);
     localStorage.setItem("wishlist_product", JSON.stringify(product));
 }

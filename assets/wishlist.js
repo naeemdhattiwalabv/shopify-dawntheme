@@ -21,7 +21,7 @@ function mergeObjectsWithSameKey(array) {
         if (!groups[key]) {
             groups[key] = item;
         } else {
-            console.log(addedQty);
+            console.log(item.addedQty);
             groups[key].addedQty += item.addedQty;
         }
         return groups;

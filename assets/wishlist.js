@@ -10,6 +10,7 @@ function wishlist(proId) {
         localStorage.setItem("wishlist_product", JSON.stringify(product));
     } else {
         product = wishlist_productData;
+        product.push({ proId: proId, addedQty: addedQty });
         console.log(product);
     }
     // if (proIds[0] != proId) {

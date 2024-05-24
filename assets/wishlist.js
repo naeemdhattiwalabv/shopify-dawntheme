@@ -1,5 +1,5 @@
 
-const myTimeout = setTimeout(wishlist, 5000);
+const myTimeout = setTimeout(wishlist, 10000);
 
 
 function wishlist(val) {

@@ -18,5 +18,6 @@ function wishlist(proId) {
         qty = wishlist_productData.map(item => item.addedQty);
         console.log(typeof(parseInt(qty[0])));
         console.log(typeof(parseInt(addedQty)));
+        console.log(parseInt(qty[0]) + parseInt(addedQty));
     }
 }

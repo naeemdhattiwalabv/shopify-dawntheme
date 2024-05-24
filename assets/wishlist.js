@@ -1,11 +1,8 @@
 function wishlist(proId) {
     let addedQty =  document.querySelectorAll('[name="quantity"]')[0].value;
     var product = [];
-    console.log(product['id']);
-    if (product['id'] != proId) {
         product['id'] = proId;
         product['qty'] = addedQty;
-    }
     console.log(product);
     //var wishlist_productData = [];
     // wishlist_productData =  JSON.parse(localStorage.getItem("wishlist_product"));
@@ -19,6 +16,7 @@ function wishlist(proId) {
     //     var productJSON = JSON.stringify(product);
     //     console.log(productJSON );
     // }
-    // localStorage.setItem("wishlist_product", productJSON);
+    localStorage.setItem("product", product);
+    console.log(JSON.parse(localStorage.getItem("product")));
     
 }

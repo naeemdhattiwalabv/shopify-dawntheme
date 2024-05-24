@@ -3,7 +3,8 @@ const myTimeout = setTimeout(wishlist, 10000);
 
 
 function wishlist(val) {
-    let qtyId = 'Quantity-template--' + val + '__main';
+    //let qtyId = 'Quantity-template--' + val + '__main';
+    let qtyId =  document.querySelectorAll('[name="quantity"]')[0].value;
     console.log(qtyId);
     
     let element = document.getElementById(qtyId);

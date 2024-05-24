@@ -3,13 +3,12 @@ function wishlist(proId) {
     wishlist_productData = JSON.parse(localStorage.getItem("wishlist_product"));
 
     if (wishlist_productData.length == 0) {
-        var product = proIds = [];
-        var wishlist_productData = [];
+        var product = [];
         product = [
             { proId: proId, addedQty: addedQty }
         ];
     } else {
-        product.push[
+        product.push [
             { proId: proId, addedQty: addedQty }
         ];
     }

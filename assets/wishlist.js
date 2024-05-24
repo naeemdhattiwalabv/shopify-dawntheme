@@ -9,7 +9,6 @@ function wishlist(proId) {
             product = [
                 { proId: proId, addedQty: addedQty }
             ];
-            console.log(product);
             localStorage.setItem("wishlist_product", JSON.stringify(product));
         } else {
             qty = wishlist_productData.map(item => item.addedQty);
@@ -17,7 +16,7 @@ function wishlist(proId) {
             product = [
                 { proId: proId, addedQty: newQty }
             ];
-            console.log(product);
         }
+        console.log(product);
     }
 }

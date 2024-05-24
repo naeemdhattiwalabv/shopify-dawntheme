@@ -5,9 +5,6 @@ function wishlist(proId) {
     wishlist_productData =  JSON.parse(localStorage.getItem("wishlist_product"));
     var proIds = wishlist_productData.map(item => item.proId);
     console.log(proIds);
-    if (proIds != proIds){
-        console.log('matching');
-    }
     product = [
         { proId: proId, addedQty: addedQty }
     ];

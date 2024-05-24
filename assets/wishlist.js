@@ -1,8 +1,8 @@
 function wishlist(proId) {
     let addedQty =  document.querySelectorAll('[name="quantity"]')[0].value;
-    console.log(addedQty);
+    var product = [];
+    product[0] = prompt(proId);
+    console.log(product);
     localStorage.setItem("proId", [proId]);
     localStorage.setItem("qty", [addedQty]);
-    console.log(localStorage.getItem("proId"));
-    console.log(localStorage.getItem("qty"));
 }

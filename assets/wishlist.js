@@ -4,7 +4,9 @@ function wishlist(proId) {
     console.log(wishlist_productData);
     var product = [];
     if (!wishlist_productData) {
-        product.push({ proId: proId, addedQty: addedQty });
+        product = [
+            { proId: proId, addedQty: addedQty }
+        ];
         localStorage.setItem("wishlist_product", JSON.stringify(product)); 
     } else {
          product = wishlist_productData;

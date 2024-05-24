@@ -10,10 +10,7 @@ function wishlist(proId) {
         product = wishlist_productData;
         product.push({ proId: proId, addedQty: parseInt(addedQty) });
     }
-    console.log(product);
-    var data = product[product.length - 1];
-    console.log(data);
-    const mergedProducts = Object.values(mergeObjectsWithSameKey(product[array.length - 1]));
+    const mergedProducts = Object.values(mergeObjectsWithSameKey(product));
     console.log(mergedProducts);
     localStorage.setItem("wishlist_product", JSON.stringify(product));
 }
@@ -24,7 +21,7 @@ function mergeObjectsWithSameKey(array) {
         if (!groups[key]) {
             groups[key] = item;
         } else {
-            // Merge the current object with the existing object
+            console.log(addedQty);
             groups[key].addedQty += item.addedQty;
         }
         return groups;

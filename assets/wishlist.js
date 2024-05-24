@@ -4,7 +4,7 @@ function wishlist(proId) {
     var wishlist_productData = [];
     wishlist_productData =  JSON.parse(localStorage.getItem("wishlist_product"));
     var proIds = wishlist_productData.map(item => item.proId);
-    console.log(proIds);
+    console.log(proIds[0]);
      product = [
          { proId: proId, addedQty: addedQty }
      ];

@@ -5,9 +5,9 @@ function wishlist(proId) {
     // wishlist_productData =  JSON.parse(localStorage.getItem("wishlist_product"));
     // var proIds = wishlist_productData.map(item => item.proId);
     // console.log(proIds);
-    // product = [
-    //     { proId: proId, addedQty: addedQty }
-    // ];
+     product = [
+         { proId: proId, addedQty: addedQty }
+     ];
     var productJSON = JSON.stringify(product);
     console.log(productJSON );
     localStorage.setItem("wishlist_product", productJSON);

@@ -12,7 +12,7 @@ function wishlist(proId) {
     }
     console.log(product);
     const mergedProducts = Object.values(mergeObjectsWithSameKey(product));
-    console.log(mergedData);
+    console.log(mergedProducts);
     localStorage.setItem("wishlist_product", JSON.stringify(product));
 }
 

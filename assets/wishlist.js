@@ -1,5 +1,5 @@
 function wishlist(val) {
-    let qtyId = "Quantity-template--"+val+'__main';
+    let qtyId = 'Quantity-template--'+val+'__main';
     let addedQty = document.getElementById("'"+qtyId+"'").value ;
     console.log(qtyId);
     console.log(addedQty);

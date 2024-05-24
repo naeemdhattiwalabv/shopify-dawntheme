@@ -20,9 +20,9 @@ function mergeObjects(array) {
     return array.reduce((merged, obj) => {
         const existing = merged.find(item => item.proId === obj.proId);
         if (existing) {
-            existing.addedQty += obj.addedQty; // Merge the addedQty values
+            existing.addedQty += obj.addedQty; 
         } else {
-            merged.push(obj); // Add the object if it doesn't exist in the merged array
+            merged.push(obj);
         }
         return merged;
     }, []);

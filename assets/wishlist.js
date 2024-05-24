@@ -2,12 +2,13 @@ function wishlist(proId) {
     let addedQty = document.querySelectorAll('[name="quantity"]')[0].value;
     wishlist_productData = JSON.parse(localStorage.getItem("wishlist_product"));
     console.log(wishlist_productData);
+    var product = [];
     if (!wishlist_productData) {
-        var product = [];
         product.push({ proId: proId, addedQty: addedQty });
+        localStorage.setItem("wishlist_product", JSON.stringify(product)); 
     } else {
-        wishlist_productData.push({ proId: proId, addedQty: addedQty });
-        console.log(wishlist_productData);
+         product = wishlist_productData;
+
     }
     // if (proIds[0] != proId) {
     //     product = [
@@ -21,6 +22,4 @@ function wishlist(proId) {
     //     ];
     // }
     console.log(product);
-    localStorage.setItem("wishlist_product", JSON.stringify(product));
-    
 }

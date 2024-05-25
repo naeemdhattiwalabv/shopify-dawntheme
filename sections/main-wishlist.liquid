@@ -39,18 +39,7 @@
   }
 {% endstylesheet %}
 
-<div class="collection-grid">
-  <span id="product_wished_id"></span>
-  <div class="product-card">
-    <a href="{{ product.url }}">
-      <img id="product-image" src="" alt="Product Image">
-    </a>
-    <div class="product-info">
-      <h2 class="product-title" id="product-title"></h2>
-      <p class="product-price" id="product-prices"></p>
-    </div>
-  </div>
-</div>
+<div class="collection-grid"></div>
 
 {% javascript %}
   var wishlist_productData = [];
@@ -67,8 +56,9 @@
         const price = document.createElement("p");
         const titleValue = document.createTextNode(product.title);
         const priceValue = document.createTextNode(product.price);
-        document.getElementById('product-title').innerHTML = '<p>'+product.title+'</p>';
-        document.getElementById('product-prices').innerText = product.price;
+        title.appendChild(titleValue);
+        price.priceValue(titleValue);
+        document.getElementById("collection-grid").appendChild(node);
         if (product.images.length > 0) {
             document.getElementById('product-image').src = product.images[0];
         } else {

@@ -58,7 +58,7 @@
   var proId = wishlist_productData.map((item) => item.proId);
   var qty = wishlist_productData.map((item) => item.addedQty);
   for (let index = 0; index < proId.length; index++) {
-    fetch(`/products/my-first-product.js`)
+    fetch(`/products/${proId}.js`)
         .then((response) => response.json())
         .then((product) => {
         document.getElementById('product-title').innerText = product.title;

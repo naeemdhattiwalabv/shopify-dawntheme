@@ -57,7 +57,7 @@
   wishlist_productData = JSON.parse(localStorage.getItem('wishlist_product'));
   var proId = wishlist_productData.map((item) => item.proId);
   var qty = wishlist_productData.map((item) => item.addedQty);
-  for (let index = 0; index < proId.length; index++) {
+  for (let index = 1; index < proId.length; index++) {
     fetch(`/products/${proId[index]}.js`)
         .then((response) => response.json())
         .then((product) => {

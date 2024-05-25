@@ -11,6 +11,5 @@
     wishlist_productData = JSON.parse(localStorage.getItem('wishlist_product'));
     var proId = wishlist_productData.map((item) => item.proId);
     var qty = wishlist_productData.map((item) => item.addedQty);
-    var testval= {​{test | json}};
-    console.log(testval);
+    setSessionProp("test", proId);
 {% endjavascript %}

@@ -54,15 +54,13 @@
             console.log(product.title);
             document.getElementById("product_collection")
                 .innerHTML +=
-                `<div class="product-info">
+                `<a href="###">
+                    <img id="product-image" src="`+product.images[0]+`" alt="Product Image">
+                </a>
+                <div class="product-info">
                     <h2 class="product-title" id="product-title">`+product.title+`</h2>
-                    <p class="product-price" id="product-price">`+product.title+`</p>
+                    <p class="product-price" id="product-price">`+product.price+`</p>
                 </div>`;
-            if (product.images.length > 0) {
-                document.getElementById('product-image').src = product.images[0];
-            } else {
-                document.getElementById('product-image').src = 'default-image-url';
-            }
         })
         .catch((error) => {
         console.error('Error fetching product data:', error);

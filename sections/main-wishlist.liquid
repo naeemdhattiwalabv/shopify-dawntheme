@@ -58,7 +58,7 @@
   wishlist_productData = JSON.parse(localStorage.getItem('wishlist_product'));
   var proId = wishlist_productData.map((item) => item.proId);
   var qty = wishlist_productData.map((item) => item.addedQty);
-  fetch(`/products.js`)
+  fetch(`/store/brainvire-naeem-dev/products.json`)
     .then((response) => response.json())
     .then((product) => {
       console.log('Product data:', product);

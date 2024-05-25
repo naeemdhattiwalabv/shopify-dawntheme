@@ -46,27 +46,11 @@
     var proId = wishlist_productData.map((item) => item.proId);
     var qty = wishlist_productData.map((item) => item.addedQty);
     const container = document.getElementById('product-collection');
-    const productImage = document.createElement('img');
-    const productTitle = document.createElement('h1');
-    const productPrice = document.createElement('p');
-    const productDescription = document.createElement('div');
     for (let index = 0; index < array.length; index++) {
         fetch(`/products/my-first-product.js`)
             .then((response) => response.json())
             .then((product) => {
-                if (product.images.length > 0) {
-                        productImage.src = product.images[0];
-                    } else {
-                        productImage.src = 'default-image-url';
-                    }
-                    productTitle.innerText = product.title;
-                    productPrice.innerText = Shopify.formatMoney(product.price);
-                    productDescription.innerHTML = product.body_html;
-                    container.innerHTML = '';
-                    container.appendChild(productImage);
-                    container.appendChild(productTitle);
-                    container.appendChild(productPrice);
-                    container.appendChild(productDescription);
+                document.getElementById('product-collection').innerHTML += '<div id="idChild"> content html </div>';
             })
             .catch((error) => {
             console.error('Error fetching product data:', error);

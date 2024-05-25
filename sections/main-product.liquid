@@ -471,7 +471,7 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
-              <button onclick="wishlist({{- product.handle }})">Add to Wishlist</button>
+              <button onclick="wishlist(this.value)" value="{{ product.handle }}">Add to Wishlist</button>
               {%- when 'rating' -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}
                   <div class="rating-wrapper">

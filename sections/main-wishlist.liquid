@@ -1,4 +1,4 @@
-<style>
+{% stylesheet %}
   /* assets/styles.css */
   .collection-grid {
     display: flex;
@@ -37,7 +37,7 @@
     color: #e60023;
     font-weight: bold;
   }
-</style>
+{% endstylesheet %}
 <div class="collection-grid">
   <span id="product_wished_id"></span>
   {% for product in collections.all.products %}

@@ -38,22 +38,44 @@
     font-weight: bold;
   }
 {% endstylesheet %}
-<div class="collection-grid" id="product-collections"></div>
+<div class="collection-grid">
+  <span id="product_wished_id"></span>
+    <div class="product-card">
+        <a href="{{ product.url }}">
+            <img id="product-image" src="" alt="Product Image">
+        </a>
+      <div class="product-info">
+        <h2 class="product-title" id="product-title"></h2>
+        <p class="product-price" id="product-prices"></p>
+      </div>
+    </div>
+</div>
 
 {% javascript %}
     var wishlist_productData = [];
     wishlist_productData = JSON.parse(localStorage.getItem('wishlist_product'));
     var proId = wishlist_productData.map((item) => item.proId);
     var qty = wishlist_productData.map((item) => item.addedQty);
+    const container = document.getElementById('collection-grid');
+    const productImage = document.createElement('img');
+    const productTitle = document.createElement('h1');
+    const productPrice = document.createElement('p');
+    const productDescription = document.createElement('div');
     for (let index = 0; index < array.length; index++) {
         fetch(`/products/my-first-product.js`)
             .then((response) => response.json())
             .then((product) => {
-                document.getElementById('product-collections').innerHTML = '<div id="sdsdfsdf"> vdfdsfdsfl </div>';
+                document.getElementById('product-title').innerText = product.title;
+                document.getElementById('product-prices').innerText = product.price;
+                if (product.images.length > 0) {
+                document.getElementById('product-image').src = product.images[0];
+            } else {
+                document.getElementById('product-image').src = 'default-image-url'; // fallback image if no product image is available
+            }
             })
             .catch((error) => {
             console.error('Error fetching product data:', error);
             });
         }
-
+}
 {% endjavascript %}

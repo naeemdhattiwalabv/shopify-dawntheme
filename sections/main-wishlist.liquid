@@ -57,7 +57,7 @@
                 if (product.images.length > 0) {
                         productImage.src = product.images[0];
                     } else {
-                        productImage.src = 'default-image-url'; // fallback image if no product image is available
+                        productImage.src = 'default-image-url';
                     }
                     productTitle.innerText = product.title;
                     productPrice.innerText = Shopify.formatMoney(product.price);

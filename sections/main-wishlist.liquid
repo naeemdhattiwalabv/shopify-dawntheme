@@ -3,14 +3,12 @@ var wishlist_productData = [];
 wishlist_productData = JSON.parse(localStorage.getItem("wishlist_product"));
 var proId = wishlist_productData.map(item => item.proId);
 var qty = wishlist_productData.map(item => item.addedQty);
-</script>
-{{ proId }}
-    {% for product in collections.all.products %}
-            {% assign my_product = product %} 
-           <script>
-           {{ product.id }}
-           console.log(proId);
+console.log(proId);
 console.log(qty);
 
   </script>
+{{ proId }}
+    {% for product in collections.all.products %}
+            {% assign my_product = product %} 
+            {{ product.id }}
  {% endfor %}

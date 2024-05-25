@@ -39,7 +39,18 @@
   }
 {% endstylesheet %}
 
-<div class="collection-grid"></div>
+<div class="collection-grid">
+  <span id="product_wished_id"></span>
+  <div class="product-card">
+    <a href="{{ product.url }}">
+      <img id="product-image" src="" alt="Product Image">
+    </a>
+    <div class="product-info">
+      <h2 class="product-title" id="product-title"></h2>
+      <p class="product-price" id="product-prices"></p>
+    </div>
+  </div>
+</div>
 
 {% javascript %}
   var wishlist_productData = [];
@@ -58,7 +69,8 @@
         const priceValue = document.createTextNode(product.price);
         title.appendChild(titleValue);
         price.priceValue(titleValue);
-        document.getElementById("collection-grid").appendChild(node);
+        document.getElementById("product-title").appendChild(title);
+        document.getElementById("product-price").appendChild(price);
         if (product.images.length > 0) {
             document.getElementById('product-image').src = product.images[0];
         } else {

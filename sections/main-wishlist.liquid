@@ -39,17 +39,7 @@
   }
 {% endstylesheet %}
 
-<div class="collection-grid">
-  <span id="product_wished_id"></span>
-  <div class="product-card">
-    <a href="{{ product.url }}">
-      <img id="product-image" src="" alt="Product Image">
-    </a>
-    <div class="product-info">
-      <h2 class="product-title" id="product-title"></h2>
-      <p class="product-price" id="product-prices"></p>
-    </div>
-  </div>
+<div class="collection-grid" id="product-collection">
 </div>
 
 {% javascript %}
@@ -63,15 +53,13 @@
         .then((response) => response.json())
         .then((product) => {
         console.log(product.title);
-        document.getElementById('product-title').innerHTML = 
+        document.getElementById('product-collection').innerHTML = 
         '<div class="product-card>'+
                 '<div class="product-info">'+
                 '<h2 class="product-title" id="product-title">'+product.title+'</h2>'+
                 '<p class="product-price" id="product-prices">'+ product.price+'</p>'+
             '</div>'+
         '</div>';
-        document.getElementById('product-title').innerHTML = '<p>'+product.title+'</p>';
-        document.getElementById('product-prices').innerText = product.price;
         if (product.images.length > 0) {
             document.getElementById('product-image').src = product.images[0];
         } else {

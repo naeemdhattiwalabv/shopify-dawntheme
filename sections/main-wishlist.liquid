@@ -58,7 +58,7 @@
   var proId = wishlist_productData.map((item) => item.proId);
   var qty = wishlist_productData.map((item) => item.addedQty);
   console.log(proId);
-  for (let index = 1; index < proId.length; index++) {
+  for (let index = 0; index < proId.length; index++) {
     fetch(`/products/${proId[index]}.js`)
         .then((response) => response.json())
         .then((product) => {

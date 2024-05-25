@@ -61,6 +61,7 @@
     fetch(`/products/${proId[index]}.js`)
         .then((response) => response.json())
         .then((product) => {
+        console.log(product.title);
         document.getElementById('product-title').innerText = product.title;
         document.getElementById('product-prices').innerText = product.price;
         if (product.images.length > 0) {

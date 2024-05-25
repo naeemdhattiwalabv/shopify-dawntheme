@@ -10,4 +10,7 @@
     wishlist_productData = JSON.parse(localStorage.getItem('wishlist_product'));
     var proId = wishlist_productData.map((item) => item.proId);
     var qty = wishlist_productData.map((item) => item.addedQty);
+    {% for product in collections.all.products %}
+            <h2>{{ product.title }}</h2>
+    {% endfor %}
 {% endjavascript %}

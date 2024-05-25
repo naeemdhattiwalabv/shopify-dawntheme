@@ -12,7 +12,6 @@ function wishlist(proId) {
         product.push({ proId: proId, addedQty: parseInt(addedQty) });
     }
     const mergedProducts = Object.values(mergeObjectsWithSameKey(product));
-    console.log(mergedProducts);
     localStorage.setItem("wishlist_product", JSON.stringify(mergedProducts));
 }
 
@@ -24,7 +23,6 @@ function mergeObjectsWithSameKey(array) {
         } else {
             groups[key].addedQty += item.addedQty;
         }
-        console.log(groups);
         return groups;
     }, {});
 }   

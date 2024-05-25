@@ -63,7 +63,12 @@
         .then((response) => response.json())
         .then((product) => {
             console.log(product.title);
-
+            document.getElementById("product_collection")
+                .innerHTML +=
+                `<h3>
+                    This is the text which has
+                    been inserted by JS
+                </h3>`;
             if (product.images.length > 0) {
                 document.getElementById('product-image').src = product.images[0];
             } else {

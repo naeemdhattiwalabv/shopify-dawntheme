@@ -56,20 +56,18 @@
   wishlist_productData = JSON.parse(localStorage.getItem('wishlist_product'));
   var proId = wishlist_productData.map((item) => item.proId);
   var qty = wishlist_productData.map((item) => item.addedQty);
-  for (let index = 0; index < array.length; index++) {
-    fetch(`/products/my-first-product.js`)
-        .then((response) => response.json())
-        .then((product) => {
-            document.getElementById('product-title').innerText = product.title;
-            document.getElementById('product-prices').innerText = product.price;
-            if (product.images.length > 0) {
-            document.getElementById('product-image').src = product.images[0];
-        } else {
-            document.getElementById('product-image').src = 'default-image-url'; // fallback image if no product image is available
-        }
-        })
-        .catch((error) => {
-        console.error('Error fetching product data:', error);
-        });
+  fetch(`/products/my-first-product.js`)
+    .then((response) => response.json())
+    .then((product) => {
+        document.getElementById('product-title').innerText = product.title;
+        document.getElementById('product-prices').innerText = product.price;
+        if (product.images.length > 0) {
+        document.getElementById('product-image').src = product.images[0];
+    } else {
+        document.getElementById('product-image').src = 'default-image-url'; // fallback image if no product image is available
     }
+    })
+    .catch((error) => {
+      console.error('Error fetching product data:', error);
+    });
 {% endjavascript %}

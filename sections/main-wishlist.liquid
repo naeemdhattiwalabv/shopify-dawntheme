@@ -1,13 +1,17 @@
 <div class="wishlist_section">
-    <span id="product_wished_id"></span>
-    {% for product in collections.all.products %}
-            <h2>{{ product.title }}</h2>
-    {% endfor %}
+  <span id="product_wished_id"></span>
+  {% for product in collections.all.products %}
+    <h1>{{ product.title }}</h1>
+    <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
+    <p>{{ product.description }}</p>
+    <p>Price: {{ product.price | money }}</p>
+  {% endfor %}
 </div>
 
 {% javascript %}
-    var wishlist_productData = [];
-    wishlist_productData = JSON.parse(localStorage.getItem('wishlist_product'));
-    var proId = wishlist_productData.map((item) => item.proId);
-    var qty = wishlist_productData.map((item) => item.addedQty);
+  var wishlist_productData = [];
+  wishlist_productData = JSON.parse(localStorage.getItem('wishlist_product'));
+  var proId = wishlist_productData.map((item) => item.proId);
+  var qty = wishlist_productData.map((item) => item.addedQty);
+  var testval = '{​{ test }}';
 {% endjavascript %}

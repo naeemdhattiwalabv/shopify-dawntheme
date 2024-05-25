@@ -1,22 +1,13 @@
-
-
 <div class="wishlist_section">
-<span id="product_wished_id"></span>
-{% for product in collections.all.products %}
-{{ product_wished_id}}
-{% if product.id == product_wished_id %}
-<h2>{{ product.title }}</h2>
-{% endif %}
-{% endfor %}
+    <span id="product_wished_id"></span>
+    {% for product in collections.all.products %}
+            <h2>{{ product.title }}</h2>
+    {% endfor %}
 </div>
 
-
 {% javascript %}
-var wishlist_productData = [];
-wishlist_productData = JSON.parse(localStorage.getItem("wishlist_product"));
-var proId = wishlist_productData.map(item => item.proId);
-var qty = wishlist_productData.map(item => item.addedQty);
-console.log(proId[0]);
-document.getElementById("product_wished_id").innerHTML = proId[0];
-{{ 'test' }}
+    var wishlist_productData = [];
+    wishlist_productData = JSON.parse(localStorage.getItem('wishlist_product'));
+    var proId = wishlist_productData.map((item) => item.proId);
+    var qty = wishlist_productData.map((item) => item.addedQty);
 {% endjavascript %}

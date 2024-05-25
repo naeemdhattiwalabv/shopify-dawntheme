@@ -10,5 +10,9 @@ console.log(qty);
 {{ proId }}
     {% for product in collections.all.products %}
             {% assign my_product = product %} 
-           
+           <script>
+           console.log(proId);
+console.log(qty);
+
+  </script>
  {% endfor %}

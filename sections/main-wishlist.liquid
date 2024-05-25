@@ -60,7 +60,7 @@
     .then((response) => response.json())
     .then((product) => {
         document.getElementById('product-title').innerText = product.title;
-        document.getElementById('product-prices').innerText = Shopify.formatMoney(product.price);
+        document.getElementById('product-prices').innerText = product.price;
         document.getElementById('product-image').innerHTML =  product.featured_image;
     })
     .catch((error) => {

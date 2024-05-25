@@ -44,11 +44,11 @@
 {% javascript %}
     var wishlist_productData = [];
     wishlist_productData = JSON.parse(localStorage.getItem('wishlist_product'));
-    var proId = wishlist_productData.map((item) => item.proId);
+    var proHandle = wishlist_productData.map((item) => item.proHandle);
     var qty = wishlist_productData.map((item) => item.addedQty);
-    console.log(proId);
-    for (let index = 0; index < proId.length; index++) {
-        fetch(`/products/${proId[index]}.js`)
+    console.log(proHandle);
+    for (let index = 0; index < proHandle.length; index++) {
+        fetch(`/products/${proHandle[index]}.js`)
         .then((response) => response.json())
         .then((product) => {
             console.log(product.title);

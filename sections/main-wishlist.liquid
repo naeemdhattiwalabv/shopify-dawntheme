@@ -42,9 +42,6 @@
   <span id="product_wished_id"></span>
   {% for product in collections.all.products %}
     <div class="product-card">
-      <a href="{{ product.url }}">
-        {{ product.featured_image | image_url: width: 300 | image_tag }}
-      </a>
       <div class="product-info">
         <h2 class="product-title">{{ product.title }}</h2>
         <p class="product-price">{{ product.price | money }}</p>
@@ -61,8 +58,8 @@
   fetch(`/products/my-first-product.js`)
     .then((response) => response.json())
     .then((product) => {
-      console.log('Product data:', product);
-      displayProductData(product);
+        document.getElementById('product-title').innerText = product.title;
+        document.getElementById('product-price').innerText = Shopify.formatMoney(product.price);
     })
     .catch((error) => {
       console.error('Error fetching product data:', error);

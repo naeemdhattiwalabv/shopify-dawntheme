@@ -1,7 +1,7 @@
 <div class="wishlist_section">
   <span id="product_wished_id"></span>
   {% for product in collections.all.products %}
-    <div style="display: float-left;">
+    <div style="display: inline-block; float:left">
         <h1>{{ product.title }}</h1>
         {{ product.featured_image | image_url: width: 300 | image_tag }}
         <p>{{ product.description }}</p>

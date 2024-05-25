@@ -2,8 +2,8 @@
 
 <div class="wishlist_section">
 <span id="product_wished_id"></span>
-<span id="">text</span>
 {% for product in collections.all.products %}
+{{ product_wished_id}}
 {% if product.id == product_wished_id %}
 <h2>{{ product.title }}</h2>
 {% endif %}

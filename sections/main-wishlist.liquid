@@ -39,7 +39,7 @@
   }
 {% endstylesheet %}
 
-<div class="collection-grid">
+<div class="collection-grid" id="product_collection">
   <span id="product_wished_id"></span>
   <div class="product-card">
     <a href="{{ product.url }}">
@@ -63,8 +63,7 @@
         .then((response) => response.json())
         .then((product) => {
             console.log(product.title);
-            document.getElementById("product-title").appendChild(title);
-            document.getElementById("product-price").appendChild(price);
+
             if (product.images.length > 0) {
                 document.getElementById('product-image').src = product.images[0];
             } else {

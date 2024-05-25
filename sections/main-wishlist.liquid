@@ -42,13 +42,14 @@
   <span id="product_wished_id"></span>
   {% for product in collections.all.products %}
     <div class="product-card">
-            <a href="{{ product.url }}">
-                {{ product.featured_image | image_url: width: 300 | image_tag }}
-            </a>
-            <div class="product-info">
-                <h2 class="product-title">{{ product.title }}</h2>
-                <p class="product-price">{{ product.price | money }}</p>
-            </div>
+        <h1>{{ product.title }}</h1>
+        {{ product.featured_image | image_url: width: 300 | image_tag }} 
+        <div class="product-info">
+         <h2 class="product-title">{{ product.title }}</h2>
+         <p class="product-price">{{ product.price | money }}</p>
+        <p>{{ product.description }}</p>
+        </div>
+    </div>
   {% endfor %}
 </div>
 

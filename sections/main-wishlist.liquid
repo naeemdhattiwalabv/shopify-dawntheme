@@ -68,7 +68,7 @@
         const titleValue = document.createTextNode(product.title);
         const priceValue = document.createTextNode(product.price);
         title.appendChild(titleValue);
-        price.priceValue(titleValue);
+        price.appendChild(priceValue);
         document.getElementById("product-title").appendChild(title);
         document.getElementById("product-price").appendChild(price);
         if (product.images.length > 0) {

@@ -17,7 +17,9 @@ wishlist_productData = JSON.parse(localStorage.getItem("wishlist_product"));
 var proId = wishlist_productData.map(item => item.proId);
 var qty = wishlist_productData.map(item => item.addedQty);
 console.log(proId[0]);
-console.log(qty);
+var myVar = {{ 'tezt' | json}}
+
+console.log(myVar);
 
 document.getElementById("product_wished_id").innerHTML = proId[0];
 </script>

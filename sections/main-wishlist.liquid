@@ -47,43 +47,24 @@
       </a>
       <div class="product-info">
         <h2 class="product-title">{{ product.title }}</h2>
-        <h2 class="product-title">{{ product.handle }}</h2>
         <p class="product-price">{{ product.price | money }}</p>
       </div>
     </div>
   {% endfor %}
 </div>
-<div id="product" data-handle="{{ product.handle }}"></div>
 
-<div id="product-info">
-    <h1 id="product-title"></h1>
-    <p id="product-price"></p>
-    <div id="product-description"></div>
-</div>
 {% javascript %}
-  
-  function fetchProductData(handle) {
-    fetch(`/products/${handle}.js`)
-        .then(response => response.json())
-        .then(product => {
-            console.log('Product data:', product);
-            displayProductData(product);
-        })
-        .catch(error => {
-            console.error('Error fetching product data:', error);
-        });
-}
-
-function displayProductData(product) {
-    document.getElementById('product-title').innerText = product.title;
-    document.getElementById('product-price').innerText = Shopify.formatMoney(product.price);
-    document.getElementById('product-description').innerHTML = product.body_html;
-}
-
-// Get product handle from the data attribute
-document.addEventListener('DOMContentLoaded', function() {
-    var productElement = document.getElementById('product');
-    var productHandle = productElement.getAttribute('data-handle');
-    fetchProductData(productHandle);
-});
+  var wishlist_productData = [];
+  wishlist_productData = JSON.parse(localStorage.getItem('wishlist_product'));
+  var proId = wishlist_productData.map((item) => item.proId);
+  var qty = wishlist_productData.map((item) => item.addedQty);
+  fetch(`/products/my-first-product.js`)
+    .then((response) => response.json())
+    .then((product) => {
+      console.log('Product data:', product);
+      displayProductData(product);
+    })
+    .catch((error) => {
+      console.error('Error fetching product data:', error);
+    });
 {% endjavascript %}

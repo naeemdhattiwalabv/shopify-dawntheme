@@ -21,6 +21,7 @@ function mergeObjectsWithSameKey(array) {
             groups[key] = item;
         } else {
             groups[key].addedQty = 1;
+            groups[key].proName = item.proName;
         }
         return groups;
     }, {});

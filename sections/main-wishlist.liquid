@@ -12,4 +12,5 @@
     var proId = wishlist_productData.map((item) => item.proId);
     var qty = wishlist_productData.map((item) => item.addedQty);
     setSessionProp("test", proId);
+    console.log(getSessionProp("test"));
 {% endjavascript %}

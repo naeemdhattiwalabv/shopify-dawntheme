@@ -2,7 +2,7 @@
   <span id="product_wished_id"></span>
   {% for product in collections.all.products %}
     <h1>{{ product.title }}</h1>
-    <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
+    {{product.featured_image | img_url |  image_tag}}
     <p>{{ product.description }}</p>
     <p>Price: {{ product.price | money }}</p>
   {% endfor %}

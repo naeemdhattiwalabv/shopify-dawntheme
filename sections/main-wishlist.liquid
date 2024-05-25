@@ -40,14 +40,12 @@
 {% endstylesheet %}
 <div class="collection-grid">
   <span id="product_wished_id"></span>
-  {% for product in collections.all.products %}
     <div class="product-card">
       <div class="product-info">
         <h2 class="product-title">{{ product.title }}</h2>
         <p class="product-price">{{ product.price | money }}</p>
       </div>
     </div>
-  {% endfor %}
 </div>
 
 {% javascript %}

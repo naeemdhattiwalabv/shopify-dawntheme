@@ -23,6 +23,7 @@ function mergeObjectsWithSameKey(array) {
         } else {
             groups[key].addedQty += item.addedQty;
         }
+        console.log(groups);
         return groups;
     }, {});
 }   

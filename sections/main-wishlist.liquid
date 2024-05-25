@@ -58,7 +58,13 @@
   wishlist_productData = JSON.parse(localStorage.getItem('wishlist_product'));
   var proId = wishlist_productData.map((item) => item.proId);
   var qty = wishlist_productData.map((item) => item.addedQty);
-  var pathname = window.location.pathname;
-    var segments = pathname.split('/');
-    console.log( segments[segments.length - 1]);
+  fetch(`/products/wishlist-page.js`)
+    .then((response) => response.json())
+    .then((product) => {
+      console.log('Product data:', product);
+      displayProductData(product);
+    })
+    .catch((error) => {
+      console.error('Error fetching product data:', error);
+    });
 {% endjavascript %}

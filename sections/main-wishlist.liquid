@@ -39,18 +39,7 @@
   }
 {% endstylesheet %}
 
-<div class="collection-grid" id="product_collection">
-  <span id="product_wished_id"></span>
-  <div class="product-card">
-    <a href="{{ product.url }}">
-      <img id="product-image" src="" alt="Product Image">
-    </a>
-    <div class="product-info">
-      <h2 class="product-title" id="product-title"></h2>
-      <p class="product-price" id="product-price"></p>
-    </div>
-  </div>
-</div>
+<div class="collection-grid" id="product_collection"></div>
 
 {% javascript %}
     var wishlist_productData = [];

@@ -59,7 +59,7 @@
   fetch(`/products/my-first-product.js`)
     .then((response) => response.json())
     .then((product) => {
-        document.getElementById('product-title').innerText = product.title;
+        document.getElementById('product-title').innerText = product.price;
         document.getElementById('product-prices').innerHTML = Shopify.formatMoney(product.price);
         document.getElementById('product-image').innerHTML =  product.featured_image;
     })

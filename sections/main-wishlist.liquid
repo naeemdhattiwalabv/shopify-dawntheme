@@ -1,54 +1,55 @@
 <style>
-    /* assets/styles.css */
-.collection-grid {
+  /* assets/styles.css */
+  .collection-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-}
+  }
 
-.product-card {
+  .product-card {
     background: #fff;
     border: 1px solid #ddd;
     padding: 15px;
     width: calc(33.333% - 20px);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
-}
+  }
 
-.product-card:hover {
+  .product-card:hover {
     transform: scale(1.05);
-}
+  }
 
-.product-card img {
+  .product-card img {
     width: 100%;
     height: auto;
-}
+  }
 
-.product-info {
+  .product-info {
     padding: 10px 0;
-}
+  }
 
-.product-title {
+  .product-title {
     font-size: 18px;
     margin: 10px 0;
-}
+  }
 
-.product-price {
+  .product-price {
     color: #e60023;
     font-weight: bold;
-}
+  }
 </style>
 <div class="collection-grid">
   <span id="product_wished_id"></span>
   {% for product in collections.all.products %}
     <div class="product-card">
-        <h1>{{ product.title }}</h1>
-        {{ product.featured_image | image_url: width: 300 | image_tag }} 
-        <div class="product-info">
-         <h2 class="product-title">{{ product.title }}</h2>
-         <p class="product-price">{{ product.price | money }}</p>
+      <a href="{{ product.url }}">
+        {{ product.featured_image | image_url: width: 300 | image_tag }}
+      </a>
+      <div class="product-info">
+        <h2 class="product-title">{{ product.title }}</h2>
+        <p class="product-price">{{ product.price | money }}</p>
         <p>{{ product.description }}</p>
-        </div>
+      </div>
     </div>
   {% endfor %}
 </div>

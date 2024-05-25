@@ -61,5 +61,28 @@
 </div>
 {% javascript %}
   
+  function fetchProductData(handle) {
+    fetch(`/products/${handle}.js`)
+        .then(response => response.json())
+        .then(product => {
+            console.log('Product data:', product);
+            displayProductData(product);
+        })
+        .catch(error => {
+            console.error('Error fetching product data:', error);
+        });
+}
 
+function displayProductData(product) {
+    document.getElementById('product-title').innerText = product.title;
+    document.getElementById('product-price').innerText = Shopify.formatMoney(product.price);
+    document.getElementById('product-description').innerHTML = product.body_html;
+}
+
+// Get product handle from the data attribute
+document.addEventListener('DOMContentLoaded', function() {
+    var productElement = document.getElementById('product');
+    var productHandle = productElement.getAttribute('data-handle');
+    fetchProductData(productHandle);
+});
 {% endjavascript %}

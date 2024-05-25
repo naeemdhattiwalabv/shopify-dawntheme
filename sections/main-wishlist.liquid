@@ -39,16 +39,17 @@
   }
 {% endstylesheet %}
 <div class="collection-grid">
-  <span id="product_wished_id"></span>
-    <div class="product-card">
-        <a href="{{ product.url }}">
-            <img id="product-image" src="" alt="Product Image">
-        </a>
-      <div class="product-info">
-        <h2 class="product-title" id="product-title"></h2>
-        <p class="product-price" id="product-prices"></p>
-      </div>
-    </div>
+    {% for product in collections.all.products %}
+        <div class="product-card">
+            <a href="{{ product.url }}">
+                <img id="product-image" src="" alt="Product Image">
+            </a>
+        <div class="product-info">
+            <h2 class="product-title" id="product-title"></h2>
+            <p class="product-price" id="product-prices"></p>
+        </div>
+        </div>
+    {% endfor %}
 </div>
 
 {% javascript %}

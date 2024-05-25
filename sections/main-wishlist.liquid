@@ -42,7 +42,6 @@
   <span id="product_wished_id"></span>
     <div class="product-card">
         <a href="{{ product.url }}">
-            {{ product.featured_image | image_url: width: 300 | image_tag }}
             <img src="{{ 'logo.png' | asset_url }}" alt=""  id="product-image">
         </a>
       <div class="product-info">
@@ -62,7 +61,7 @@
     .then((product) => {
         document.getElementById('product-title').innerText = product.title;
         document.getElementById('product-prices').innerHTML = Shopify.formatMoney(product.price);
-        document.getElementById('product-image').innerText = Shopify.formatMoney(product.price);
+        document.getElementById('product-image').innerHTML =  product.featured_image;
     })
     .catch((error) => {
       console.error('Error fetching product data:', error);

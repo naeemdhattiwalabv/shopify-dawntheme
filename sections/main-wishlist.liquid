@@ -4,10 +4,13 @@
             <h2>{{ product.title }}</h2>
     {% endfor %}
 </div>
+{% assign test = 'templates.search.page' | t %}
 
 {% javascript %}
     var wishlist_productData = [];
     wishlist_productData = JSON.parse(localStorage.getItem('wishlist_product'));
     var proId = wishlist_productData.map((item) => item.proId);
     var qty = wishlist_productData.map((item) => item.addedQty);
+    var testval= {​{test | json}};
+    console.log(testval);
 {% endjavascript %}

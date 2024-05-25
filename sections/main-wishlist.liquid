@@ -63,7 +63,7 @@
         .then((response) => response.json())
         .then((product) => {
         console.log(product.title);
-        document.getElementById('product-title').innerText = product.title;
+        document.getElementById('product-title').innerText = '<p>'+product.title+'</p>';
         document.getElementById('product-prices').innerText = product.price;
         if (product.images.length > 0) {
             document.getElementById('product-image').src = product.images[0];

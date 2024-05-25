@@ -8,7 +8,7 @@ function wishlist(proId, proName) {
         ];
     } else {
         product = wishlist_productData;
-        product.push({ proId: proId, addedQty: parseInt(addedQty) });
+        product.push({ proId: proId, addedQty: parseInt(addedQty), proName: proName });
     }
     const mergedProducts = Object.values(mergeObjectsWithSameKey(product));
     localStorage.setItem("wishlist_product", JSON.stringify(mergedProducts));

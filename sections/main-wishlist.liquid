@@ -1,12 +1,4 @@
-<script>
-var wishlist_productData = [];
-wishlist_productData = JSON.parse(localStorage.getItem("wishlist_product"));
-var proId = wishlist_productData.map(item => item.proId);
-var qty = wishlist_productData.map(item => item.addedQty);
-console.log(proId[0]);
-console.log(qty);
-document.getElementById("product_wished_id").innerHTML = proId[0];
-</script>
+
 
 <div class="wishlist_section">
 <span id="product_wished_id"></span>
@@ -17,3 +9,14 @@ document.getElementById("product_wished_id").innerHTML = proId[0];
 {% endif %}
 {% endfor %}
 </div>
+
+
+<script>
+var wishlist_productData = [];
+wishlist_productData = JSON.parse(localStorage.getItem("wishlist_product"));
+var proId = wishlist_productData.map(item => item.proId);
+var qty = wishlist_productData.map(item => item.addedQty);
+console.log(proId[0]);
+console.log(qty);
+document.getElementById("product_wished_id").innerHTML = proId[0];
+</script>

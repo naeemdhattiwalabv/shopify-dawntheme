@@ -38,6 +38,7 @@
     font-weight: bold;
   }
 {% endstylesheet %}
+
 <div class="collection-grid">
   <span id="product_wished_id"></span>
   <div class="product-card">
@@ -56,6 +57,7 @@
   wishlist_productData = JSON.parse(localStorage.getItem('wishlist_product'));
   var proId = wishlist_productData.map((item) => item.proId);
   var qty = wishlist_productData.map((item) => item.addedQty);
+  console.log(proId);
   fetch(`/products/my-first-product.js`)
     .then((response) => response.json())
     .then((product) => {

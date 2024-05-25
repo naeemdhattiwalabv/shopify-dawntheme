@@ -11,11 +11,11 @@
 </div>
 
 
-<script>
+{% javascript %}
 var wishlist_productData = [];
 wishlist_productData = JSON.parse(localStorage.getItem("wishlist_product"));
 var proId = wishlist_productData.map(item => item.proId);
 var qty = wishlist_productData.map(item => item.addedQty);
 console.log(proId[0]);
 document.getElementById("product_wished_id").innerHTML = proId[0];
-</script>
+{% endjavascript %}

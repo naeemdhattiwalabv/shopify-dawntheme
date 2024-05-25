@@ -8,6 +8,7 @@ var qty = wishlist_productData.map(item => item.addedQty);
     {% for product in collections.all.products %}
             {% assign my_product = product %} 
            <script>
+           {{ product.id }}
            console.log(proId);
 console.log(qty);
 

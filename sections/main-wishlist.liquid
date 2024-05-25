@@ -53,7 +53,7 @@
         .then((response) => response.json())
         .then((product) => {
         console.log(product.title);
-        document.getElementById('product-collection').innerHTML = 
+        var data = 
         '<div class="product-card>'+
                 '<div class="product-info">'+
                 '<h2 class="product-title" id="product-title">'+product.title+'</h2>'+

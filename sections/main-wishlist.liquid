@@ -64,12 +64,12 @@
                 if (product.images.length > 0) {
                 document.getElementById('product-image').src = product.images[0];
             } else {
-                document.getElementById('product-image').src = 'default-image-url'; // fallback image if no product image is available
+                document.getElementById('product-image').src = 'default-image-url';
             }
             })
             .catch((error) => {
             console.error('Error fetching product data:', error);
             });
         }
-}
+
 {% endjavascript %}

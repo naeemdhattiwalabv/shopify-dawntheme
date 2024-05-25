@@ -39,7 +39,17 @@
   }
 {% endstylesheet %}
 
-<div class="collection-grid" id="product-collection">
+<div class="collection-grid">
+  <span id="product_wished_id"></span>
+  <div class="product-card">
+    <a href="{{ product.url }}">
+      <img id="product-image" src="" alt="Product Image">
+    </a>
+    <div class="product-info">
+      <h2 class="product-title" id="product-title"></h2>
+      <p class="product-price" id="product-prices"></p>
+    </div>
+  </div>
 </div>
 
 {% javascript %}
@@ -48,18 +58,17 @@
   var proId = wishlist_productData.map((item) => item.proId);
   var qty = wishlist_productData.map((item) => item.addedQty);
   console.log(proId);
-  var data1 = '';
   for (let index = 0; index < proId.length; index++) {
     fetch(`/products/${proId[index]}.js`)
         .then((response) => response.json())
         .then((product) => {
         console.log(product.title);
-        data1 += '<div class="product-card>'+
-                '<div class="product-info">'+
-                '<h2 class="product-title" id="product-title">'+product.title+'</h2>'+
-                '<p class="product-price" id="product-prices">'+ product.price+'</p>'+
-            '</div>'+
-        '</div>';
+        const title = document.createElement("h2");
+        const price = document.createElement("p");
+        const titleValue = document.createTextNode(product.title);
+        const priceValue = document.createTextNode(product.price);
+        document.getElementById('product-title').innerHTML = '<p>'+product.title+'</p>';
+        document.getElementById('product-prices').innerText = product.price;
         if (product.images.length > 0) {
             document.getElementById('product-image').src = product.images[0];
         } else {
@@ -70,5 +79,4 @@
         console.error('Error fetching product data:', error);
         });
     }
-    console.log(data1);
 {% endjavascript %}

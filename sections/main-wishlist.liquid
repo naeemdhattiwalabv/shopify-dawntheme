@@ -38,15 +38,17 @@
     font-weight: bold;
 }
 </style>
-<div class="wishlist_section">
+<div class="collection-grid">
   <span id="product_wished_id"></span>
   {% for product in collections.all.products %}
-    <div style="display: inline-block; float:left">
-        <h1>{{ product.title }}</h1>
-        {{ product.featured_image | image_url: width: 300 | image_tag }}
-        <p>{{ product.description }}</p>
-        <p>Price: {{ product.price | money }}</p>
-    </div>
+    <div class="product-card">
+            <a href="{{ product.url }}">
+                {{ product.featured_image | image_url: width: 300 | image_tag }}
+            </a>
+            <div class="product-info">
+                <h2 class="product-title">{{ product.title }}</h2>
+                <p class="product-price">{{ product.price | money }}</p>
+            </div>
   {% endfor %}
 </div>
 

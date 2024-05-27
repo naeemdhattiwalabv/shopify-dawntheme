@@ -56,7 +56,7 @@
                         <h2 class="product-title">`+product.title+`</h2>
                         <span>Price : </span><span class="product-price">`+product.price+`</span><br>
                         <span>Quantity : </span><span class="product-qty">`+qty[index]+`</span><br>
-                        <button class="remove-btn" onclick="removeProduct(`+proHandle[index]+`)"><span>Remove</span></button>
+                        <button class="remove-btn" id="removeProduct" value="(`+proHandle[index]+`)"><span>Remove</span></button>
                     </div>
                 </div>`;
         })
@@ -65,8 +65,6 @@
         });
     }
 
-    function removeProduct(val){
-      alert(val);
-    }
+    
 
 {% endjavascript %}

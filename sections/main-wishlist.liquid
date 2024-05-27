@@ -78,10 +78,7 @@
                         <span>Price : </span><span class="product-price">`+product.price+`</span><br>
                         <span>Quantity : </span><span class="product-qty">`+qty[index]+`</span><br>
                         <button class="remove-btn" onclick="removeProduct(this.value)" value="`+proHandle[index]+`"><span>Remove</span></button>
-                        <form method="post" action="/cart/add">
-                          <input name="id" value="`+product['variants'][0]['id']+`" type="hidden" />
-                          <input name="add" value="Add to Cart" type="submit" />
-                        </form>
+                        <button class="addtocart" onclick="addtocart(this.value)" value="`+product['variants'][0]['id']+`"><span>Add to Cart</span></button>
                     </div>
                 </div>`;
         })

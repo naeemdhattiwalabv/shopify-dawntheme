@@ -34,7 +34,7 @@
     font-weight: bold;
   }
 {% endstylesheet %}
-
+<script src="{{ 'wishlist.js' | asset_url }}" defer="defer"></script>
 <div class="collection-grid" id="product_collection"></div>
 
 {% javascript %}
@@ -66,8 +66,6 @@
         });
     }
   }
-    function removeProduct(){
-      alert('val');
-    }
+    
 
 {% endjavascript %}

@@ -37,5 +37,8 @@ function removeProduct(productHandle){
     //     element.style.display = 'block';
     // });
     location.reload();
+}
 
+function addtocart(value){
+    alert(value);
 }

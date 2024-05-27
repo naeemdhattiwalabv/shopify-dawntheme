@@ -27,7 +27,7 @@ function mergeProductData(products) {
     }, {});
 }   
 
-function removeProduct(productHandle){
+function removeWishlistProduct(productHandle){
     wishlist_productData = JSON.parse(localStorage.getItem("wishlist_product"));
     const updatedProducts = wishlist_productData.filter(
         wishlist_productData => wishlist_productData.proHandle != productHandle
@@ -39,7 +39,7 @@ function removeProduct(productHandle){
     location.reload();
 }
 
-function addtocart(proVariantId){
+function addtocartProduct(proVariantId){
     let qty = document.querySelectorAll('[name="wishlish_qty_'+proVariantId+'"]')[0].value;
     let formData = {
     'items': [{
@@ -58,7 +58,7 @@ function addtocart(proVariantId){
         return response.json();
     })
     .then(data => {
-        removeProduct(data['items'][0]['handle']);
+        removeWishlistProduct(data['items'][0]['handle']);
         return window.location = "/cart";
     })
     .catch((error) => {

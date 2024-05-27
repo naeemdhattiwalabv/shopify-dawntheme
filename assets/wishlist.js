@@ -12,7 +12,7 @@ function wishlist(proHandle) {
     }
     const mergedProducts = Object.values(mergeProductData(product));
     localStorage.setItem("wishlist_product", JSON.stringify(mergedProducts));
-    window.location = "wishlist";
+    window.location = "/pages/wishlist";
 }
 
 function mergeProductData(products) {

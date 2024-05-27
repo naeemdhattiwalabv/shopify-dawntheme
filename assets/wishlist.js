@@ -35,15 +35,15 @@ function removeProduct(productHandle){
     document.querySelectorAll('.msgsuccess').forEach(function(element) {
         element.style.display = 'block';
     });
-    fetch('wishlist-page')
-        .then(response => response.text())
-        .then(data => {
-            console.log(data);
-            document.getElementById('wishlist_page_main').innerHTML = data;
-        })
-        .catch(error => {
-            console.error('Error fetching new content:', error);
-    });
-    //location.reload();
+    // fetch('wishlist-page')
+    //     .then(response => response.text())
+    //     .then(data => {
+    //         console.log(data);
+    //         document.getElementById('wishlist_page_main').innerHTML = data;
+    //     })
+    //     .catch(error => {
+    //         console.error('Error fetching new content:', error);
+    // });
+    location.reload();
 
 }

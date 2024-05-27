@@ -54,7 +54,7 @@
 {% javascript %}
   var wishlist_productData = [];
   wishlist_productData = JSON.parse(localStorage.getItem('wishlist_product'));
-  if (wishlist_productData) {
+  if (wishlist_productData.length) {
     var proHandle = wishlist_productData.map((item) => item.proHandle);
     var qty = wishlist_productData.map((item) => item.addedQty);
     for (let index = 0; index < proHandle.length; index++) {

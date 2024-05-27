@@ -38,7 +38,7 @@
 <div class="collection-grid" id="product_collection"></div>
 
 {% javascript %}
-  document.addEventListener("DOMContentLoaded", function() {
+  window.onload = function() {
     var wishlist_productData = [];
     wishlist_productData = JSON.parse(localStorage.getItem('wishlist_product'));
     var proHandle = wishlist_productData.map((item) => item.proHandle);

@@ -32,4 +32,5 @@ function removeProduct(productHandle){
         wishlist_productData => wishlist_productData.proHandle != productHandle
     );
     localStorage.setItem("wishlist_product", JSON.stringify(updatedProducts));
+    $( "#product_collection" ).load(window.location.href + "product_collection" );
 }

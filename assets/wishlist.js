@@ -29,17 +29,18 @@ function mergeProductData(products) {
 function removeProduct(productHandle){
     console.log(productHandle);
     wishlist_productData = JSON.parse(localStorage.getItem("wishlist_product"));
-    var proHandle = wishlist_productData.map((item) => item.proHandle);
-    if (wishlist_productData) {
-        for (let index = 0; index < proHandle.length; index++) {
-            console.log(proHandle[index]);
+    console.log(wishlist_productData);
+    // var proHandle = wishlist_productData.map((item) => item.proHandle);
+    // if (wishlist_productData) {
+    //     for (let index = 0; index < proHandle.length; index++) {
+    //         console.log(proHandle[index]);
         
-        let indexe = proHandle.indexOf(productHandle); // Find the index of the element to remove
-        console.log(indexe);
-        if (indexe !== -1) {
-            proHandle.splice(indexe, 1); // Remove one element at the specified index
-         }
-         console.log(proHandle);
-    }
-    }
+    //     let indexe = proHandle.indexOf(productHandle); // Find the index of the element to remove
+    //     console.log(indexe);
+    //     if (indexe !== -1) {
+    //         proHandle.splice(indexe, 1); // Remove one element at the specified index
+    //      }
+    //      console.log(proHandle);
+    // }
+    //}
 }

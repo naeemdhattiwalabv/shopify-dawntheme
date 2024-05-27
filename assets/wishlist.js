@@ -35,9 +35,12 @@ function removeProduct(productHandle){
     document.querySelectorAll('.msgsuccess').forEach(function(element) {
         element.style.display = 'block';
     });
-    document.querySelectorAll('.collection-grid').forEach(function(element) {
-        element.reload();
-    });
+    var req = new XMLHttpRequest();
+req.open("POST", "address_for_div_content", true);
+req.onreadystatechange = function () {
+  if (req.readyState != 4 || req.status != 200) return;
+  document.getElementById('product_collection')=req.responseText;
+};
     //location.reload();
 
 }

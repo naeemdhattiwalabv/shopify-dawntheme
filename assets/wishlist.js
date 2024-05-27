@@ -34,5 +34,10 @@ function removeProduct(productHandle){
         for (let index = 0; index < proHandle.length; index++) {
             console.log(proHandle[index]);
         }
+        let index = wishlist_productData.indexOf(productHandle); // Find the index of the element to remove
+        console.log(index);
+        // if (index !== -1) {
+        //     array.splice(index, 1); // Remove one element at the specified index
+        // }
     }
 }

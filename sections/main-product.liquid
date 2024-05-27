@@ -472,7 +472,9 @@
                   show_pickup_availability: true
                 -%}
                 {% for wishlist in section.blocks %}
+                    {% if  wishlist.settings.show_wishlist != blank  %}
                     {{ wishlist.settings.wishlist_text }}
+                    {% endif %}
                 {% endfor %}
               <button class="product-form__submit button button--full-width button--secondary" onclick="wishlist(this.value)" value="{{ product.handle }}">
                 <span>Add to Wishlist</span>

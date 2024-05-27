@@ -37,8 +37,9 @@ function removeProduct(productHandle){
         let indexe = proHandle.indexOf(productHandle); // Find the index of the element to remove
         console.log(indexe);
         if (indexe !== -1) {
-            wishlist_productData.splice(indexe, 1); // Remove one element at the specified index
+            proHandle.splice(indexe, 1); // Remove one element at the specified index
          }
+         console.log(proHandle);
     }
     }
 }

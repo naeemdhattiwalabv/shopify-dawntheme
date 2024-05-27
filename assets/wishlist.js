@@ -26,6 +26,6 @@ function mergeProductData(products) {
     }, {});
 }   
 
-function removeProduct(){
-    alert('val');
+function removeProduct(proHandle){
+    alert(proHandle);
   }

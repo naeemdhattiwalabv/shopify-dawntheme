@@ -47,7 +47,6 @@ function addtocart(proVariantId){
             'quantity': qty
         }]
     };
-    console.log(formData);
     fetch(window.Shopify.routes.root + 'cart/add.js', {
         method: 'POST',
         headers: {
@@ -56,6 +55,7 @@ function addtocart(proVariantId){
         body: JSON.stringify(formData)
       })
       .then(response => {
+        console.log(response);
         return response.json();
       })
       .catch((error) => {

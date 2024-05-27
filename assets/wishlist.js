@@ -32,7 +32,9 @@ function removeProduct(productHandle){
         wishlist_productData => wishlist_productData.proHandle != productHandle
     );
     if(localStorage.setItem("wishlist_product", JSON.stringify(updatedProducts))){
-        document.querySelectorAll('#msgsuccess').style.display = 'show';
+        document.querySelectorAll('.msgsuccess').forEach(function(element) {
+            element.style.display = 'block'; // or 'inline' depending on the element type
+        });
     }
     //location.reload();
 }

@@ -38,6 +38,7 @@ function removeProduct(productHandle){
     fetch('wishlist-page')
         .then(response => response.text())
         .then(data => {
+            console.log(data);
             document.getElementById('wishlist_page_main').innerHTML = data;
         })
         .catch(error => {

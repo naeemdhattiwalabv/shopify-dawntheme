@@ -41,6 +41,6 @@ function removeProduct(productHandle){
 
 function addtocart(value){
     alert(value);
-    let qty = document.querySelectorAll('[name="wishlish_qty"'+value+'"]').value;
+    let qty = document.querySelectorAll('[name="wishlish_qty_'+value+'"]')[0].value;
     alert(qty);
 }

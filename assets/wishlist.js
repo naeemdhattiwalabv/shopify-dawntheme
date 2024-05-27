@@ -39,10 +39,10 @@ function removeWishlistProduct(productHandle){
     location.reload();
 }
 
-function addtocartProduct(proVariantId){
+function addtocartWishlistProduct(proVariantId){
     let qty = document.querySelectorAll('[name="wishlish_qty_'+proVariantId+'"]')[0].value;
     let formData = {
-    'items': [{
+        'items': [{
             'id': proVariantId,
             'quantity': qty
         }]

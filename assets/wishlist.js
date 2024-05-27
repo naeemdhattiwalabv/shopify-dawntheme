@@ -58,7 +58,8 @@ function addtocart(proVariantId){
             return response.json();
         })
         .then(data => {
-            return removeProduct(data['items'][0]['handle']);
+            removeProduct(data['items'][0]['handle']);
+            return window.location = "/cart";
         }
         )
         .catch((error) => {

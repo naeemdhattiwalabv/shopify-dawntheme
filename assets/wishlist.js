@@ -53,16 +53,15 @@ function addtocart(proVariantId){
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(formData)
-      })
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {
-            removeProduct(data['items'][0]['handle']);
-            return window.location = "/cart";
-        }
-        )
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+    })
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        removeProduct(data['items'][0]['handle']);
+        return window.location = "/cart";
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
 }

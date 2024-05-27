@@ -54,11 +54,13 @@ function addtocart(proVariantId){
         },
         body: JSON.stringify(formData)
       })
-      .then(response => {
-        return response.json();
-      })
-      .then(data => console.log(data['items'][0]['handle']))
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+        .then(response => {
+            return response.json();
+        })
+        .then(data => 
+            console.log(data['items'][0]['handle']) 
+        )
+        .catch((error) => {
+            console.error('Error:', error);
+        });
 }

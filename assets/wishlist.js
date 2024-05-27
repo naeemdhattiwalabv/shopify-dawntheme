@@ -10,11 +10,11 @@ function wishlist(proHandle) {
         product = wishlist_productData;
         product.push({ proHandle: proHandle, addedQty: parseInt(addedQty) });
     }
-    const mergedProducts = Object.values(mergeObjectsWithSameKey(product));
+    const mergedProducts = Object.values(mergeProductData(product));
     localStorage.setItem("wishlist_product", JSON.stringify(mergedProducts));
 }
 
-function mergeObjectsWithSameKey(array) {
+function mergeProductData(array) {
     return array.reduce((groups, item) => {
         const key = item.proHandle;
         if (!groups[key]) {

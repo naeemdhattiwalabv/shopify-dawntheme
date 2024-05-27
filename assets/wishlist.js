@@ -31,7 +31,7 @@ function removeProduct(productHandle){
     const updatedProducts = wishlist_productData.filter(
         wishlist_productData => wishlist_productData.proHandle != productHandle
     );
-   // localStorage.setItem("wishlist_product", JSON.stringify(updatedProducts));
+    localStorage.setItem("wishlist_product", JSON.stringify(updatedProducts));
     document.querySelectorAll('.msgsuccess').forEach(function(element) {
         element.style.display = 'block';
     });

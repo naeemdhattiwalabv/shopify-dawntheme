@@ -33,6 +33,6 @@ function removeProduct(productHandle){
     );
     if(localStorage.setItem("wishlist_product", JSON.stringify(updatedProducts))){
         document.querySelectorAll('.msgsuccess')[0].style.display = 'block';
+        location.reload();
     }
-    //location.reload();
 }

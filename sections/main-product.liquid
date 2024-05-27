@@ -471,7 +471,7 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
-                {% for wishlist in section.blocks.wishlist %}
+                {% for wishlist in section.blocks.settings.wishlist %}
                     {{ wishlist.wishlist_text }}
                 {% endfor %}
               <button class="product-form__submit button button--full-width button--secondary" onclick="wishlist(this.value)" value="{{ product.handle }}">

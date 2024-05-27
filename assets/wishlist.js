@@ -31,7 +31,7 @@ function removeProduct(productHandle){
     wishlist_productData = JSON.parse(localStorage.getItem("wishlist_product"));
     console.log(wishlist_productData);
     
-    const updatedProducts = wishlist_productData.filter(wishlist_productData => wishlist_productData.productHandle != productHandle);
+    const updatedProducts = wishlist_productData.filter(wishlist_productData => wishlist_productData.proHandle != productHandle);
 
     console.log(updatedProducts);
     // var proHandle = wishlist_productData.map((item) => item.proHandle);

@@ -36,9 +36,9 @@ function removeProduct(productHandle){
         
         let indexe = proHandle.indexOf(productHandle); // Find the index of the element to remove
         console.log(indexe);
-        // if (index !== -1) {
-        //     array.splice(index, 1); // Remove one element at the specified index
-        // }
+        if (indexe !== -1) {
+            proHandle.splice(indexe, 1); // Remove one element at the specified index
+         }
     }
     }
 }

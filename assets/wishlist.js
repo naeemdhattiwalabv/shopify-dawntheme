@@ -38,7 +38,7 @@ function removeProduct(productHandle){
     fetch('wishlist-page')
         .then(response => response.text())
         .then(data => {
-            document.getElementById('product_collection').innerHTML = data;
+            document.getElementById('wishlist_page_main').innerHTML = data;
         })
         .catch(error => {
             console.error('Error fetching new content:', error);

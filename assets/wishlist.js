@@ -35,6 +35,6 @@ function removeProduct(productHandle){
     document.querySelectorAll('.msgsuccess').forEach(function(element) {
         element.style.display = 'block';
     });
-    location.reload();
+    //location.reload();
 
 }

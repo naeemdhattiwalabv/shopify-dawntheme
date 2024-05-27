@@ -35,6 +35,9 @@ function removeProduct(productHandle){
     document.querySelectorAll('.msgsuccess').forEach(function(element) {
         element.style.display = 'block';
     });
+    document.querySelectorAll('."product_collection').forEach(function(element) {
+        element.reload();
+    });
     //location.reload();
 
 }

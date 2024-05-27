@@ -65,7 +65,7 @@
         fetch(`/products/${proHandle[index]}.js`)
         .then((response) => response.json())
         .then((product) => {
-            console.log(product.variant);
+            console.log(product.variants);
             document.getElementById("product_collection")
                 .innerHTML +=
                 `<div class="product-card">

@@ -29,6 +29,9 @@ function mergeProductData(products) {
 function removeProduct(proHandle){
     wishlist_productData = JSON.parse(localStorage.getItem("wishlist_product"));
     if (wishlist_productData) {
-        console.log(wishlist_productData);
+        for (let index = 0; index < wishlist_productData.length; index++) {
+            console.log(proHandle[index]);
+            
+        }
     }
   }

@@ -38,7 +38,7 @@
     padding: 8px;
     color: #fff;
   }
-  .emptysuccess {
+  .empty_wishlist {
     background-color: #2dd26b;
     padding: 8px;
     color: #fff;
@@ -52,7 +52,7 @@
 <div id="wishlist_page_main">
   <div class="collection-grid" id="product_collection"></div>
 </div>
-<div style="display:none;" class="msgsuccess">
+<div style="display:none;" class="empty_wishlist">
   <p> No product in wishlist.</p>
 </div>
 {% javascript %}
@@ -84,7 +84,7 @@
         });
     }
   } else  {
-    document.querySelectorAll('.emptysuccess').forEach(function(element) {
+    document.querySelectorAll('.empty_wishlist').forEach(function(element) {
          element.style.display = 'block';
     });
   }

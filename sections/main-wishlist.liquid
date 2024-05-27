@@ -76,6 +76,10 @@
                         <span>Price : </span><span class="product-price">`+product.price+`</span><br>
                         <span>Quantity : </span><span class="product-qty">`+qty[index]+`</span><br>
                         <button class="remove-btn" onclick="removeProduct(this.value)" value="`+proHandle[index]+`"><span>Remove</span></button>
+                        <form method="post" action="/cart/add">
+                          <input name="id" value="`+product.images+`" type="hidden" />
+                          <input name="add" value="ORDER NOW" type="submit" />
+                        </form>
                     </div>
                 </div>`;
         })

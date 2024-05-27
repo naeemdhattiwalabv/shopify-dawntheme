@@ -25,3 +25,7 @@ function mergeProductData(products) {
         return groups;
     }, {});
 }   
+
+function removeProduct(){
+    alert('val');
+  }

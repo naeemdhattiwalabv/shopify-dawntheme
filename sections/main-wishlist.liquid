@@ -38,6 +38,7 @@
 <div class="collection-grid" id="product_collection"></div>
 
 {% javascript %}
+  window.onload = function() {
     var wishlist_productData = [];
     wishlist_productData = JSON.parse(localStorage.getItem('wishlist_product'));
     var proHandle = wishlist_productData.map((item) => item.proHandle);
@@ -64,7 +65,7 @@
         console.error('Error fetching product data:', error);
         });
     }
-
+  }
     function removeProduct(){
       alert('val');
     }

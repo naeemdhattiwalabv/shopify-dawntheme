@@ -80,7 +80,7 @@
                         <button class="remove-btn" onclick="removeProduct(this.value)" value="`+proHandle[index]+`"><span>Remove</span></button>
                         <form method="post" action="/cart/add">
                           <input name="id" value="`+product['variants'][0]['id']+`" type="hidden" />
-                          <input name="add" value="ORDER NOW" type="submit" />
+                          <input name="add" value="Add to Cart" type="submit" />
                         </form>
                     </div>
                 </div>`;

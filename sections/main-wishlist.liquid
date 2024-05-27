@@ -33,8 +33,12 @@
     color: #e60023;
     font-weight: bold;
   }
-
   .msgsuccess {
+    background-color: #2dd26b;
+    padding: 8px;
+    color: #fff;
+  }
+  .emptysuccess {
     background-color: #2dd26b;
     padding: 8px;
     color: #fff;
@@ -42,7 +46,7 @@
 {% endstylesheet %}
 
 <script src="{{ 'wishlist.js' | asset_url }}" defer="defer"></script>
-<div id="msgsuccess" class="msgsuccess" style="display:none;">
+<div id="msgsuccess" class="emptysuccess" style="display:none;">
   Product added successfully into wishlist.
 </div>
 <div id="wishlist_page_main">
@@ -80,7 +84,7 @@
         });
     }
   } else  {
-    document.querySelectorAll('.empty_wishlist').forEach(function(element) {
+    document.querySelectorAll('.emptysuccess').forEach(function(element) {
          element.style.display = 'block';
     });
   }

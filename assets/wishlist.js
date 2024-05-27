@@ -57,7 +57,7 @@ function addtocart(proVariantId){
       .then(response => {
         return response.json();
       })
-      .then(data => console.log(data[0]))
+      .then(data => console.log(data[1]))
       .catch((error) => {
         console.error('Error:', error);
       });

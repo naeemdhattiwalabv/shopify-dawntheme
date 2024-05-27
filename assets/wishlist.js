@@ -37,4 +37,4 @@ function removeProduct(productHandle){
             }
         }
     }
-  }
+}

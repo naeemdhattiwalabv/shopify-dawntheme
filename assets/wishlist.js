@@ -33,11 +33,12 @@ function removeProduct(productHandle){
     if (wishlist_productData) {
         for (let index = 0; index < proHandle.length; index++) {
             console.log(proHandle[index]);
-        }
-        let index = wishlist_productData.indexOf(productHandle); // Find the index of the element to remove
-        console.log(index);
+        
+        let indexe = proHandle.indexOf(productHandle); // Find the index of the element to remove
+        console.log(indexe);
         // if (index !== -1) {
         //     array.splice(index, 1); // Remove one element at the specified index
         // }
+    }
     }
 }

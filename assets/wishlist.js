@@ -14,13 +14,13 @@ function wishlist(proHandle) {
     localStorage.setItem("wishlist_product", JSON.stringify(mergedProducts));
 }
 
-function mergeProductData(array) {
-    return array.reduce((groups, item) => {
-        const key = item.proHandle;
-        if (!groups[key]) {
-            groups[key] = item;
+function mergeProductData(products) {
+    return products.reduce((groups, item) => {
+        const product_key = item.proHandle;
+        if (!groups[product_key]) {
+            groups[product_key] = item;
         } else {
-            groups[key].addedQty += item.addedQty;
+            groups[product_key].addedQty += item.addedQty;
         }
         return groups;
     }, {});

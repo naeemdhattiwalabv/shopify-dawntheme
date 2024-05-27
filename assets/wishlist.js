@@ -58,8 +58,8 @@ function addtocart(proVariantId){
             return response.json();
         })
         .then(data => {
-            console.log(data['items'][0]['handle'])
-            addtocart(data['items'][0]['handle'])
+            console.log(data['items'][0]['handle']);
+            removeProduct(data['items'][0]['handle']);
         }
         )
         .catch((error) => {

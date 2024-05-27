@@ -58,7 +58,6 @@ function addtocart(proVariantId){
             return response.json();
         })
         .then(data => {
-            console.log(data['items'][0]['handle']);
             return removeProduct(data['items'][0]['handle']);
         }
         )

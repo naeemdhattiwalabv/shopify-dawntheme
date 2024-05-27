@@ -35,7 +35,7 @@ function removeProduct(productHandle){
     document.querySelectorAll('.msgsuccess').forEach(function(element) {
         element.style.display = 'block';
     });
-    fetch('new_content.html') // Replace 'new_content.html' with the URL of your server endpoint
+    fetch('wishlist-page')
         .then(response => response.text())
         .then(data => {
             document.getElementById('contentDiv').innerHTML = data;

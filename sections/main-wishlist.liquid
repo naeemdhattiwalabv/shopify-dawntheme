@@ -1,36 +1,32 @@
 {% stylesheet %}
-  /* assets/styles.css */
-  .collection-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  .product-card {
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 15px;
-    width: calc(33.333% - 20px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-  }
-  .product-card:hover {
-    transform: scale(1.05);
-  }
-  .product-card img {
-    width: 50%;
-    height: auto;
-  }
-  .product-info {
-    padding: 10px 0;
-  }
-  .product-title {
-    font-size: 18px;
-    margin: 10px 0;
-  }
-  .product-price {
-    color: #e60023;
-    font-weight: bold;
-  }
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
 {% endstylesheet %}
 
 <div class="collection-grid" id="product_collection"></div>
@@ -46,15 +42,13 @@
         .then((product) => {
             document.getElementById("product_collection")
                 .innerHTML +=
-                `<div class="product-card">
+                `<div class="card">
                     <a href="`+product.url+`">
                         <img id="product-image" src="`+product.images[0]+`" alt="Product Image">
                     </a>
-                    <div class="product-info">
-                        <h2 class="product-title">`+product.title+`</h2>
-                        <span>Price : </span><p class="product-price">`+product.price+`</p>
-                        <span>Quantity : </span><p class="product-qty">`+qty[index]+`</p>
-                    </div>
+                    <h1>`+product.title+`</h1>
+                    <p class="price">`+product.price+`</p>
+                    <p>`+qty[index]+`</p>
                 </div>`;
         })
         .catch((error) => {

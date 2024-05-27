@@ -55,6 +55,7 @@
 <div style="display:none;" class="empty_wishlist">
   <p> No product in wishlist.</p>
 </div>
+
 {% javascript %}
   var wishlist_productData = [];
   wishlist_productData = JSON.parse(localStorage.getItem('wishlist_product'));
@@ -75,7 +76,7 @@
                         <h2 class="product-title">`+product.title+`</h2>
                         <span>Price : </span><span class="product-price">`+product.price+`</span><br>
                         <span>Quantity : </span><input type="number" name="wishlish_qty_`+product['variants'][0]['id']+`" class="product-qty" value="`+qty[index]+`"><br>
-                        <button class="remove-btn" onclick="removeProduct(this.value)" value="`+proHandle[index]+`"><span>Remove</span></button>
+                        <button class="remove-btn" onclick="removeWishlistProduct(this.value)" value="`+proHandle[index]+`"><span>Remove</span></button>
                         <button class="addtocart" onclick="addtocartWishlistProduct(this.value)" value="`+product['variants'][0]['id']+`"><span>Add to Cart</span></button>
                     </div>
                 </div>`;

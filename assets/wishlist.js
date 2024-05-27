@@ -39,8 +39,7 @@ function removeProduct(productHandle){
     location.reload();
 }
 
-function addtocart(value){
-    alert(value);
-    let qty = document.querySelectorAll('[name="wishlish_qty_'+value+'"]')[0].value;
+function addtocart(proVariantId){
+    let qty = document.querySelectorAll('[name="wishlish_qty_'+proVariantId+'"]')[0].value;
     alert(qty);
 }

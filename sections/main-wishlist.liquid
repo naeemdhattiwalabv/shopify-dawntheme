@@ -40,30 +40,30 @@
 <div class="collection-grid" id="product_collection"></div>
 
 {% javascript %}
-    var wishlist_productData = [];
-    wishlist_productData = JSON.parse(localStorage.getItem('wishlist_product'));
-    var proHandle = wishlist_productData.map((item) => item.proHandle);
-    var qty = wishlist_productData.map((item) => item.addedQty);
-    for (let index = 0; index < proHandle.length; index++) {
-        fetch(`/products/${proHandle[index]}.js`)
-        .then((response) => response.json())
-        .then((product) => {
-            document.getElementById("product_collection")
-                .innerHTML +=
-                `<div class="product-card">
-                    <a href="`+product.url+`">
-                        <img id="product-image" src="`+product.images[0]+`" alt="Product Image">
-                    </a>
-                    <div class="product-info">
-                        <h2 class="product-title">`+product.title+`</h2>
-                        <span>Price : </span><span class="product-price">`+product.price+`</span><br>
-                        <span>Quantity : </span><span class="product-qty">`+qty[index]+`</span><br>
-                        <button class="remove-btn" onclick="removeProduct()"><span>Remove</span></button>
-                    </div>
-                </div>`;
-        })
-        .catch((error) => {
-        console.error('Error fetching product data:', error);
-        });
-    }
+  var wishlist_productData = [];
+  wishlist_productData = JSON.parse(localStorage.getItem('wishlist_product'));
+  var proHandle = wishlist_productData.map((item) => item.proHandle);
+  var qty = wishlist_productData.map((item) => item.addedQty);
+  for (let index = 0; index < proHandle.length; index++) {
+      fetch(`/products/${proHandle[index]}.js`)
+      .then((response) => response.json())
+      .then((product) => {
+          document.getElementById("product_collection")
+              .innerHTML +=
+              `<div class="product-card">
+                  <a href="`+product.url+`">
+                      <img id="product-image" src="`+product.images[0]+`" alt="Product Image">
+                  </a>
+                  <div class="product-info">
+                      <h2 class="product-title">`+product.title+`</h2>
+                      <span>Price : </span><span class="product-price">`+product.price+`</span><br>
+                      <span>Quantity : </span><span class="product-qty">`+qty[index]+`</span><br>
+                      <button class="remove-btn" onclick="removeProduct()"><span>Remove</span></button>
+                  </div>
+              </div>`;
+      })
+      .catch((error) => {
+      console.error('Error fetching product data:', error);
+      });
+  }
 {% endjavascript %}

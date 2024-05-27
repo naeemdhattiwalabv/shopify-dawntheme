@@ -32,9 +32,7 @@ function removeProduct(productHandle){
     var proHandle = wishlist_productData.map((item) => item.proHandle);
     if (wishlist_productData) {
         for (let index = 0; index < proHandle.length; index++) {
-            if (proHandle[index] == productHandle) {
-                console.log('trye');
-            }
+            console.log(proHandle[index]);
         }
     }
 }

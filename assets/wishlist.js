@@ -42,12 +42,10 @@ function removeProduct(productHandle){
 function addtocart(proVariantId){
     let qty = document.querySelectorAll('[name="wishlish_qty_'+proVariantId+'"]')[0].value;
     let formData = {
-    'items': [
-            {
-                'id': proVariantId,
-                'quantity': qty
-            }
-        ]
+    'items': [{
+            'id': proVariantId,
+            'quantity': qty
+        }]
     };
     console.log(formData);
     fetch(window.Shopify.routes.root + 'cart/add.js', {

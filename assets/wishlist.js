@@ -27,5 +27,5 @@ function mergeProductData(products) {
 }   
 
 function removeProduct(proHandle){
-    alert(proHandle);
+    alert(proHandle.value);
   }

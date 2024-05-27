@@ -30,7 +30,10 @@ function removeProduct(productHandle){
     console.log(productHandle);
     wishlist_productData = JSON.parse(localStorage.getItem("wishlist_product"));
     console.log(wishlist_productData);
-    console.log(wishlist_productData.indexOf(productHandle));
+    
+    const updatedProducts = wishlist_productData.filter(wishlist_productData => wishlist_productData.productHandle !== productHandle);
+
+    console.log(updatedProducts);
     // var proHandle = wishlist_productData.map((item) => item.proHandle);
     // if (wishlist_productData) {
     //     for (let index = 0; index < proHandle.length; index++) {

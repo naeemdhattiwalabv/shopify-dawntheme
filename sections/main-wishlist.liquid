@@ -38,6 +38,7 @@
 <div class="collection-grid" id="product_collection"></div>
 
 {% javascript %}
+  document.addEventListener("DOMContentLoaded", function() {
     var wishlist_productData = [];
     wishlist_productData = JSON.parse(localStorage.getItem('wishlist_product'));
     var proHandle = wishlist_productData.map((item) => item.proHandle);
@@ -59,12 +60,13 @@
                         <button class="remove-btn" id="removeProduct" value="`+proHandle[index]+`"><span>Remove</span></button>
                     </div>
                 </div>`;
-                document.getElementById("removeProduct").click = function(){
-      alert('test');
-    }
         })
         .catch((error) => {
         console.error('Error fetching product data:', error);
         });
     }
+  }
+    document.getElementById("removeProduct").onclick = function(){
+      alert('test');
+    };
 {% endjavascript %}

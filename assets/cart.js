@@ -105,14 +105,12 @@ class CartItems extends HTMLElement {
 
   updateQuantity(line, quantity, name, variantId) {
     var upadateQty = quantity + 1;
-    console.log(upadateQty);
     const body = JSON.stringify({
       line,
       quantity,
       sections: this.getSectionsToRender().map((section) => section.section),
       sections_url: window.location.pathname,
     });
-    console.log(body);
     fetch(`${routes.cart_change_url}`, { ...fetchConfig(), ...{ body } })
       .then((response) => {
         return response.text();

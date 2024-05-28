@@ -79,9 +79,9 @@ document.addEventListener('DOMContentLoaded', function() {
             countdownValue--;
         } else {
             document.getElementById('countdown').innerHTML=5;
-            updateCountdown();
+            setInterval(updateCountdown, 1000);
         }
     }
 
-    var countdownInterval = setInterval(updateCountdown, 1000); // Update every second (1000 milliseconds)
+    var countdownInterval = setInterval(updateCountdown, 1000);
 });

@@ -160,7 +160,7 @@
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
               <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
             {%- endif -%}
-              <i class="fa fa-heart" aria-hidden="true" onclick="wishlist(this.value)"value="{{ card_product.handle }}"></i>
+              <i class="fa fa-heart" aria-hidden="true" onclick="wishlist(this.value)"value="{{ card_product.handle }}">Wishlist</i>
             <span class="caption-large light">{{ block.settings.description | escape }}</span>
 
             {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}

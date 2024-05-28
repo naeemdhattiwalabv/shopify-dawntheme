@@ -71,7 +71,7 @@ function addtocartWishlistProduct(proVariantId){
 
 document.addEventListener('DOMContentLoaded', function() {
     var countdownElement = document.getElementById('product_countdown');
-    var countdownValue = countdownElement.value;
+    var countdownValue = countdownElement.getAttribute('value');
     alert(countdownValue);
     function updateCountdown() {
         if (countdownValue >= 0) {

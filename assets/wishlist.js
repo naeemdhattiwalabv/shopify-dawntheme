@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
             countdownValue--;
         } else {
             document.getElementById('countdown').innerHTML=5;
+            var countdownValue = 5;
             setInterval(updateCountdown, 1000);
         }
     }

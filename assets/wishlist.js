@@ -75,12 +75,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateCountdown() {
         if (countdownValue >= 0) {
-
             countdownElement.textContent = countdownValue;
             countdownValue--;
         } else {
-            document.getElementById('countdown').innerHTML=5;
-            setInterval(updateCountdown, 1000);
+            countdownElement.textContent = 5;
+            countdownValue--;
         }
     }
 

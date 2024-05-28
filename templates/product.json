@@ -63,6 +63,12 @@
             "show_wishlist": true,
             "wishlist_text": "Add to Wishlist"
           }
+        },
+        "product_countodown_timer_tTemkj": {
+          "type": "product_countodown_timer",
+          "settings": {
+            "product_countodown_timer": 15
+          }
         }
       },
       "block_order": [
@@ -75,7 +81,8 @@
         "description",
         "share",
         "text_ycMk4r",
-        "wishlist_dHPWDx"
+        "wishlist_dHPWDx",
+        "product_countodown_timer_tTemkj"
       ],
       "settings": {
         "enable_sticky_info": true,

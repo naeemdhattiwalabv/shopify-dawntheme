@@ -66,5 +66,30 @@
     }
 
     var countdownInterval = setInterval(updateCountdownTimer, 1000);
+
+    let duration = 5 * 60; // 5 minutes in seconds
+    let display = document.getElementById('timer_countdown');
+
+    // Function to start the timer
+    function startTimer(duration, display) {
+        let timer = duration, minutes, seconds;
+        let interval = setInterval(function() {
+            minutes = Math.floor(timer / 60);
+            seconds = timer % 60;
+
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            display.textContent = minutes + ':' + seconds;
+
+            if (--timer < 0) {
+                clearInterval(interval);
+                alert('Time is up!');
+            }
+        }, 1000);
+    }
+
+    // Start the timer
+    startTimer(duration, display);
 });
 </script>

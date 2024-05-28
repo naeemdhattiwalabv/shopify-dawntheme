@@ -51,6 +51,12 @@
         novalidate: 'novalidate',
         data-type: 'add-to-cart-form'
       -%}
+      <input
+        type="hidden"
+        name="current_time"
+        value="{{ "now" | date: "%Y-%m-%d %H:%M" }}"
+        class="product-variant-id"
+      >
         <input
           type="hidden"
           name="id"

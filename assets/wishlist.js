@@ -71,7 +71,7 @@ function addtocartWishlistProduct(proVariantId){
 
 document.addEventListener('DOMContentLoaded', function() {
     var countdownElement = document.getElementById('countdown');
-    var countdownValue = 15;
+    var countdownValue = 5;
 
     function updateCountdown() {
         if (countdownValue >= 0) {

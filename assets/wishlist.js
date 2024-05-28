@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
             countdownElement.textContent = countdownValue;
             countdownValue--;
         } else {
-            countdownElement.textContent = countdownValue;
-            countdownValue++;
+            document.getElementById('countdown').innerHTML=5;
+            updateCountdown();
         }
     }
 

@@ -5,10 +5,11 @@
       {% if banner.settings.link != blank %}
         <a href="{{ banner.settings.link }}">
       {% endif %}
+      
+      {{ banner.settings.image | image_url: width: 1000 | image_tag: class: 'mySlides' }}
       <div id="countdown-container">
         <div id="timer_countdown">{{ section.settings.timer }}:00</div>
       </div>
-      {{ banner.settings.image | image_url: width: 1000 | image_tag: class: 'mySlides' }}
       {% if banner.settings.link != blank %}
         </a>
       {% endif %}

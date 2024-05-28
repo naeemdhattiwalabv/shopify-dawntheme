@@ -71,13 +71,13 @@ function addtocartWishlistProduct(proVariantId){
 
 document.addEventListener('DOMContentLoaded', function() {
     var countdownElement = document.getElementById('countdown');
-    var countdownValue = 15;
+    var countdownValue = countdownElement.val;
     function updateCountdown() {
         if (countdownValue >= 0) {
             countdownElement.textContent = countdownValue;
             countdownValue--;
         } else {
-            countdownValue = 15;
+            countdownValue = countdownElement.val;
         }
     }
     var countdownInterval = setInterval(updateCountdown, 1000);

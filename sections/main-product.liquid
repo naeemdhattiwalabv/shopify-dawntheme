@@ -72,9 +72,6 @@
       <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
         {% render 'product-media-gallery', variant_images: variant_images %}
       </div>
-      {% for productTimer in section.blocks %}
-        <div id="product_countdown">13</div>
-      {% endfor %}
       <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <product-info
           id="ProductInfo-{{ section.id }}"
@@ -105,7 +102,9 @@
                     </h2>
                   </a>
                 </div>
-                
+                {% for productTimer in section.blocks %}
+                  <div id="product_countdown">{{ productTimer.settings.product_countdown_timer }}</div>
+                {% endfor %}
               {%- when 'price' -%}
                 <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
@@ -2201,12 +2200,6 @@
     }
   ],
   "settings": [
-    {
-      "type": "checkbox",
-      "id": "fdsfsdfdsfsdf",
-      "default": true,
-      "label": "t:sections.main-product.settings.enable_sticky_info.label"
-    },
     {
       "type": "checkbox",
       "id": "enable_sticky_info",

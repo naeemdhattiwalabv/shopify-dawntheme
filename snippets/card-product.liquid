@@ -324,6 +324,7 @@
       </div>
     </div>
   </div>
+  <button onclick="wishlist(this.value)"value="{{ card_product.handle }}"><span>Add to Wishlist</span></button>
 {%- else -%}
   {%- liquid
     assign ratio = 1
@@ -377,4 +378,3 @@
     </div>
   </div>
 {%- endif -%}
-<button onclick="wishlist(this.value)"value="{{ card_product.handle }}"><span>Add to Wishlist</span></button>

@@ -371,16 +371,16 @@
               <div class="caption-with-letter-spacing light">{{ 'products.product.vendor' | t }}</div>
             {%- endif -%}
             {% render 'price', show_compare_at_price: true %}
+            <button
+              class="product-form__submit button button--full-width button--secondary"
+              onclick="wishlist(this.value)"
+              value="{{ product.handle }}"
+            >
+              <span>Add to wishlist2</span>
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
 {%- endif -%}
-<button
-  class="product-form__submit button button--full-width button--secondary"
-  onclick="wishlist(this.value)"
-  value="{{ product.handle }}"
->
-  <span>Add to wishlist</span>
-</button>

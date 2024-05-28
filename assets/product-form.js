@@ -31,7 +31,7 @@ if (!customElements.get('product-form')) {
         delete config.headers['Content-Type'];
 
         const formData = new FormData(this.form);
-        console.log(formData);
+        localStorage.setItem('cartFormData', formData);
         if (this.cart) {
           formData.append(
             'sections',

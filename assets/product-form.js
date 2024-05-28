@@ -32,6 +32,8 @@ if (!customElements.get('product-form')) {
 
         const formData = new FormData(this.form);
         localStorage.setItem('cartFormData', formData);
+        console.log(formData);
+        return false;
         if (this.cart) {
           formData.append(
             'sections',

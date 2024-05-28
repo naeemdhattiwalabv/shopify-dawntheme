@@ -53,14 +53,14 @@
   document.addEventListener('DOMContentLoaded', function() {
     var countdownElement = document.getElementById('countdown');
     
-    var countdownValue = 15;
+    var countdownValue = parseInt({{ section.settings.timer }});
 
     function updateCountdown() {
         if (countdownValue >= 0) {
             countdownElement.innerHTML = countdownValue;
             countdownValue--;
         } else {
-          countdownValue = 15;
+          countdownValue = parseInt({{ section.settings.timer }});
         }
     }
 

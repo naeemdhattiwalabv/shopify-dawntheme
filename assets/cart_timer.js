@@ -2,16 +2,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var addToCartButton = document.getElementById('ProductSubmitButton-template--22655669600555__main');
 
-    if (addToCartButton) {
-        addToCartButton.addEventListener('click', function(event) {
-            var currentTime = new Date().toISOString();
-            console.log(currentTime);
-            console.log('Product added to cart at:', currentTime);
-            // Store the timestamp in local storage (or send it to your server)
-            localStorage.setItem('addToCartTime', currentTime);
-            console.log(localStorage.getItem('addToCartTime'));
-        });
-    }
+    // if (addToCartButton) {
+    //     addToCartButton.addEventListener('click', function(event) {
+    //         var currentTime = new Date().toISOString();
+    //         console.log(currentTime);
+    //         console.log('Product added to cart at:', currentTime);
+    //         // Store the timestamp in local storage (or send it to your server)
+    //         localStorage.setItem('addToCartTime', currentTime);
+    //         console.log(localStorage.getItem('addToCartTime'));
+    //     });
+    // }
     console.log(localStorage.getItem('cartFormData'));
     fetch(window.Shopify.routes.root + 'cart.js', {
         method: 'GET',

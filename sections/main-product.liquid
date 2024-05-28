@@ -82,7 +82,7 @@
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
           {%- for block in section.blocks -%}
-            {{ block.settings.product_countdown_timer }}
+            
             {%- case block.type -%}
               {%- when '@app' -%}
                 {% render block %}
@@ -102,6 +102,7 @@
                     </h2>
                   </a>
                 </div>
+                {{ block.settings.product_countdown_timer }}
                 {% for productTimer in section.blocks %}
                   {{ productTimer.settings.product_countdown_timer }}
                 {% endfor %}

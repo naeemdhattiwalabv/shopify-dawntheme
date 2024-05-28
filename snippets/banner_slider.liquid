@@ -52,7 +52,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', function() {
-    let duration = 0.2 * 60; // 5 minutes in seconds
+    let duration = 0.20 * 60; // 5 minutes in seconds
     let display = document.getElementById('timer_countdown');
 
     // Function to start the timer
@@ -68,7 +68,8 @@
             display.innerHTML = minutes + ':' + seconds;
 
             if (--timer < 0) {
-              let duration = 0.2 * 60;
+              document.getElementById('timer_countdown').innerHTML = 0.20;
+              let duration = 0.20 * 60;
             }
         }, 1000);
     }

@@ -51,7 +51,7 @@
     x[slideIndex-1].style.display = "block";
   }
 
-  document.addEventListener('DOMContentLoaded', function() {
+  {% comment %} document.addEventListener('DOMContentLoaded', function() {
     var countdownElement = document.getElementById('countdown');
     
     var countdownValue = parseInt({{ section.settings.timer }});
@@ -66,5 +66,5 @@
     }
 
     var countdownInterval = setInterval(updateCountdown, 1000); // Update every second (1000 milliseconds)
-});
+}); {% endcomment %}
 </script>

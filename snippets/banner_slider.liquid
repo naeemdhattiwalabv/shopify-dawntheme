@@ -29,9 +29,9 @@
   <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
   <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
 </div>
-{% comment %} <div id="countdown-container">
+<div id="countdown-container">
   <div id="countdown">{{ section.settings.timer }}</div>
-</div> {% endcomment %}
+</div>
 <script>
   var slideIndex = 1;
   showDivs(slideIndex);
@@ -51,7 +51,7 @@
     x[slideIndex-1].style.display = "block";
   }
 
-  {% comment %} document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function() {
     var countdownElement = document.getElementById('countdown');
     
     var countdownValue = parseInt({{ section.settings.timer }});
@@ -66,5 +66,5 @@
     }
 
     var countdownInterval = setInterval(updateCountdown, 1000); // Update every second (1000 milliseconds)
-}); {% endcomment %}
+});
 </script>

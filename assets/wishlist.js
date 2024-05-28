@@ -1,5 +1,8 @@
 function wishlist(proHandle) {
-    let addedQty = document.querySelectorAll('[name="quantity"]')[0].value;
+    var addedQty = 1;
+    if(document.querySelectorAll('[name="quantity"]')[0].value) {
+        addedQty = document.querySelectorAll('[name="quantity"]')[0].value;
+    }
     var wishlist_productData = product = [];
     wishlist_productData = JSON.parse(localStorage.getItem("wishlist_product"));
     if (!wishlist_productData) {

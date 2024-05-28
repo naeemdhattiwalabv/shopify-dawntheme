@@ -11,8 +11,9 @@ function wishlist(proHandle) {
         product.push({ proHandle: proHandle, addedQty: parseInt(addedQty) });
     }
     const mergedProducts = Object.values(mergeProductData(product));
-    localStorage.setItem("wishlist_product", JSON.stringify(mergedProducts));
-    window.location = "/pages/wishlist-page?msg="+true;
+    if(localStorage.setItem("wishlist_product", JSON.stringify(mergedProducts))) {
+        window.location = "/pages/wishlist-page?msg="+true;
+    }
 }
 
 function mergeProductData(products) {

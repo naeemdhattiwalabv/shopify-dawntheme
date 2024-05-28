@@ -52,13 +52,13 @@
   }
 
   document.addEventListener('DOMContentLoaded', function() {
-    var countdownElement = document.getElementById('timer_countdown');
+    var countdown = document.getElementById('timer_countdown');
     
-    var countdownValue = parseInt({{ section.settings.timer }});
+    var countdownTimerValue = parseInt({{ section.settings.timer }});
 
     function updateCountdownTimer() {
         if (countdownTimerValue >= 0) {
-            countdownElement.innerHTML = countdownTimerValue;
+            countdown.innerHTML = countdownTimerValue;
             countdownTimerValue--;
         } else {
           countdownValue = parseInt({{ section.settings.timer }});

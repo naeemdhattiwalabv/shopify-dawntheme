@@ -52,7 +52,7 @@
 
   document.addEventListener('DOMContentLoaded', function() {
     var countdownElement = document.getElementById('countdown');
-    var countdownValue = "{{ section.settings.timer }}";
+    var countdownValue = parseInt({{ section.settings.timer }});
 
     function updateCountdown() {
         if (countdownValue >= 0) {

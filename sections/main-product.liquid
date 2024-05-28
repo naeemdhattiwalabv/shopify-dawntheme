@@ -82,7 +82,6 @@
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
           {%- for block in section.blocks -%}
-            
             {%- case block.type -%}
               {%- when '@app' -%}
                 {% render block %}
@@ -102,9 +101,6 @@
                     </h2>
                   </a>
                 </div>
-                {% for productTimer in section.blocks %}
-                  <div id="product_countdown">{{ productTimer.settings.product_countdown_timer }}</div>
-                {% endfor %}
               {%- when 'price' -%}
                 <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
@@ -475,8 +471,6 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
-                
-               
                 {% for wishlist in section.blocks %}
                   {% if wishlist.settings.show_wishlist != blank %}
                     <button
@@ -1023,18 +1017,6 @@
           "type": "text",
           "id": "wishlist_text",
           "label": "Add Wishlist Label"
-        }
-      ]
-    },
-    {
-      "type": "productCountdown",
-      "name": "productCountdown",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "number",
-          "id": "product_countdown_timer",
-          "label": "Add Product Countdown Timer"
         }
       ]
     },

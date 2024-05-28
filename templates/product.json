@@ -56,19 +56,6 @@
             "text": "<strong>Warrenty<\/strong>  {{ product.metafields.custom.warrenty.value }}",
             "text_style": "body"
           }
-        },
-        "wishlist_dHPWDx": {
-          "type": "wishlist",
-          "settings": {
-            "show_wishlist": true,
-            "wishlist_text": "Add to Wishlist"
-          }
-        },
-        "product_countdown_zRFp3B": {
-          "type": "productCountdown",
-          "settings": {
-            "product_countdown_timer": 13
-          }
         }
       },
       "block_order": [
@@ -80,9 +67,7 @@
         "buy_buttons",
         "description",
         "share",
-        "text_ycMk4r",
-        "wishlist_dHPWDx",
-        "product_countdown_zRFp3B"
+        "text_ycMk4r"
       ],
       "settings": {
         "enable_sticky_info": true,

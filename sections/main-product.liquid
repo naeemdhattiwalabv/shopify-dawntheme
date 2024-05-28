@@ -102,7 +102,7 @@
                   </a>
                 </div>
                 {{ "test1" }}
-                {{ block.settings.product_countdown_value }}
+                {{- block.settings.product_countdown_value -}}
               {%- when 'price' -%}
                 <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
@@ -1026,7 +1026,7 @@
     },
     {
       "type": "product_countdown",
-      "name": "Product Countdown Timer",
+      "name": "product_countdown",
       "limit": 1,
       "settings": [
         {

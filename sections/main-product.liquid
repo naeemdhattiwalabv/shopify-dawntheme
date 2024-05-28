@@ -471,6 +471,7 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
+                {{ section.blocks.settings.product_countodown_timer }}
                 <div id="countdown">{{ section.blocks.settings.product_countodown_timer }}</div>
                 {% for wishlist in section.blocks %}
                   {% if wishlist.settings.show_wishlist != blank %}

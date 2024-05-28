@@ -2,6 +2,41 @@
   "sections": {
     "banner_slider": {
       "type": "banner_slider",
+      "blocks": {
+        "slide_bVHCdi": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slider-img3.jpg",
+            "link": "shopify:\/\/products\/the-inventory-not-tracked-snowboard"
+          }
+        },
+        "slide_3k4XyD": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slider-img2.jpg",
+            "link": "shopify:\/\/products\/the-compare-at-price-snowboard"
+          }
+        },
+        "slide_kB7iJD": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slider-img1.jpg",
+            "link": ""
+          }
+        },
+        "banner_video_mw7QU6": {
+          "type": "banner_video",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/big_buck_bunny_720p_20mb (1).mp4"
+          }
+        }
+      },
+      "block_order": [
+        "slide_bVHCdi",
+        "slide_3k4XyD",
+        "slide_kB7iJD",
+        "banner_video_mw7QU6"
+      ],
       "settings": {
       }
     },

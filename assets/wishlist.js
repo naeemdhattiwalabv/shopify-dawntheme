@@ -74,7 +74,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var countdownValue = 5;
 
     function updateCountdown() {
+        alert('test');
         if (countdownValue >= 0) {
+
             countdownElement.textContent = countdownValue;
             countdownValue--;
         } else {

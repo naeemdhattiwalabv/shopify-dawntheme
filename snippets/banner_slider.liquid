@@ -52,18 +52,16 @@
 
   document.addEventListener('DOMContentLoaded', function() {
     var countdownElement = document.getElementById('countdown');
-    console.log({{ section.settings.timer }});
-    var countdownValue = 15;
+    var countdownValue = {{ section.settings.timer }};
 
     function updateCountdown() {
         if (countdownValue >= 0) {
             countdownElement.textContent = countdownValue;
             countdownValue--;
         } else {
-            clearInterval(countdownInterval); // Stop the countdown when it reaches 0
+          countdownValue = {{ section.settings.timer }};
         }
     }
 
-    var countdownInterval = setInterval(updateCountdown, 1000); // Update every second (1000 milliseconds)
-});
+    var countdownInterval = setInterval(updateCountdown, 1000);
 </script>

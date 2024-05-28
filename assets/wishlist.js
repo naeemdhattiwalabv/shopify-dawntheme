@@ -78,7 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
             countdownElement.textContent = countdownValue;
             countdownValue--;
         } else {
-            clearInterval(countdownInterval); // Stop the countdown when it reaches 0
+            countdownElement.textContent = countdownValue;
+            countdownValue++;
         }
     }
 

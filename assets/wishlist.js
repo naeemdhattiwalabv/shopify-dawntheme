@@ -71,16 +71,14 @@ function addtocartWishlistProduct(proVariantId){
 
 document.addEventListener('DOMContentLoaded', function() {
     var countdownElement = document.getElementById('countdown');
-    var countdownValue = 5;
-
+    var countdownValue = 15;
     function updateCountdown() {
         if (countdownValue >= 0) {
             countdownElement.textContent = countdownValue;
             countdownValue--;
         } else {
-            countdownValue = 5;
+            countdownValue = 15;
         }
     }
-
     var countdownInterval = setInterval(updateCountdown, 1000);
 });

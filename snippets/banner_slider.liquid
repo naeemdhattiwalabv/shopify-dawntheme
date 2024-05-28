@@ -58,7 +58,7 @@
     function updateCountdown() {
       alert(parseInt({{ section.settings.timer }}) - 1);
         if (countdownValue >= 0) {
-            countdownElement.textContent = countdownValue;
+            countdownElement.innerHTML = countdownValue;
             countdownValue--;
         } else {
           countdownValue = 15;

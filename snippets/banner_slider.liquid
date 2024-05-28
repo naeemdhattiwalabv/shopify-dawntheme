@@ -52,19 +52,31 @@
   }
 
   document.addEventListener('DOMContentLoaded', function() {
-    var countdown = document.getElementById('timer_countdown');
-    
-    var countdownValue = parseInt({{ section.settings.timer }});
+    let duration = 5 * 60; // 5 minutes in seconds
+    let display = document.getElementById('timer');
+    let restartBtn = document.getElementById('restart-btn');
+    let interval;
 
-    function updateCountdownTimer() {
-        if (countdownTimerValue >= 0) {
-            countdown.innerHTML = countdownTimerValue;
-            countdownTimerValue--;
-        } else {
-          countdownValue = parseInt({{ section.settings.timer }});
-        }
+    function startTimer(duration, display) {
+        let timer = duration, minutes, seconds;
+
+        interval = setInterval(function() {
+            minutes = Math.floor(timer / 60);
+            seconds = timer % 60;
+
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            display.textContent = minutes + ':' + seconds;
+
+            if (--timer < 0) {
+              clearInterval(interval);
+              startTimer(duration, display);
+            }
+        }, 1000);
     }
 
-    var countdownInterval = setInterval(updateCountdownTimer, 1000);
+    // Start the initial timer
+    startTimer(duration, display);
 });
 </script>

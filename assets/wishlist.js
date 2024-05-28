@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
             countdownElement.textContent = countdownValue;
             countdownValue--;
         } else {
+            var countdownValue = 5;
             countdownElement.textContent = 5;
             countdownValue--;
         }

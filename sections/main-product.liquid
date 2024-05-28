@@ -101,7 +101,8 @@
                     </h2>
                   </a>
                 </div>
-                {{ block.settings.product_countdown }}
+                {{ "test1" }}
+                {{ block.settings.product_countdown.product_countdown_value }}
               {%- when 'price' -%}
                 <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',

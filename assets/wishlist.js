@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
             countdownElement.textContent = countdownValue;
             countdownValue--;
         } else {
-            countdownValue = countdownElement.val;
+            countdownValue = countdownElement.value;
         }
     }
     var countdownInterval = setInterval(updateCountdown, 1000);

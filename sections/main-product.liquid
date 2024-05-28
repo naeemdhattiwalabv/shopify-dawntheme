@@ -103,7 +103,7 @@
                   </a>
                 </div>
                 {% for productTimer in section.blocks %}
-                  {{ productTimer.settings.product_countdown_timer }}
+                  <div id="product_countdown">{{ productTimer.settings.product_countdown_timer }}</div>
                 {% endfor %}
               {%- when 'price' -%}
                 <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>

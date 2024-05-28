@@ -22,7 +22,6 @@
 
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
-<script src="{{ 'wishlist.js' | asset_url }}" defer="defer"></script>
 
 {%- if card_product and card_product != empty -%}
   {%- liquid
@@ -325,12 +324,6 @@
       </div>
     </div>
   </div>
-  <button
-    class="product-form__submit button button--full-width button--secondary"
-    onclick="wishlist(this.value)"
-    value="{{ product.handle }}">
-      <span>Add to Wishlist</span>
-  </button>
 {%- else -%}
   {%- liquid
     assign ratio = 1

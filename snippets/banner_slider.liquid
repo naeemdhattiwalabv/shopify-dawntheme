@@ -52,21 +52,6 @@
   }
 
   document.addEventListener('DOMContentLoaded', function() {
-    var countdown = document.getElementById('timer_countdown');
-    
-    var countdownTimerValue = parseInt({{ section.settings.timer }});
-
-    function updateCountdownTimer() {
-        if (countdownTimerValue >= 0) {
-            countdown.innerHTML = countdownTimerValue;
-            countdownTimerValue--;
-        } else {
-          countdownValue = parseInt({{ section.settings.timer }});
-        }
-    }
-
-    var countdownInterval = setInterval(updateCountdownTimer, 1000);
-
     let duration = 5 * 60; // 5 minutes in seconds
     let display = document.getElementById('timer_countdown');
 

@@ -52,10 +52,9 @@
   }
 
   document.addEventListener('DOMContentLoaded', function() {
-    let duration = 1 * 60; // 5 minutes in seconds
+    let duration = parseInt({{ section.settings.timer }}) * 60;
     let display = document.getElementById('timer_countdown');
     let interval;
-
     function startTimer(duration, display) {
         let timer = duration, minutes, seconds;
 
@@ -74,8 +73,6 @@
             }
         }, 1000);
     }
-
-    // Start the initial timer
     startTimer(duration, display);
 });
 </script>

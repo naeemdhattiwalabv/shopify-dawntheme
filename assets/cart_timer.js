@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    var addToCartButton = document.getElementById('add-to-cart');
+    var addToCartButton = document.getElementById('ProductSubmitButton-template--22655669600555__main');
 
     if (addToCartButton) {
         addToCartButton.addEventListener('click', function(event) {

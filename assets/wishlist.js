@@ -68,17 +68,3 @@ function addtocartWishlistProduct(proVariantId){
         console.error('Error:', error);
     });
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    var countdownElement = document.getElementById('product_countdown');
-    var countdownValue = 13;
-    function updateCountdown() {
-        if (countdownValue >= 0) {
-            countdownElement.textContent = countdownValue;
-            countdownValue--;
-        } else {
-            countdownValue = 13;
-        }
-    }
-    var countdownInterval = setInterval(updateCountdown, 1000);
-});

@@ -101,6 +101,7 @@
                     </h2>
                   </a>
                 </div>
+                {{ block.settings.product_countodown_timer }}
               {%- when 'price' -%}
                 <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
@@ -471,7 +472,7 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
-                {{ blocks.settings.product_countodown_timer }}
+                
                
                 {% for wishlist in section.blocks %}
                   {% if wishlist.settings.show_wishlist != blank %}

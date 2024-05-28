@@ -68,8 +68,7 @@
             display.textContent = minutes + ':' + seconds;
 
             if (--timer < 0) {
-                clearInterval(interval);
-                alert('Time is up!');
+              let duration = 0.2 * 60;
             }
         }, 1000);
     }

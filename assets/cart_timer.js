@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Product added to cart at:', currentTime);
             // Store the timestamp in local storage (or send it to your server)
             localStorage.setItem('addToCartTime', currentTime);
+            console.log(localStorage.getItem('addToCartTime'));
         });
     }
     

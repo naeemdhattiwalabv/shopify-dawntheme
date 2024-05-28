@@ -70,8 +70,9 @@ function addtocartWishlistProduct(proVariantId){
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    var countdownElement = document.getElementById('countdown');
+    var countdownElement = document.getElementById('product_countdown');
     var countdownValue = countdownElement.val;
+    alert(countdownValue);
     function updateCountdown() {
         if (countdownValue >= 0) {
             countdownElement.textContent = countdownValue;

@@ -57,9 +57,9 @@
     var countdownValue = parseInt({{ section.settings.timer }});
 
     function updateCountdownTimer() {
-        if (countdownValue >= 0) {
-            countdownElement.innerHTML = countdownValue;
-            countdownValue--;
+        if (countdownTimerValue >= 0) {
+            countdownElement.innerHTML = countdownTimerValue;
+            countdownTimerValue--;
         } else {
           countdownValue = parseInt({{ section.settings.timer }});
         }

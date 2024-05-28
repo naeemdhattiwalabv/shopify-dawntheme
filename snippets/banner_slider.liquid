@@ -30,7 +30,7 @@
   <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
 </div>
 <div id="countdown-container">
-  <div id="timer_countdown">00:20</div>
+  <div id="timer_countdown">{{ section.settings.timer }}</div>
 </div>
 <script>
   var slideIndex = 1;
@@ -52,29 +52,19 @@
   }
 
   document.addEventListener('DOMContentLoaded', function() {
-    let duration = 0.20 * 60; // 5 minutes in seconds
-    let display = document.getElementById('timer_countdown');
+    var countdown = document.getElementById('timer_countdown');
+    
+    var countdownValue = parseInt({{ section.settings.timer }});
 
-    // Function to start the timer
-    function startTimer(duration, display) {
-        let timer = duration, minutes, seconds;
-        let interval = setInterval(function() {
-            minutes = Math.floor(timer / 60);
-            seconds = timer % 60;
-
-            minutes = minutes < 10 ? '0' + minutes : minutes;
-            seconds = seconds < 10 ? '0' + seconds : seconds;
-
-            display.innerHTML = minutes + ':' + seconds;
-
-            if (--timer < 0) {
-              document.getElementById('timer_countdown').innerHTML = 0.20;
-              let duration = 0.20 * 60;
-            }
-        }, 1000);
+    function updateCountdownTimer() {
+        if (countdownTimerValue >= 0) {
+            countdown.innerHTML = countdownTimerValue;
+            countdownTimerValue--;
+        } else {
+          countdownValue = parseInt({{ section.settings.timer }});
+        }
     }
 
-    // Start the timer
-    startTimer(duration, display);
+    var countdownInterval = setInterval(updateCountdownTimer, 1000);
 });
 </script>

@@ -471,7 +471,7 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
-                <div id="countdown">5</div>
+                <div id="countdown">15</div>
                 {% for wishlist in section.blocks %}
                   {% if wishlist.settings.show_wishlist != blank %}
                     <button
@@ -2184,6 +2184,12 @@
   ],
   "settings": [
     {
+      "type": "number",
+      "id": "products_offer_countdown",
+      "label": "Product Countdown Offer",
+      "default": 15
+    },
+    {
       "type": "checkbox",
       "id": "enable_sticky_info",
       "default": true,
@@ -2360,12 +2366,6 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
-    },
-    {
-      "type": "number",
-      "id": "products_offer_countdown",
-      "label": "Product Countdown Offer",
-      "default": 15
     }
   ]
 }

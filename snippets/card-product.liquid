@@ -22,7 +22,6 @@
 
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 {%- if card_product and card_product != empty -%}
   {%- liquid
@@ -53,7 +52,6 @@
         class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
         style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
       >
-        <button onclick="wishlist(this.value)"value="{{ card_product.handle }}"><i class="fa fa-heart" aria-hidden="true" onclick="wishlist(this.value)"value="{{ card_product.handle }}"></i></button>
         {%- if card_product.featured_media -%}
           <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
             <div class="media media--transparent media--hover-effect">
@@ -379,3 +377,4 @@
     </div>
   </div>
 {%- endif -%}
+<button onclick="wishlist(this.value)"value="{{ card_product.handle }}"><span>Add to Wishlist</span></button>

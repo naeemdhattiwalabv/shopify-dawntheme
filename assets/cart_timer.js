@@ -9,14 +9,14 @@ function getcartData(){
       return response.json();
     })
     .then(data => {
-      cartRemoveItem(data);
+      checkCartData(data);
     })
     .catch((error) => {
       console.error('Error:', error);
     });
 }
 
-function cartRemoveItem(data){
+function checkCartData(data){
   var localCartItemData = JSON.parse(localStorage.getItem('cartTimerData'));
   var cartItemData = data['items'];
   
@@ -25,12 +25,12 @@ function cartRemoveItem(data){
     const date2 = new Date();
     const diffTime = Math.abs(date2 - new Date(localDateTime));
     if(Math.floor(diffTime / 60000) >= 1) {
-      updateCartItem(cartItemData[index]['variant_id']);
+      removeCartData(cartItemData[index]['variant_id']);
     }
   }
 }
 
-function updateCartItem(variant_id){
+function removeCartData(variant_id){
   fetch(window.Shopify.routes.root + 'cart/change.js', {
     method: 'POST',
     headers: {

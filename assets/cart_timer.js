@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return response.json();
     })
     .then(data => {
-      console.log(localStorage.getItem('cartTimerData'));
+      console.logJSON.parse((localStorage.getItem('cartTimerData')));
       console.log(data['items']);
     })
     .catch((error) => {

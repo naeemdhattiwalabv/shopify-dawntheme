@@ -1,5 +1,4 @@
 function cartData(){
-    console.log('fun1');
     fetch(window.Shopify.routes.root + 'cart.js', {
       method: 'GET',
       headers: {
@@ -10,7 +9,7 @@ function cartData(){
       return response.json();
     })
     .then(data => {
-      //cartRemoveItem(data);
+      cartRemoveItem(data);
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -18,7 +17,6 @@ function cartData(){
 }
 
 function cartRemoveItem(data){
-  console.log('fun2');
   var localCartItemData = JSON.parse(localStorage.getItem('cartTimerData'));
   var cartItemData = data['items'];
   
@@ -27,13 +25,12 @@ function cartRemoveItem(data){
     const date2 = new Date();
     const diffTime = Math.abs(date2 - new Date(localDateTime));
     if(Math.floor(diffTime / 60000) >= 1) {
-      //updateCartItem(cartItemData[index]['variant_id']);
+      updateCartItem(cartItemData[index]['variant_id']);
     }
   }
 }
 
 function updateCartItem(variant_id){
-  console.log('fun3');
   let formData = {
         'id': '"'+variant_id+'"',
         'quantity': 0
@@ -58,5 +55,7 @@ function updateCartItem(variant_id){
 }
 
 var intervalId = window.setInterval(function(){
-  cartData();
+  if(JSON.parse(localStorage.getItem('cartTimerData'))) {
+    cartData();
+  }
 }, 5000);

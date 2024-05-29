@@ -124,24 +124,20 @@ if (!customElements.get('product-form')) {
         cartTimerData = JSON.parse(localStorage.getItem('cartTimerData'));
         if (!cartTimerData) {
           cartItemData = [
-            { variant_id: response['variant_id'], added_time: currentDateTime }
+            { variant_id: response['variant_id'], current_time: currentDateTime }
           ];
         } else {
           cartItemData = cartTimerData;
-          cartItemData.push({ variant_id: response['variant_id'], added_time: currentDateTime });
+          cartItemData.push({ variant_id: response['variant_id'], current_time: currentDateTime });
         }
-
         const latestTimes = new Map();
-        cartItemData.forEach(item => {
+        data.forEach(item => {
             const { variant_id, added_time } = item;
             if (!latestTimes.has(variant_id) || new Date(added_time) > new Date(latestTimes.get(variant_id))) {
                 latestTimes.set(variant_id, added_time);
             }
         });
-
-        cartItemData = Array.from(latestTimes, ([variant_id, added_time]) => ({ variant_id, added_time }));
-
-        localStorage.setItem('cartTimerData',cartItemData);
+        localStorage.setItem('cartTimerData', JSON.stringify(cartItemData));
         console.log(localStorage.getItem('cartTimerData'));
       }
     }

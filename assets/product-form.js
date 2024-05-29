@@ -121,6 +121,7 @@ if (!customElements.get('product-form')) {
         var cartTimerData = [];
         var currentdate = new Date();
         const date2 = new Date('05/29/2024');
+        console.log(date2);
         const diffTime = Math.abs(date2 - currentdate);
         const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)); 
         console.log(diffTime + " milliseconds");

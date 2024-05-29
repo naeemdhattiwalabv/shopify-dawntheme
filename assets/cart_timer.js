@@ -30,6 +30,9 @@ function removeCartData(variant_id){
     );
     //console.log(updatedData);
     localStorage.setItem("cartTimerData", JSON.stringify(updatedData));
+    if(empty(updatedData)) {
+      clearInterval(intervalId);
+    }
     location.reload();
   })
   .catch((error) => {

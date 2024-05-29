@@ -10,7 +10,7 @@ function cartData(){
       return response.json();
     })
     .then(data => {
-      cartRemoveItem(data);
+      //cartRemoveItem(data);
     })
     .catch((error) => {
       console.error('Error:', error);

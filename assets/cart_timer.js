@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function cartRemoveItem(data){
+  console.log(data);
   var localCartItemData = JSON.parse(localStorage.getItem('cartTimerData'));
   var cartItemData = data['items'];
   

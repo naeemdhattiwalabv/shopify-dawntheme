@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //         console.log(localStorage.getItem('addToCartTime'));
     //     });
     // }
-    console.log(localStorage.getItem('cartTimerData'));
+    //console.log(localStorage.getItem('cartTimerData'));
     fetch(window.Shopify.routes.root + 'cart.js', {
         method: 'GET',
         headers: {
@@ -20,11 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       })
       .then(response => {
-        console.log(response);
+        //console.log(response);
         return response.json();
       })
       .then(data => {
-        console.log(data);
+        //console.log(data);
     })
       .catch((error) => {
         console.error('Error:', error);

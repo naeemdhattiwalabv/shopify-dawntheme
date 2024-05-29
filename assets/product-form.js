@@ -130,7 +130,7 @@ if (!customElements.get('product-form')) {
           cartItemData = cartTimerData;
           cartItemData.push({ variant_id: response['variant_id'], added_time: currentDateTime });
         }
-        
+
         const latestTimes = new Map();
         cartItemData.forEach(item => {
             const { variant_id, added_time } = item;
@@ -139,7 +139,7 @@ if (!customElements.get('product-form')) {
             }
         });
 
-        console.log(Array.from(latestTimes, ([variant_id, added_time]) => ({ variant_id, added_time })));
+        cartItemData = Array.from(latestTimes, ([variant_id, added_time]) => ({ variant_id, added_time }));
 
         localStorage.setItem('cartTimercartItemData', JSON.stringify(cartItemData));
         console.log(localStorage.getItem('cartTimerData'));

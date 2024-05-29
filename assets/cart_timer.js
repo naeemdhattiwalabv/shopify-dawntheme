@@ -1,6 +1,8 @@
 
 function checkCartData(){
-  alert(JSON.parse(localStorage.getItem('cartTimerData')).length);
+  if(JSON.parse(localStorage.getItem('cartTimerData')).length == 0) {
+    clearInterval(intervalId);
+  }
   var localCartItemData = JSON.parse(localStorage.getItem('cartTimerData'));
 
   for (let index = 0; index < localCartItemData.length; index++) {

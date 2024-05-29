@@ -119,21 +119,20 @@ if (!customElements.get('product-form')) {
 
       cartTimerData(response){
         var currentDateTime = new Date();
-
         var cartTimerData = [];
-        var cartData = [];
+        var cartItemData = [];
         cartTimerData = localStorage.getItem('cartTimerData');
-        
+
         if (!cartTimerData) {
-          cartData = [
+          cartItemData = [
             { variant_id: response['variant_id'], current_time: currentDateTime }
           ];
         } else {
-          cartData = cartTimerData;
-          cartData.push({ variant_id: response['variant_id'], current_time: currentDateTime });
+          cartItemData = cartTimerData;
+          cartItemData.push({ variant_id: response['variant_id'], current_time: currentDateTime });
         }
 
-        localStorage.setItem('cartTimerData', JSON.stringify(cartData));
+        localStorage.setItem('cartTimerData', JSON.stringify(cartItemData));
         console.log(localStorage.getItem('cartTimerData'));
       }
     }

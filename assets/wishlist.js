@@ -50,8 +50,6 @@ function addtocartWishlistProduct(proVariantId){
             'quantity': qty
         }]
     };
-    console.log(formData);
-    return false;
     fetch(window.Shopify.routes.root + 'cart/add.js', {
         method: 'POST',
         headers: {

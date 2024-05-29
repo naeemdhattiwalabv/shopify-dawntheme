@@ -28,9 +28,8 @@ function removeCartData(variant_id){
     const updatedData = cartData.filter(
         cartData => cartData.variant_id != variant_id
     );
-    console.log(updatedData);
-    return false;
-    //localStorage.setItem("cartTimerData", JSON.stringify(updatedData));
+    //console.log(updatedData);
+    localStorage.setItem("cartTimerData", JSON.stringify(updatedData));
     location.reload();
   })
   .catch((error) => {

@@ -130,23 +130,9 @@ if (!customElements.get('product-form')) {
           cartItemData = cartTimerData;
           cartItemData.push({ variant_id: response['variant_id'], current_time: currentDateTime });
         }
-        const mergedProducts = Object.values(mergeProductData(product));
-        console.log(mergedCartData);
         localStorage.setItem('cartTimerData', JSON.stringify(cartItemData));
         console.log(localStorage.getItem('cartTimerData'));
       }
-
-      mergeProductData(products) {
-        return products.reduce((groups, item) => {
-            const product_key = item.proHandle;
-            if (!groups[product_key]) {
-                groups[product_key] = item;
-            } else {
-                groups[product_key].addedQty += item.addedQty;
-            }
-            return groups;
-        }, {});
-      }  
     }
   );
 }

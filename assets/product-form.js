@@ -45,14 +45,11 @@ if (!customElements.get('product-form')) {
         fetch(`${routes.cart_add_url}`, config)
           .then((response) => response.json())
           .then((response) => {
-            console.log(response);
             var cartTimerData = [];
             cartTimerData = [
               { variant_id: response['variant_id'], current_itme: new Date().toISOString() }
             ];
-            console.log(response['variant_id']);
             localStorage.setItem('cartTimerData', cartTimerData);
-            return false;
             if (response.status) {
               publish(PUB_SUB_EVENTS.cartError, {
                 source: 'product-form',

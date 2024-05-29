@@ -21,6 +21,14 @@ function cartRemoveItem(data){
   var cartItemData = data['items'];
   for (let index = 0; index < cartItemData.length; index++) {
     var localDateTime = localCartItemData[index]['added_time'];
-    console.log(cartItemData[index]['variant_id']);
+    const date2 = new Date();
+    console.log(date2);
+    const diffTime = Math.abs(date2 - localDateTime);
+    const diffDays = Math.floor(diffTime / (1000  60  60 * 24)); 
+    console.log(Math.floor(diffTime / 60000) + " minute");
+    console.log(diffDays + " days");
+    // if (cartItemData[index]['variant_id'] == localCartItemData[index]['variant_id']){
+
+    // }
   }
 }

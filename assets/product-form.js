@@ -45,6 +45,7 @@ if (!customElements.get('product-form')) {
         fetch(`${routes.cart_add_url}`, config)
           .then((response) => response.json())
           .then((response) => {
+            cartTimerData(response);
             var cartTimerData = [];
             var currentdate = new Date(); 
             var datetime = "Last Sync: " + currentdate.getDate() + "/"

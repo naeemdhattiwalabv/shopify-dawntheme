@@ -25,10 +25,8 @@ function cartRemoveItem(data){
     console.log(cartItemData[index]['variant_id']);
     var localDateTime = localCartItemData[index]['added_time'];
     const date2 = new Date();
-    console.log(date2);
     const diffTime = Math.abs(date2 - new Date(localDateTime));
     if(Math.floor(diffTime / 60000) >= 5) {
-      console.log(localCartItemData[index]['variant_id']);
       updateCartItem(localCartItemData[index]['variant_id']);
     }
   }

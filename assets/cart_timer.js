@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+function cartData(){
     fetch(window.Shopify.routes.root + 'cart.js', {
       method: 'GET',
       headers: {
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch((error) => {
       console.error('Error:', error);
     });
-});
+}
 
 function cartRemoveItem(data){
   console.log(data);
@@ -55,3 +55,7 @@ function updateCartItem(variant_id){
     console.error('Error:', error);
   });
 }
+
+var intervalId = window.setInterval(function(){
+  cartData();
+}, 5000);

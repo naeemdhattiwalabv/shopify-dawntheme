@@ -49,7 +49,7 @@ if (!customElements.get('product-form')) {
             cartTimerData = [
               { variant_id: response['variant_id'], current_time: new Date().toISOString() }
             ];
-            localStorage.setItem('cartTimerData', cartTimerData);
+            localStorage.setItem('cartTimerData', JSON.stringify(cartTimerData));
             if (response.status) {
               publish(PUB_SUB_EVENTS.cartError, {
                 source: 'product-form',

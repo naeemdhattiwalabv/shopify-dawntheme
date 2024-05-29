@@ -24,11 +24,8 @@ function cartRemoveItem(data){
     const date2 = new Date();
     console.log(date2);
     const diffTime = Math.abs(date2 - localDateTime);
-    const diffDays = Math.floor(diffTime / (1000  60  60 * 24)); 
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)); 
     console.log(Math.floor(diffTime / 60000) + " minute");
     console.log(diffDays + " days");
-    // if (cartItemData[index]['variant_id'] == localCartItemData[index]['variant_id']){
-
-    // }
   }
 }

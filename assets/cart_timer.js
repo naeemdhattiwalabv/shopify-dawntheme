@@ -1,6 +1,6 @@
 
 function checkCartData(){
-  alert('test');
+  alert(JSON.parse(localStorage.getItem('cartTimerData')).length);
   var localCartItemData = JSON.parse(localStorage.getItem('cartTimerData'));
 
   for (let index = 0; index < localCartItemData.length; index++) {

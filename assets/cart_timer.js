@@ -26,6 +26,26 @@ function cartRemoveItem(data){
     const diffTime = Math.abs(date2 - new Date(localDateTime));
     if(Math.floor(diffTime / 60000) >= 5) {
       console.log(localCartItemData[index]['variant_id']);
+
     }
   }
+}
+
+function updateCartItem(variant_id){
+  let updates = {
+    variant_id: 0
+  };
+  fetch(window.Shopify.routes.root + 'cart/change.js', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ updates })
+  })
+  .then(response => {
+    return response.json();
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
 }

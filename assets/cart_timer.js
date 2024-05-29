@@ -39,6 +39,7 @@ function updateCartItem(variant_id){
     body: JSON.stringify({'quantity': 1, 'id': variant_id })
   })
   .then(response => {
+    console.log(response);
     return response.json();
   })
   .then(data => {

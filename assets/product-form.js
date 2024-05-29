@@ -118,11 +118,20 @@ if (!customElements.get('product-form')) {
       }
 
       cartTimerData(response){
-        var cartTimerData = [];
         var currentDateTime = new Date();
-        cartTimerData = [
-          { variant_id: response['variant_id'], current_time: currentDateTime }
-        ];
+
+        var cartTimerData = cartData = [];
+        cartTimerData = localStorage.getItem('cartTimerData');
+    
+        if (!cartTimerData) {
+          cartData = [
+            { variant_id: response['variant_id'], current_time: currentDateTime }
+          ];
+        } else {
+          cartData = cartTimerData;
+          cartData.push({ variant_id: response['variant_id'], current_time: currentDateTime });
+        }
+
         localStorage.setItem('cartTimerData', JSON.stringify(cartTimerData));
         console.log(localStorage.getItem('cartTimerData'));
       }

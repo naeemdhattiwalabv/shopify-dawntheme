@@ -25,7 +25,7 @@ function cartRemoveItem(data){
     var localDateTime = localCartItemData[index]['added_time'];
     const date2 = new Date();
     const diffTime = Math.abs(date2 - new Date(localDateTime));
-    if(Math.floor(diffTime / 60000) >= 5) {
+    if(Math.floor(diffTime / 60000) >= 1) {
       updateCartItem(cartItemData[index]['variant_id']);
     }
   }

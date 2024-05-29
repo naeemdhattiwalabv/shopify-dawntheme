@@ -119,9 +119,9 @@ if (!customElements.get('product-form')) {
 
       cartTimerData(response){
         var cartTimerData = [];
-        var currentdate = new Date();
+        var currentDateTime = new Date();
         cartTimerData = [
-          { variant_id: response['variant_id'], current_time: currentdate }
+          { variant_id: response['variant_id'], current_time: currentDateTime }
         ];
         localStorage.setItem('cartTimerData', JSON.stringify(cartTimerData));
         console.log(localStorage.getItem('cartTimerData'));

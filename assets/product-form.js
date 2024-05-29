@@ -144,7 +144,6 @@ if (!customElements.get('product-form')) {
         ));
 
         localStorage.setItem('cartTimerData', JSON.stringify(cartItemData));
-        console.log(localStorage.getItem('cartTimerData'));
       }
     }
   );

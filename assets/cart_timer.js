@@ -51,6 +51,6 @@ function removeCartData(variant_id){
 
 var intervalId = window.setInterval(function(){
   if(JSON.parse(localStorage.getItem('cartTimerData'))) {
-    cartData();
+    getcartData();
   }
 }, 5000);

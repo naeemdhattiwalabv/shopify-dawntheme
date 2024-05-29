@@ -47,7 +47,7 @@ function updateCartItem(variant_id){
     return response.json();
   })
   .then(data => {
-    carconsole.log(tRemoveItem(data));
+    console.log(data);
   })
   .catch((error) => {
     console.error('Error:', error);

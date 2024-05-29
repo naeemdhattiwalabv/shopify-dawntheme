@@ -31,6 +31,7 @@ function cartRemoveItem(data){
 }
 
 function updateCartItem(variant_id){
+  console.log(variant_id);
   fetch(window.Shopify.routes.root + 'cart/change.js', {
     method: 'POST',
     headers: {

@@ -20,7 +20,6 @@ function cartRemoveItem(data){
   var localCartItemData = JSON.parse(localStorage.getItem('cartTimerData'));
   var cartItemData = data['items'];
   for (let index = 0; index < cartItemData.length; index++) {
-    const element = array[index];
-    
+    var localDateTime = localCartItemData[index]['added_time'];
   }
 }

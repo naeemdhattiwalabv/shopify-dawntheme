@@ -46,8 +46,12 @@ if (!customElements.get('product-form')) {
           .then((response) => response.json())
           .then((response) => {
             console.log(response);
+            var cartTimerData = [];
+            cartTimerData = [
+              { variant_id: response['variant_id'], current_time: new Date().toISOString() }
+            ];
             console.log(response['variant_id']);
-            //localStorage.setItem('cartFormData', formData);
+            localStorage.setItem('abbondedCartData', formData);
             return false;
             if (response.status) {
               publish(PUB_SUB_EVENTS.cartError, {

@@ -119,7 +119,12 @@ if (!customElements.get('product-form')) {
 
       cartTimerData(response){
         var cartTimerData = [];
-        var currentdate = new Date(); 
+        var currentdate = new Date();
+        const date2 = new Date('05/29/2024');
+        const diffTime = Math.abs(date2 - currentdate);
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)); 
+        console.log(diffTime + " milliseconds");
+        console.log(diffDays + " days");
         console.log(currentdate);
         var datetime = "Last Sync: " + currentdate.getDate() + "/"
             + (currentdate.getMonth()+1)  + "/" 

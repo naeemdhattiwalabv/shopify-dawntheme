@@ -120,9 +120,10 @@ if (!customElements.get('product-form')) {
       cartTimerData(response){
         var currentDateTime = new Date();
 
-        var cartTimerData = cartData = [];
+        var cartTimerData = [];
+        var cartData = [];
         cartTimerData = localStorage.getItem('cartTimerData');
-    
+        
         if (!cartTimerData) {
           cartData = [
             { variant_id: response['variant_id'], current_time: currentDateTime }

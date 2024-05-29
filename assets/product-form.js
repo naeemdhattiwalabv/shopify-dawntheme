@@ -137,7 +137,7 @@ if (!customElements.get('product-form')) {
         cartItemData.forEach(item => {
             const { variant_id, added_time } = item;
             if (!latestTimes.has(variant_id) || new Date(added_time) > new Date(latestTimes.get(variant_id))) {
-                latestTimes.set(variant_id, added_time);
+                latestTimes.set(variant_id, new Date());
             }
         });
         cartItemData = Array.from(

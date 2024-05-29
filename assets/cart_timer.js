@@ -19,7 +19,10 @@ document.addEventListener('DOMContentLoaded', function() {
 function cartRemoveItem(data){
   var localCartItemData = JSON.parse(localStorage.getItem('cartTimerData'));
   var cartItemData = data['items'];
+  
   for (let index = 0; index < cartItemData.length; index++) {
+      updateCartItem(localCartItemData[index]['variant_id']);
+    console.log(cartItemData[index]['variant_id']);
     var localDateTime = localCartItemData[index]['added_time'];
     const date2 = new Date();
     console.log(date2);

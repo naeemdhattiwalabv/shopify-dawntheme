@@ -1,7 +1,6 @@
 
 function checkCartData(){
   if(JSON.parse(localStorage.getItem('cartTimerData')).length == 0) {
-    alert(JSON.parse(localStorage.getItem('cartTimerData')).length);
     clearInterval(intervalId);
   }
   var localCartItemData = JSON.parse(localStorage.getItem('cartTimerData'));
@@ -43,7 +42,5 @@ function removeCartData(variant_id){
 var intervalId = window.setInterval(function(){
   if(JSON.parse(localStorage.getItem('cartTimerData'))) {
     checkCartData();
-  } else{
-    clearInterval(intervalId)
   }
 }, 5000);

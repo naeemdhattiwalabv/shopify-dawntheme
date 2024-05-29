@@ -1,24 +1,6 @@
-function getcartData(){
-    fetch(window.Shopify.routes.root + 'cart.js', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(response => {
-      return response.json();
-    })
-    .then(data => {
-      checkCartData(data);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-}
 
-function checkCartData(data){
+function checkCartData(){
   var localCartItemData = JSON.parse(localStorage.getItem('cartTimerData'));
-  //var cartItemData = data['items'];
   
   for (let index = 0; index < localCartItemData.length; index++) {
     var localDateTime = localCartItemData[index]['added_time'];
@@ -51,6 +33,6 @@ function removeCartData(variant_id){
 
 var intervalId = window.setInterval(function(){
   if(JSON.parse(localStorage.getItem('cartTimerData'))) {
-    getcartData();
+    checkCartData();
   }
 }, 5000);

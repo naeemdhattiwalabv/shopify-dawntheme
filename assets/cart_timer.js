@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return response.json();
     })
     .then(data => {
+      cartRemoveItem(data);
       console.log(JSON.parse(localStorage.getItem('cartTimerData')));
       console.log(data['items']);
     })
@@ -16,3 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
       console.error('Error:', error);
     });
 });
+
+function cartRemoveItem(data){
+  console.log('test');
+}

@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //         console.log(localStorage.getItem('addToCartTime'));
     //     });
     // }
-    console.log(localStorage.getItem('cartFormData'));
+    console.log(localStorage.getItem('cartTimerData'));
     fetch(window.Shopify.routes.root + 'cart.js', {
         method: 'GET',
         headers: {

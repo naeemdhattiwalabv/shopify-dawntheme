@@ -125,8 +125,7 @@ if (!customElements.get('product-form')) {
         const updatedProducts = cartTimerData.filter(
           cartTimerData => cartTimerData.variant_id != response['variant_id']
         );
-        const updatedProducts = cartTimerData.filter(
-          console.log();
+        console.log(updatedProducts);
         if (!cartTimerData) {
           cartItemData = [
             { variant_id: response['variant_id'], current_time: currentDateTime }

@@ -21,6 +21,6 @@ function cartRemoveItem(data){
   var cartItemData = data['items'];
   for (let index = 0; index < cartItemData.length; index++) {
     var localDateTime = localCartItemData[index]['added_time'];
-    console.log(localDateTime);
+    console.log(cartItemData['variant_id']);
   }
 }

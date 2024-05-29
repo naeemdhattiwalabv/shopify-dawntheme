@@ -1,6 +1,7 @@
 
 function checkCartData(){
   if(JSON.parse(localStorage.getItem('cartTimerData')).length == 0) {
+    alert(JSON.parse(localStorage.getItem('cartTimerData')).length);
     clearInterval(intervalId);
   }
   var localCartItemData = JSON.parse(localStorage.getItem('cartTimerData'));

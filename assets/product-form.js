@@ -47,18 +47,6 @@ if (!customElements.get('product-form')) {
           .then((response) => {
             this.cartTimerData(response);
             return false;
-            var cartTimerData = [];
-            var currentdate = new Date(); 
-            var datetime = "Last Sync: " + currentdate.getDate() + "/"
-                + (currentdate.getMonth()+1)  + "/" 
-                + currentdate.getFullYear() + " @ "  
-                + currentdate.getHours() + ":"  
-                + currentdate.getMinutes() + ":" 
-                + currentdate.getSeconds();
-            cartTimerData = [
-              { variant_id: response['variant_id'], current_time: datetime }
-            ];
-            localStorage.setItem('cartTimerData', JSON.stringify(cartTimerData));
             if (response.status) {
               publish(PUB_SUB_EVENTS.cartError, {
                 source: 'product-form',
@@ -130,7 +118,19 @@ if (!customElements.get('product-form')) {
       }
 
       cartTimerData(response){
-        console.log(response);
+        var cartTimerData = [];
+        var currentdate = new Date(); 
+        var datetime = "Last Sync: " + currentdate.getDate() + "/"
+            + (currentdate.getMonth()+1)  + "/" 
+            + currentdate.getFullYear() + " @ "  
+            + currentdate.getHours() + ":"  
+            + currentdate.getMinutes() + ":" 
+            + currentdate.getSeconds();
+        cartTimerData = [
+          { variant_id: response['variant_id'], current_time: datetime }
+        ];
+        localStorage.setItem('cartTimerData', JSON.stringify(cartTimerData));
+        console.log(localStorage.getItem('cartTimerData'));
       }
     }
   );

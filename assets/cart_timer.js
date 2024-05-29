@@ -34,7 +34,7 @@ function cartRemoveItem(data){
 
 function updateCartItem(variant_id){
   let updates = {
-    'id': variant_id,
+    'id': parseInt(variant_id),
     'quantity': 0
   };
   console.log(updates);

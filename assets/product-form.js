@@ -120,21 +120,8 @@ if (!customElements.get('product-form')) {
       cartTimerData(response){
         var cartTimerData = [];
         var currentdate = new Date();
-        const date2 = new Date('05/29/2024');
-        console.log(date2);
-        const diffTime = Math.abs(date2 - currentdate);
-        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)); 
-        console.log(Math.floor(diffTime / 60000) + " minute");
-        console.log(diffDays + " days");
-        console.log(currentdate);
-        var datetime = "Last Sync: " + currentdate.getDate() + "/"
-            + (currentdate.getMonth()+1)  + "/" 
-            + currentdate.getFullYear() + " @ "  
-            + currentdate.getHours() + ":"  
-            + currentdate.getMinutes() + ":" 
-            + currentdate.getSeconds();
         cartTimerData = [
-          { variant_id: response['variant_id'], current_time: datetime }
+          { variant_id: response['variant_id'], current_time: currentdate }
         ];
         localStorage.setItem('cartTimerData', JSON.stringify(cartTimerData));
         console.log(localStorage.getItem('cartTimerData'));

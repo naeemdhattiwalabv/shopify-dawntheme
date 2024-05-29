@@ -1,4 +1,5 @@
 function cartData(){
+    console.log('test');
     fetch(window.Shopify.routes.root + 'cart.js', {
       method: 'GET',
       headers: {

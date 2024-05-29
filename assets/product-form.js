@@ -46,6 +46,7 @@ if (!customElements.get('product-form')) {
           .then((response) => response.json())
           .then((response) => {
             this.cartTimerData(response);
+            return false;
             var cartTimerData = [];
             var currentdate = new Date(); 
             var datetime = "Last Sync: " + currentdate.getDate() + "/"

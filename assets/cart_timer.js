@@ -31,17 +31,12 @@ function cartRemoveItem(data){
 }
 
 function updateCartItem(variant_id){
-  let updates = {
-    'id': variant_id,
-    'quantity': 1
-  }
-  console.log(updates);
   fetch(window.Shopify.routes.root + 'cart/change.js', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ updates })
+    body: JSON.stringify({'quantity': 1, 'id': variant_id, })
   })
   .then(response => {
     return response.json();

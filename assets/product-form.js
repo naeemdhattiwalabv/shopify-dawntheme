@@ -31,7 +31,7 @@ if (!customElements.get('product-form')) {
         delete config.headers['Content-Type'];
 
         const formData = new FormData(this.form);
-        localStorage.setItem('cartFormData', formData);
+        
         if (this.cart) {
           formData.append(
             'sections',
@@ -45,7 +45,8 @@ if (!customElements.get('product-form')) {
         fetch(`${routes.cart_add_url}`, config)
           .then((response) => response.json())
           .then((response) => {
-            console.log(response);
+            console.log(response['variant_id']);
+            //localStorage.setItem('cartFormData', formData);
             return false;
             if (response.status) {
               publish(PUB_SUB_EVENTS.cartError, {

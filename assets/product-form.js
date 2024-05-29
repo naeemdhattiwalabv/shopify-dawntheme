@@ -130,8 +130,7 @@ if (!customElements.get('product-form')) {
       }
 
       cartTimerData(response){
-        console.log('test' + response);
-        return false;
+        console.log(response);
       }
     }
   );

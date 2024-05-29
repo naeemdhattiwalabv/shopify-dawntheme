@@ -121,7 +121,9 @@ if (!customElements.get('product-form')) {
         var currentDateTime = new Date();
         var cartTimerData = [];
         var cartItemData = [];
+        
         cartTimerData = JSON.parse(localStorage.getItem('cartTimerData'));
+
         if (!cartTimerData) {
           cartItemData = [
             { variant_id: response['variant_id'], added_time: currentDateTime }

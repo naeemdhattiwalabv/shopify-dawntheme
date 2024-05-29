@@ -1,4 +1,4 @@
-function cartData(){
+function getcartData(){
     fetch(window.Shopify.routes.root + 'cart.js', {
       method: 'GET',
       headers: {
@@ -31,10 +31,6 @@ function cartRemoveItem(data){
 }
 
 function updateCartItem(variant_id){
-  let formData = {
-        'id': '"'+variant_id+'"',
-        'quantity': 0
-  };
   fetch(window.Shopify.routes.root + 'cart/change.js', {
     method: 'POST',
     headers: {
@@ -43,11 +39,9 @@ function updateCartItem(variant_id){
     body: JSON.stringify({'id': variant_id.toString(), 'quantity': 0})
   })
   .then(response => {
-    console.log(response);
     return response.json();
   })
   .then(data => {
-    console.log(data);
     location.reload();
   })
   .catch((error) => {

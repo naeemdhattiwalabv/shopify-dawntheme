@@ -121,7 +121,7 @@ if (!customElements.get('product-form')) {
         var currentDateTime = new Date();
         var cartTimerData = [];
         var cartItemData = [];
-        cartTimerData = localStorage.getItem('cartTimerData');
+        cartTimerData = JSON.parse(localStorage.getItem('cartTimerData'));
 
         if (!cartTimerData) {
           cartItemData = [

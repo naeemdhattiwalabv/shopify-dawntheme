@@ -124,7 +124,7 @@ if (!customElements.get('product-form')) {
         console.log(date2);
         const diffTime = Math.abs(date2 - currentdate);
         const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)); 
-        console.log(diffTime + " milliseconds");
+        console.log(Math.floor(diffTime / 60000) + " minute");
         console.log(diffDays + " days");
         console.log(currentdate);
         var datetime = "Last Sync: " + currentdate.getDate() + "/"

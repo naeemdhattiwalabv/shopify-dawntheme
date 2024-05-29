@@ -1,5 +1,5 @@
 function cartData(){
-    console.log('test');
+    console.log('fun1');
     fetch(window.Shopify.routes.root + 'cart.js', {
       method: 'GET',
       headers: {
@@ -18,7 +18,7 @@ function cartData(){
 }
 
 function cartRemoveItem(data){
-  console.log('data');
+  console.log('fun2');
   var localCartItemData = JSON.parse(localStorage.getItem('cartTimerData'));
   var cartItemData = data['items'];
   
@@ -33,7 +33,7 @@ function cartRemoveItem(data){
 }
 
 function updateCartItem(variant_id){
-  console.log(variant_id);
+  console.log('fun3');
   let formData = {
         'id': '"'+variant_id+'"',
         'quantity': 0

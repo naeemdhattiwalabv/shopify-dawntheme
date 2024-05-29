@@ -141,7 +141,7 @@ if (!customElements.get('product-form')) {
 
         cartItemData = Array.from(latestTimes, ([variant_id, added_time]) => ({ variant_id, added_time }));
 
-        localStorage.setItem('cartTimercartItemData', cartItemData);
+        localStorage.setItem('cartTimerData', cartItemData);
         console.log(localStorage.getItem('cartTimerData'));
       }
     }

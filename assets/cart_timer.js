@@ -36,6 +36,7 @@ function updateCartItem(variant_id){
     'id': variant_id,
     'quantity': 1
   };
+  console.log(updates);
   fetch(window.Shopify.routes.root + 'cart/change.js', {
     method: 'POST',
     headers: {

@@ -57,6 +57,6 @@ function updateCartItem(variant_id){
   });
 }
 
-// var intervalId = window.setInterval(function(){
-//   cartData();
-// }, 5000);
+var intervalId = window.setInterval(function(){
+  cartData();
+}, 5000);

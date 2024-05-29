@@ -126,6 +126,10 @@ if (!customElements.get('product-form')) {
           this.errorMessage.textContent = errorMessage;
         }
       }
+
+      cartTimerData(response){
+        console.log('test' + response);
+      }
     }
   );
 }

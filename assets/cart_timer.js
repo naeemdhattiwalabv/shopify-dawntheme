@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return response.json();
     })
     .then(data => {
-      console.log(data);
+      console.log(data['items']);
     })
     .catch((error) => {
       console.error('Error:', error);

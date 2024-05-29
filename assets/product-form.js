@@ -130,15 +130,6 @@ if (!customElements.get('product-form')) {
           cartItemData = cartTimerData;
           cartItemData.push({ variant_id: response['variant_id'], added_time: currentDateTime });
         }
-        const latestTimes = new Map();
-        cartItemData.forEach(item => {
-            const { variant_id, added_time } = item;
-            if (!latestTimes.has(variant_id) || new Date(added_time) > new Date(latestTimes.get(variant_id))) {
-                latestTimes.set(variant_id, added_time);
-            }
-        });
-        console.log(Array.from(latestTimes, ([variant_id, added_time]) => ({ variant_id, added_time })));
-        
         localStorage.setItem('cartTimerData', JSON.stringify(cartItemData));
         console.log(localStorage.getItem('cartTimerData'));
       }

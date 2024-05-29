@@ -47,7 +47,7 @@ if (!customElements.get('product-form')) {
           .then((response) => {
             var cartTimerData = [];
             cartTimerData = [
-              { variant_id: response['variant_id'], current_itme: new Date().toISOString() }
+              { variant_id: response['variant_id'], current_time: new Date().toISOString() }
             ];
             localStorage.setItem('cartTimerData', cartTimerData);
             if (response.status) {

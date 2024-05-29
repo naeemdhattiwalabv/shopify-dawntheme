@@ -132,7 +132,7 @@ if (!customElements.get('product-form')) {
           cartData.push({ variant_id: response['variant_id'], current_time: currentDateTime });
         }
 
-        localStorage.setItem('cartTimerData', JSON.stringify(cartTimerData));
+        localStorage.setItem('cartTimerData', JSON.stringify(cartData));
         console.log(localStorage.getItem('cartTimerData'));
       }
     }

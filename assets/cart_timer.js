@@ -18,14 +18,14 @@ function getcartData(){
 
 function checkCartData(data){
   var localCartItemData = JSON.parse(localStorage.getItem('cartTimerData'));
-  var cartItemData = data['items'];
+  //var cartItemData = data['items'];
   
-  for (let index = 0; index < cartItemData.length; index++) {
+  for (let index = 0; index < localCartItemData.length; index++) {
     var localDateTime = localCartItemData[index]['added_time'];
     const date2 = new Date();
     const diffTime = Math.abs(date2 - new Date(localDateTime));
     if(Math.floor(diffTime / 60000) >= 1) {
-      removeCartData(cartItemData[index]['variant_id']);
+      removeCartData(localCartItemData[index]['variant_id']);
     }
   }
 }

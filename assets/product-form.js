@@ -45,6 +45,7 @@ if (!customElements.get('product-form')) {
         fetch(`${routes.cart_add_url}`, config)
           .then((response) => response.json())
           .then((response) => {
+            console.log(response);
             console.log(response['variant_id']);
             //localStorage.setItem('cartFormData', formData);
             return false;

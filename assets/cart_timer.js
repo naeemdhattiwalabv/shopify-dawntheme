@@ -33,7 +33,8 @@ function cartRemoveItem(data){
 
 function updateCartItem(variant_id){
   let updates = {
-    variant_id: 0
+    id: variant_id,
+    'quantity': 0
   };
   fetch(window.Shopify.routes.root + 'cart/change.js', {
     method: 'POST',

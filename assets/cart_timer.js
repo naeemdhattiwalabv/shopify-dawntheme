@@ -28,11 +28,7 @@ function removeCartData(variant_id){
     const updatedData = cartData.filter(
         cartData => cartData.variant_id != variant_id
     );
-    //console.log(updatedData);
     localStorage.setItem("cartTimerData", JSON.stringify(updatedData));
-    if(empty(updatedData)) {
-      clearInterval(intervalId);
-    }
     location.reload();
   })
   .catch((error) => {
@@ -43,5 +39,7 @@ function removeCartData(variant_id){
 var intervalId = window.setInterval(function(){
   if(JSON.parse(localStorage.getItem('cartTimerData'))) {
     checkCartData();
+  } else{
+    clearInterval(intervalId)
   }
 }, 5000);

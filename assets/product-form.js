@@ -32,8 +32,6 @@ if (!customElements.get('product-form')) {
 
         const formData = new FormData(this.form);
         localStorage.setItem('cartFormData', formData);
-        //console.log(formData);
-        return false;
         if (this.cart) {
           formData.append(
             'sections',
@@ -47,6 +45,8 @@ if (!customElements.get('product-form')) {
         fetch(`${routes.cart_add_url}`, config)
           .then((response) => response.json())
           .then((response) => {
+            console.log(response);
+            return false;
             if (response.status) {
               publish(PUB_SUB_EVENTS.cartError, {
                 source: 'product-form',

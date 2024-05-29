@@ -36,7 +36,7 @@ function updateCartItem(variant_id){
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ quantity: 0, id: variant_id }),
+    body: JSON.stringify({ id: variant_id,quantity: 0}),
   })
   .then(response => {
     console.log(response);

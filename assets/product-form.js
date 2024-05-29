@@ -120,6 +120,7 @@ if (!customElements.get('product-form')) {
       cartTimerData(response){
         var cartTimerData = [];
         var currentdate = new Date(); 
+        console.log(currentdate);
         var datetime = "Last Sync: " + currentdate.getDate() + "/"
             + (currentdate.getMonth()+1)  + "/" 
             + currentdate.getFullYear() + " @ "  

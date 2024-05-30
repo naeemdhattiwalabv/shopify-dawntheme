@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const diffTime = Math.abs(date2 - new Date(localDateTime));
     let display = document.getElementById('timer_countdown_'+localCartItemData[index]['variant_id']);
     let duration = (diffTime / 60000) * 60;
-    updateCountdown(duration.toFixed(2));
+    updateCountdown(duration.toFixed(2), display);
   }
 });
-function updateCountdown(expirationTime) {
+function updateCountdown(expirationTime, timer) {
   var now = new Date().getTime();
   var distance = expirationTime - now;
 

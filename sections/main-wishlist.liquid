@@ -1,0 +1,93 @@
+{% stylesheet %}
+  /* assets/styles.css */
+  .collection-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-left: 50px;
+  }
+  .product-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: calc(33.333% - 15px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    margin-bottom: 50px;
+  }
+  .product-card:hover {
+    transform: scale(1.05);
+  }
+  .product-card img {
+    width: 50%;
+    height: auto;
+  }
+  .product-info {
+    padding: 10px 0;
+  }
+  .product-title {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  .product-price {
+    color: #e60023;
+    font-weight: bold;
+  }
+  .msgsuccess {
+    background-color: #2dd26b;
+    padding: 8px;
+    color: #fff;
+  }
+  .empty_wishlist {
+    background-color: #FF0000;
+    padding: 5px;
+    color: #fff;
+  }
+{% endstylesheet %}
+
+<script src="{{ 'wishlist.js' | asset_url }}" defer="defer"></script>
+<div id="msgsuccess" class="emptysuccess" style="display:none;">
+  Product added successfully into wishlist.
+</div>
+<div id="wishlist_page_main">
+  <div class="collection-grid" id="product_collection"></div>
+</div>
+<div style="display:none;" class="empty_wishlist">
+  <p> No product in wishlist.</p>
+</div>
+
+{% javascript %}
+  var wishlist_productData = [];
+  wishlist_productData = JSON.parse(localStorage.getItem('wishlist_product'));
+  if (wishlist_productData.length) {
+    var proHandle = wishlist_productData.map((item) => item.proHandle);
+    var qty = wishlist_productData.map((item) => item.addedQty);
+    for (let index = 0; index < proHandle.length; index++) {
+      fetch(`/products/${proHandle[index]}.js`)
+        .then((response) => response.json())
+          .then((product) => {
+              document.getElementById("product_collection").innerHTML +=
+                `<div class="product-card">
+                    <a href="`+product.url+`">
+                        <img id="product-image" src="`+product.images[0]+`" alt="Product Image">
+                    </a>
+                    <div class="product-info">
+                        <h2 class="product-title">`+product.title+`</h2>
+                        <span>Price : </span><span class="product-price">`+product.price+`</span><br>
+                        <span>Quantity : </span><input type="number" name="wishlish_qty_`+product['variants'][0]['id']+`" class="product-qty" value="`+qty[index]+`"><br>
+                        <button class="remove-btn" onclick="removeWishlistProduct(this.value)" value="`+proHandle[index]+`"><span>Remove All</span></button>
+                        <button class="addtocart" onclick="addtocartWishlistProduct(this.value)" value="`+product['variants'][0]['id']+`"><span>Add to Cart</span></button>
+                    </div>
+                </div>`
+              ;
+      })
+      .catch((error) => {
+        console.error('Error fetching product data:', error);
+      });
+    }
+  } else  {
+    document.querySelectorAll('.empty_wishlist').forEach(function(element) {
+      element.style.display = 'block';
+    });
+  }
+{% endjavascript %}

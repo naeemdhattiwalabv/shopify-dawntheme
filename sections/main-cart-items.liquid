@@ -24,6 +24,7 @@
 {%- endunless -%}
 
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'cart_timer.js' | asset_url }}" defer="defer"></script>
 
 <cart-items class="gradient color-{{ section.settings.color_scheme }} isolate{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="page-width">
@@ -73,6 +74,9 @@
                   </th>
                   <th class="small-hide right caption-with-letter-spacing" colspan="1" scope="col">
                     {{ 'sections.cart.headings.total' | t }}
+                  </th>
+                  <th class="small-hide right caption-with-letter-spacing" colspan="1" scope="col">
+                    {{ 'Remove Product After 1 Minute' }}
                   </th>
                 </tr>
               </thead>
@@ -428,6 +432,7 @@
                         {%- endif -%}
                       </div>
                     </td>
+                    <td><div class="timer_countdown" id='{{ "timer_countdown_" | append: item.variant_id}}'></div></td>
                   </tr>
                 {%- endfor -%}
               </tbody>

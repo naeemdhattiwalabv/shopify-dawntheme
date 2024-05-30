@@ -5,6 +5,7 @@
       {% if banner.settings.link != blank %}
         <a href="{{ banner.settings.link }}">
       {% endif %}
+      
       {{ banner.settings.image | image_url: width: 1000 | image_tag: class: 'mySlides' }}
       {% if banner.settings.link != blank %}
         </a>
@@ -28,8 +29,11 @@
   ></iframe>
   <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
   <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+  
 </div>
-
+<div id="countdown-container">
+  <div id="timer_countdown">{{ section.settings.timer }}:00</div>
+</div>
 <script>
   var slideIndex = 1;
   showDivs(slideIndex);
@@ -48,4 +52,29 @@
     }
     x[slideIndex-1].style.display = "block";
   }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    let duration = parseInt({{ section.settings.timer }}) * 60;
+    let display = document.getElementById('timer_countdown');
+    let interval;
+    function startTimer(duration, display) {
+        let timer = duration, minutes, seconds;
+
+        interval = setInterval(function() {
+            minutes = Math.floor(timer / 60);
+            seconds = timer % 60;
+
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            display.textContent = minutes + ':' + seconds;
+
+            if (--timer < 0) {
+              clearInterval(interval);
+              startTimer(duration, display);
+            }
+        }, 1000);
+    }
+    startTimer(duration, display);
+});
 </script>

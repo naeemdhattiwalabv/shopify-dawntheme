@@ -31,6 +31,7 @@ if (!customElements.get('product-form')) {
         delete config.headers['Content-Type'];
 
         const formData = new FormData(this.form);
+        
         if (this.cart) {
           formData.append(
             'sections',
@@ -44,6 +45,7 @@ if (!customElements.get('product-form')) {
         fetch(`${routes.cart_add_url}`, config)
           .then((response) => response.json())
           .then((response) => {
+            this.cartTimerData(response);
             if (response.status) {
               publish(PUB_SUB_EVENTS.cartError, {
                 source: 'product-form',
@@ -112,6 +114,36 @@ if (!customElements.get('product-form')) {
         if (errorMessage) {
           this.errorMessage.textContent = errorMessage;
         }
+      }
+
+      cartTimerData(response){
+        var currentDateTime = new Date();
+        var cartTimerData = [];
+        var cartItemData = [];
+
+        cartTimerData = JSON.parse(localStorage.getItem('cartTimerData'));
+
+        if (!cartTimerData) {
+          cartItemData = [
+            { variant_id: response['variant_id'], added_time: currentDateTime }
+          ];
+        } else {
+          cartItemData = cartTimerData;
+          cartItemData.push({ variant_id: response['variant_id'], added_time: currentDateTime });
+        }
+
+        const latestTimes = new Map();
+        cartItemData.forEach(item => {
+            const { variant_id, added_time } = item;
+            if (!latestTimes.has(variant_id) || new Date(added_time) > new Date(latestTimes.get(variant_id))) {
+                latestTimes.set(variant_id, added_time);
+            }
+        });
+        cartItemData = (Array.from(
+          latestTimes, ([variant_id, added_time]) => ({ variant_id, added_time })
+        ));
+
+        localStorage.setItem('cartTimerData', JSON.stringify(cartItemData));
       }
     }
   );

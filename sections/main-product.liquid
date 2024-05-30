@@ -35,6 +35,7 @@
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'wishlist.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'cart_timer.js' | asset_url }}" defer="defer"></script>
   {%- if product.quantity_price_breaks_configured? -%}
     <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
@@ -471,8 +472,17 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
-              
-              <button onclick="wishlist({{ product.id }})">Add to Wishlist</button>
+                {% for wishlist in section.blocks %}
+                  {% if wishlist.settings.show_wishlist != blank %}
+                    <button
+                      class="product-form__submit button button--full-width button--secondary"
+                      onclick="wishlist(this.value)"
+                      value="{{ product.handle }}"
+                    >
+                      <span>{{ wishlist.settings.wishlist_text }}</span>
+                    </button>
+                  {% endif %}
+                {% endfor %}
               {%- when 'rating' -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}
                   <div class="rating-wrapper">
@@ -991,6 +1001,23 @@
           "default": true,
           "label": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.label",
           "info": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.info"
+        }
+      ]
+    },
+    {
+      "type": "wishlist",
+      "name": "wishlist",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_wishlist",
+          "label": "Show Wishlist"
+        },
+        {
+          "type": "text",
+          "id": "wishlist_text",
+          "label": "Add Wishlist Label"
         }
       ]
     },

@@ -432,7 +432,7 @@
                         {%- endif -%}
                       </div>
                     </td>
-                    <td>12</td>
+                    <td><div id="timer_countdown">1:00</div></td>
                   </tr>
                 {%- endfor -%}
               </tbody>
@@ -494,7 +494,7 @@
 {% endschema %}
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    let duration = parseInt({{ section.settings.timer }}) * 60;
+    let duration = 1 * 60;
     let display = document.getElementById('timer_countdown');
     let interval;
     function startTimer(duration, display) {

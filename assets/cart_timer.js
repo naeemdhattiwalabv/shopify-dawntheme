@@ -12,13 +12,15 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function startTimer(duration, display) {
+  console.log('duration : '+duration);
+  console.log('timer : '+timer)
   let timer = duration, minutes, seconds;
 
   interval = setInterval(function() {
       minutes = (Math.floor(timer / 60)).toFixed(2);
       seconds = (timer % 60).toFixed(2);
-      console.log(minutes);
-      console.log(seconds);
+      console.log('minutes : '+minutes);
+      console.log('seconds : '+seconds);
 
       //minutes = minutes < 10 ? '0' + minutes.toFixed(2) : minutes.toFixed(2);
       //seconds = seconds < 10 ? '0' + seconds.toFixed(2) : seconds.toFixed(2);

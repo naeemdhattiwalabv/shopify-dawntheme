@@ -12,13 +12,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function startTimer(duration, display) {
   console.log('duration : '+duration);
+ 
+  let timer = duration, minutes, seconds;
+
+  console.log('timer : '+timer);
+
   interval = setInterval(function() {
-      let timer = duration, minutes, seconds;
-      console.log('timer : '+timer);
       minutes = (Math.floor(timer / 60));
       seconds = Math.round((timer % 60).toFixed(2));
       console.log('minutes : '+minutes);
       console.log('seconds : '+seconds);
+
       minutes = minutes < 10 ? '0' + minutes : minutes;
       seconds = seconds < 10 ? '0' + seconds : seconds;
       display.textContent = minutes + ':' + seconds;

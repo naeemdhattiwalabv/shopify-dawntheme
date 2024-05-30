@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let display = document.getElementById('timer_countdown_'+localCartItemData[index]['variant_id']);
     let duration = (diffTime / 60000) * 60;
     console.log(duration);
+    if(duration < 0.00) {
+      var test = 1.00 - duration;
+      duration = duration + test; 
+    }
     startTimer(duration.toFixed(2), display);
   }
 });

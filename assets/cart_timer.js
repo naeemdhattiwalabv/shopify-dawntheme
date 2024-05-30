@@ -20,7 +20,7 @@ function startTimer(duration, display) {
 
   interval = setInterval(function() {
       minutes = (Math.floor(timer / 60));
-      seconds = (timer % 60);
+      seconds = (timer % 60).toFixed(2);
       console.log('minutes : '+minutes);
       console.log('seconds : '+seconds);
 

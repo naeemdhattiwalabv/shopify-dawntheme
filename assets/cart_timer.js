@@ -13,8 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function startTimer(duration, display) {
   console.log('duration : '+duration);
-  console.log('timer : '+timer)
+ 
   let timer = duration, minutes, seconds;
+
+  console.log('timer : '+timer);
 
   interval = setInterval(function() {
       minutes = (Math.floor(timer / 60)).toFixed(2);

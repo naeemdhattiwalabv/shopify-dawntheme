@@ -72,7 +72,7 @@ function checkCartData(){
   for (let index = 0; index < localCartItemData.length; index++) {
     var localDateTime = localCartItemData[index]['added_time'];
     const currentDateTime = new Date();
-    const diffTime = Math.abs(date2 - new Date(localDateTime));
+    const diffTime = Math.abs(currentDateTime - new Date(localDateTime));
     if(Math.floor(diffTime / 60000) >= 1) {
      removeCartData(localCartItemData[index]['variant_id']);
     }

@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
    //display.innerHTML = time;
    let duration = parseInt(1) * 60;
     let interval;
-    function startTimer(duration, display) {
+    //function startTimer(duration, display) {
         let timer = duration, minutes, seconds;
 
         interval = setInterval(function() {
@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // }
         }, 1000);
     }
-    startTimer(duration, display);
-  }
+    //startTimer(duration, display);
+  //}
 });
 
 function checkCartData(){

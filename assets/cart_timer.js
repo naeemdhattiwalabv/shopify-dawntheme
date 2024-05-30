@@ -4,11 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var localDateTime = localCartItemData[index]['added_time'];
     const date2 = new Date();
     const diffTime = Math.abs(date2 - new Date(localDateTime));
+    let duration = 1 * 60;
+    alert(duration);
+    let display = document.getElementById('timer_countdown_'+localCartItemData[index]['variant_id']);
+    display.innerHTML = duration;
   }
-  let duration = 1 * 60;
-  alert(duration);
-  let display = document.getElementById('timer_countdown');
-  display.innerHTML = duration;
 
   // let interval;
   // function startTimer(duration, display) {

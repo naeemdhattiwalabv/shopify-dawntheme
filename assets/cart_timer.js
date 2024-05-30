@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   let duration = diffTime * 60;
   let display = document.getElementById('timer_countdown');
-  document.getElementById('timer_countdown').innerHTML = diffTime;
+  document.getElementById('timer_countdown').innerHTML = duration;
   // let interval;
   // function startTimer(duration, display) {
   //     let timer = duration, minutes, seconds;

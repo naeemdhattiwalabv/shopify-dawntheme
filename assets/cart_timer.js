@@ -16,7 +16,7 @@ function updateCountdown(expirationTime, timer) {
   var minutes = Math.floor((distance % (1000 * 61 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  timer.textContent = minutes +":"+ seconds;
+  timer.textContent = minutes + " : " + seconds;
 
   if (distance < 0) {
     clearInterval(countdownInterval);

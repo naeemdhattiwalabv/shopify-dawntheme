@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function startTimer(duration, display) {
   console.log('duration : '+duration + 1);
- 
+  console.log('duration : '+duration * 1 / 0.60);
   let timer = duration, minutes, seconds;
 
   console.log('timer : '+timer);

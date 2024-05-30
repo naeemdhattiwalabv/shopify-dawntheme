@@ -1,13 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
   var localCartItemData = JSON.parse(localStorage.getItem('cartTimerData'));
-
   for (let index = 0; index < localCartItemData.length; index++) {
       var localDateTime = localCartItemData[index]['added_time'];
+      let variant_id = localCartItemData[index]['variant_id'];
       const currentDateTime = new Date();
       const diffTime = Math.abs(currentDateTime - new Date(localDateTime));
-      let display = document.getElementById('timer_countdown_' + localCartItemData[index]['variant_id']);
+      let display = document.getElementById('timer_countdown_' + variant_id);
       let duration = Math.max(60 - (diffTime / 1000), 0);
-      let variant_id = localCartItemData[index]['variant_id'];
       showTimer(duration, display, variant_id);
   }
 });

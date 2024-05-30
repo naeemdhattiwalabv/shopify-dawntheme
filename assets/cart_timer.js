@@ -76,9 +76,8 @@ function removeCartData(variant_id) {
 //   }
 // }, 5000);
 
-
-document.querySelectorAll('.quantity__button').forEach(button => {
-  button.addEventListener('click', () => {
-    alert('test');
+document.querySelectorAll(".quantity__button").forEach((button) => {
+  button.addEventListener("click", () => {
+    cartData();
   });
 });

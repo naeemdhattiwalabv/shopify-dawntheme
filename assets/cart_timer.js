@@ -103,8 +103,8 @@ function removeCartData(variant_id){
   });
 }
 
-var intervalId = window.setInterval(function(){
-  if(JSON.parse(localStorage.getItem('cartTimerData'))) {
-    checkCartData();
-  }
-}, 5000);
+// var intervalId = window.setInterval(function(){
+//   if(JSON.parse(localStorage.getItem('cartTimerData'))) {
+//     checkCartData();
+//   }
+// }, 5000);

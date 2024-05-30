@@ -57,6 +57,7 @@ function showTimer(duration, display,variant_id) {
 
       if (timer <= 0) {
           clearInterval(interval);
+          display.textContent = "Expired";
           removeCartData(variant_id);
       }
       timer--;

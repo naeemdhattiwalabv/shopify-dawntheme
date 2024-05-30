@@ -82,6 +82,6 @@ function removeCartData(variant_id) {
 
 document.querySelectorAll(".quantity__button").forEach((button) => {
   button.addEventListener("click", () => {
-    cartData();
+    location.reload();
   });
 });

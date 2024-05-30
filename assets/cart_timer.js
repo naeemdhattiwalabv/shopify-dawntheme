@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const diffTime = Math.abs(date2 - new Date(localDateTime));
   }
   let duration = diffTime * 60;
+  alert(duration);
   let display = document.getElementById('timer_countdown');
   display.innerHTML = duration;
 

@@ -56,8 +56,8 @@ function showTimer(duration, display,variant_id) {
       display.textContent = minutes + ':' + seconds;
 
       if (timer <= 0) {
-          removeCartData(variant_id);
           clearInterval(interval);
+          removeCartData(variant_id);
       }
       timer--;
   }, 1000);

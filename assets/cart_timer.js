@@ -31,7 +31,10 @@
 // }
 
 document.addEventListener('DOMContentLoaded', function () {
-  var countdownTimers = document.querySelectorAll('#timer_countdown');
+  var localCartItemData = JSON.parse(localStorage.getItem('cartTimerData'));
+  for (let index = 0; index < localCartItemData.length; index++) {
+    var countdownTimers = document.getElementById('timer_countdown_'+localCartItemData[index]['variant_id']);
+  }
 
   countdownTimers.forEach(function (timer) {
     var variantId = timer.dataset.variantId;

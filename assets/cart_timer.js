@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function startTimer(duration, display) {
   console.log('duration : '+duration + 1);
   console.log('final duration : '+duration * 1 / 0.60);
-  duration = 1:00;
+  duration = Math.round(1);
   let timer = duration, minutes, seconds;
 
   console.log('timer : '+timer);

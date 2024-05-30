@@ -6,23 +6,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const diffTime = Math.abs(date2 - new Date(localDateTime));
     let display = document.getElementById('timer_countdown_'+localCartItemData[index]['variant_id']);
     let duration = (diffTime / 60000) * 60;
-   startTimer(duration.toFixed(2), display);
-    
+    startTimer(duration.toFixed(2), display);
   }
 });
 
 function startTimer(duration, display) {
-  console.log('duration : '+duration);
  
   let timer = duration, minutes, seconds;
-
-  console.log('timer : '+timer);
-
   interval = setInterval(function() {
       minutes = (Math.floor(timer / 60));
       seconds = Math.round((timer % 60).toFixed(2));
-      console.log('minutes : '+minutes);
-      console.log('seconds : '+seconds);
 
       minutes = minutes < 10 ? '0' + minutes : minutes;
       seconds = seconds < 10 ? '0' + seconds : seconds;

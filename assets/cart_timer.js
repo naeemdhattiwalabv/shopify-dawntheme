@@ -1,4 +1,4 @@
-function cartTimer() {
+document.addEventListener("DOMContentLoaded", function cartData() {
   var localCartItemData = JSON.parse(localStorage.getItem("cartTimerData"));
   for (let index = 0; index < localCartItemData.length; index++) {
     var localStorageDateTime = localCartItemData[index]["added_time"];
@@ -9,7 +9,7 @@ function cartTimer() {
     let duration = Math.max(60 - diffTime / 1000, 0);
     showTimer(duration, display, variantId);
   }
-}
+});
 
 function showTimer(duration, display, variantId) {
   let timer = duration,
@@ -77,8 +77,6 @@ function removeCartData(variant_id) {
 // }, 5000);
 
 
-document.querySelectorAll('.quantity__button').forEach(button => {
-  button.addEventListener('click', () => {
+document.querySelectorAll('.quantity__button').click,function(
     alert('test');
-  });
-});
+)

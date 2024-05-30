@@ -17,6 +17,8 @@ function startTimer(duration, display) {
   interval = setInterval(function() {
       minutes = (Math.floor(timer / 60)).toFixed(2);
       seconds = (timer % 60).toFixed(2);
+      console.log(minutes);
+      console.log(seconds);
 
       //minutes = minutes < 10 ? '0' + minutes.toFixed(2) : minutes.toFixed(2);
       //seconds = seconds < 10 ? '0' + seconds.toFixed(2) : seconds.toFixed(2);

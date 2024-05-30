@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log(duration);
     if(duration < 0.00) {
       var test = 1.00 - duration;
-      duration = duration + test; 
+      duration = duration + 1; 
     }
     startTimer(duration.toFixed(2), display);
   }

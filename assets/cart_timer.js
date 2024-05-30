@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   let duration = 1 * 60;
   let display = document.getElementById('timer_countdown');
-  alert(display.value);
+  alert(display.text);
   let interval;
   function startTimer(duration, display) {
       let timer = duration, minutes, seconds;

@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let display = document.getElementById('timer_countdown_'+localCartItemData[index]['variant_id']);
    //display.innerHTML = time;
    let duration = parseInt(1) * 60;
+   startTimer(duration, display);
     
   }
 });

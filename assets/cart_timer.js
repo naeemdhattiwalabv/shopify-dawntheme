@@ -24,8 +24,8 @@ function startTimer(duration, display) {
       console.log('minutes : '+minutes);
       console.log('seconds : '+seconds);
 
-      //minutes = minutes < 10 ? '0' + minutes.toFixed(2) : minutes.toFixed(2);
-      //seconds = seconds < 10 ? '0' + seconds.toFixed(2) : seconds.toFixed(2);
+      minutes = minutes < 10 ? '0' + minutes.toFixed(2) : minutes.toFixed(2);
+      seconds = seconds < 10 ? '0' + seconds.toFixed(2) : seconds.toFixed(2);
       display.textContent = minutes + ':' + seconds;
       timer++;
   }, 1000);

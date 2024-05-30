@@ -19,7 +19,7 @@ function startTimer(duration, display) {
 
       minutes = minutes < 10 ? '0' + minutes : minutes;
       seconds = seconds < 10 ? '0' + seconds : seconds;
-      display.textContent = minutes+1 + ':' + seconds;
+      display.textContent = parseInt(minutes)+1 + ':' + seconds;
       timer--;
   }, 1000);
 }

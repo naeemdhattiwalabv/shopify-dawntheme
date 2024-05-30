@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCountdown(duration.toFixed(2), display);
   }
 });
+
 function updateCountdown(expirationTime, timer) {
   var now = new Date().getTime();
   var distance = expirationTime - now;
@@ -21,7 +22,7 @@ function updateCountdown(expirationTime, timer) {
   if (distance < 0) {
     clearInterval(countdownInterval);
     timer.textContent = 'Expired';
-    removeCartData(variantId);
+    //removeCartData(variantId);
   }
 }
 

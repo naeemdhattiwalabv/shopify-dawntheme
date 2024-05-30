@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-function showTimer(duration, display) {
+function showTimer(duration, display,variant_id) {
   let timer = duration, minutes, seconds;
   let interval = setInterval(function() {
       minutes = Math.floor(timer / 60);
@@ -63,21 +63,21 @@ function showTimer(duration, display) {
   }, 1000);
 }
 
-function checkCartData(){
-  if(JSON.parse(localStorage.getItem('cartTimerData')).length == 0) {
-    clearInterval(intervalId);
-  }
-  var localCartItemData = JSON.parse(localStorage.getItem('cartTimerData'));
+// function checkCartData(){
+//   if(JSON.parse(localStorage.getItem('cartTimerData')).length == 0) {
+//     clearInterval(intervalId);
+//   }
+//   var localCartItemData = JSON.parse(localStorage.getItem('cartTimerData'));
 
-  for (let index = 0; index < localCartItemData.length; index++) {
-    var localDateTime = localCartItemData[index]['added_time'];
-    const currentDateTime = new Date();
-    const diffTime = Math.abs(currentDateTime - new Date(localDateTime));
-    if(Math.floor(diffTime / 60000) >= 1) {
-     removeCartData(localCartItemData[index]['variant_id']);
-    }
-  }
-}
+//   for (let index = 0; index < localCartItemData.length; index++) {
+//     var localDateTime = localCartItemData[index]['added_time'];
+//     const currentDateTime = new Date();
+//     const diffTime = Math.abs(currentDateTime - new Date(localDateTime));
+//     if(Math.floor(diffTime / 60000) >= 1) {
+//      removeCartData(localCartItemData[index]['variant_id']);
+//     }
+//   }
+// }
 
 function removeCartData(variant_id){
   fetch(window.Shopify.routes.root + 'cart/change.js', {

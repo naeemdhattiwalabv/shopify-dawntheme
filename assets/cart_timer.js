@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const date2 = new Date();
     const diffTime = Math.abs(date2 - new Date(localDateTime));
     let display = document.getElementById('timer_countdown_'+localCartItemData[index]['variant_id']);
-    let duration = Math.floor(diffTime / 60000) * ((diffTime % 60000) / 1000).toFixed(0);
+    let duration = Math.floor(diffTime / 60000) * 60;
    startTimer(duration, display);
     
   }

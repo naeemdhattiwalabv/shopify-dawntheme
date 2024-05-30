@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const diffTime = Math.abs(currentDateTime - new Date(localDateTime));
     let display = document.getElementById('timer_countdown_'+localCartItemData[index]['variant_id']);
     let duration = (diffTime / 60000) * 60;
-    startTimer(duration.toFixed(2), display);
+    showTimer(duration.toFixed(2), display);
   }
 });
 
-function startTimer(duration, display) {
+function showTimer(duration, display) {
   console.log('duration : '+duration);
  
   let timer = duration, minutes, seconds;

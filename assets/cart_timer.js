@@ -75,3 +75,8 @@ function removeCartData(variant_id) {
 //     checkCartData();
 //   }
 // }, 5000);
+
+
+document.querySelectorAll('.quantity__button').click,function(
+    alert('test');
+)

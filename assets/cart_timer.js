@@ -24,6 +24,7 @@ function startTimer(duration, display) {
       display.textContent = minutes + ':' + seconds;
       timer++;
   }, 1000);
+  startTimer(duration, display);
 }
 
 function checkCartData(){

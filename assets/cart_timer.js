@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const diffTime = Math.abs(currentDateTime - new Date(localDateTime));
       let display = document.getElementById('timer_countdown_' + localCartItemData[index]['variant_id']);
       let duration = Math.max(60 - (diffTime / 1000), 0);
-      let variant_id = localCartItemData[index]['added_time']
+      let variant_id = localCartItemData[index]['variant_id'];
       showTimer(duration, display, variant_id);
   }
 });

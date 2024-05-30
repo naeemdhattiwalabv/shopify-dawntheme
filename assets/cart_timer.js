@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function cartData() {
+document.addEventListener("DOMContentLoaded", cartData function () {
   var localCartItemData = JSON.parse(localStorage.getItem("cartTimerData"));
   for (let index = 0; index < localCartItemData.length; index++) {
     var localStorageDateTime = localCartItemData[index]["added_time"];

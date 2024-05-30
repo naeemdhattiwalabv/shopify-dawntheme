@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const date2 = new Date();
     const diffTime = Math.abs(date2 - new Date(localDateTime));
     let display = document.getElementById('timer_countdown_'+localCartItemData[index]['variant_id']);
-    let duration = diffTime / 60000 * 60;
+    let duration = (diffTime / 60000) * 60;
    startTimer(duration, display);
     
   }
@@ -20,8 +20,10 @@ function startTimer(duration, display) {
 
       minutes = minutes < 10 ? '0' + minutes : minutes;
       seconds = seconds < 10 ? '0' + seconds : seconds;
+      remainingSeconds = seconds < 10 ? '0' + seconds : seconds;
 
-      display.textContent = minutes + ':' + seconds;
+
+      display.textContent = minutes + ':' + remainingSeconds;
       timer++;
   }, 1000);
 }

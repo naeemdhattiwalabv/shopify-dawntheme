@@ -6,32 +6,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const diffTime = Math.abs(date2 - new Date(localDateTime));
     let display = document.getElementById('timer_countdown_'+localCartItemData[index]['variant_id']);
     let duration = (diffTime / 60000) * 60;
-    console.log(duration);
-    if(duration < 0.00) {
-      var test = 1.00 - duration;
-      duration = duration + 1; 
-    } else {
-      duration - 1;
-    }
     startTimer(duration.toFixed(2), display);
   }
 });
 
 function startTimer(duration, display) {
-  let timer = duration;
-  let interval = setInterval(function() {
-      let minutes = Math.floor(timer / 60);
-      let seconds = timer % 60;
+  console.log('duration : '+duration);
+ 
+  let timer = duration, minutes, seconds;
+
+  console.log('timer : '+timer);
+
+  interval = setInterval(function() {
+      minutes = (Math.floor(timer / 60));
+      seconds = Math.round((timer % 60).toFixed(2));
+      console.log('minutes : '+minutes);
+      console.log('seconds : '+seconds);
 
       minutes = minutes < 10 ? '0' + minutes : minutes;
       seconds = seconds < 10 ? '0' + seconds : seconds;
-
       display.textContent = minutes + ':' + seconds;
-
-      if (--timer < 0) {
-          clearInterval(interval);
-          alert('Time is up!');
-      }
+      timer++;
   }, 1000);
 }
 

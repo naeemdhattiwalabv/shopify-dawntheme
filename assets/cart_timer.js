@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
   var localCartItemData = JSON.parse(localStorage.getItem('cartTimerData'));
   for (let index = 0; index < localCartItemData.length; index++) {
     var localDateTime = localCartItemData[index]['added_time'];
-    const date2 = new Date();
-    const diffTime = Math.abs(date2 - new Date(localDateTime));
+    const currentDateTime = new Date();
+    const diffTime = Math.abs(currentDateTime - new Date(localDateTime));
     let display = document.getElementById('timer_countdown_'+localCartItemData[index]['variant_id']);
     let duration = (diffTime / 60000) * 60;
     startTimer(duration.toFixed(2), display);
@@ -38,7 +38,7 @@ function checkCartData(){
 
   for (let index = 0; index < localCartItemData.length; index++) {
     var localDateTime = localCartItemData[index]['added_time'];
-    const date2 = new Date();
+    const currentDateTime = new Date();
     const diffTime = Math.abs(date2 - new Date(localDateTime));
     if(Math.floor(diffTime / 60000) >= 1) {
      removeCartData(localCartItemData[index]['variant_id']);

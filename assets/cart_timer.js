@@ -12,9 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function startTimer(duration, display) {
-  console.log('duration : '+duration + 1);
-  console.log('final duration : '+duration * 1 / 0.60);
-  duration = Math.round(1);
+  console.log('duration : '+duration);
+ 
   let timer = duration, minutes, seconds;
 
   console.log('timer : '+timer);
@@ -28,7 +27,7 @@ function startTimer(duration, display) {
       minutes = minutes < 10 ? '0' + minutes : minutes;
       seconds = seconds < 10 ? '0' + seconds : seconds;
       display.textContent = minutes + ':' + seconds;
-      timer--;
+      timer++;
   }, 1000);
 }
 

@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let duration = 1 * 60;
     let timer = duration, minutes, seconds;
     interval = setInterval(function() {
+        alert('test');
         minutes = Math.floor(timer / 60);
         seconds = timer % 60;
 

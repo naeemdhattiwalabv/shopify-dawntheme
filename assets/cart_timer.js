@@ -11,16 +11,20 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function startTimer(duration, display) {
- 
-  let timer = duration, minutes, seconds;
-  interval = setInterval(function() {
-      minutes = (Math.floor(timer / 60));
-      seconds = Math.round((timer % 60).toFixed(2));
+  let timer = duration;
+  let interval = setInterval(function() {
+      let minutes = Math.floor(timer / 60);
+      let seconds = timer % 60;
 
       minutes = minutes < 10 ? '0' + minutes : minutes;
       seconds = seconds < 10 ? '0' + seconds : seconds;
+
       display.textContent = minutes + ':' + seconds;
-      timer++;
+
+      if (--timer < 0) {
+          clearInterval(interval);
+          alert('Time is up!');
+      }
   }, 1000);
 }
 

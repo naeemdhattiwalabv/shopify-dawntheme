@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var variantId = timer.dataset.variantId;
     var cartTimerData = JSON.parse(localStorage.getItem('cartTimerData')) || [];
     var cartItemData = cartTimerData.find((item) => item.variant_id.toString() === variantId);
-    console.log(cartItemData.expiration_time);
+    //console.log(cartItemData.expiration_time);
     if (cartItemData && cartItemData.expiration_time) {
       var expirationTime = new Date(cartItemData.expiration_time);
 

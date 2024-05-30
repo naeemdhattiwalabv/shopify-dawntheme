@@ -8,17 +8,17 @@ document.addEventListener('DOMContentLoaded', function() {
     let display = document.getElementById('timer_countdown_'+localCartItemData[index]['variant_id']);
     display.innerHTML = time;
     
-    // let duration = 1 * 60;
-    // let timer = duration, minutes, seconds;
-    // interval = setInterval(function() {
-    //     minutes = Math.floor(timer / 60);
-    //     seconds = timer % 60;
+    let duration = 1 * 60;
+    let timer = duration, minutes, seconds;
+    interval = setInterval(function() {
+        minutes = Math.floor(timer / 60);
+        seconds = timer % 60;
 
-    //     minutes = minutes < 10 ? '0' + minutes : minutes;
-    //     seconds = seconds < 10 ? '0' + seconds : seconds;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
 
-    //     display.textContent = minutes + ':' + seconds;
-    // }, 1000);
+        display.innerHTML = minutes + ':' + seconds;
+    }, 1000);
   }
 });
 

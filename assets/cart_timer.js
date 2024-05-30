@@ -22,6 +22,7 @@ function startTimer(duration, display) {
       seconds = seconds < 10 ? '0' + seconds : seconds;
 
       display.textContent = minutes + ':' + seconds;
+      timer++;
   }, 1000);
 }
 startTimer(duration, display);

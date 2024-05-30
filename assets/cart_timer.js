@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var time = Math.floor(diffTime / 60000) + ":" + ((diffTime % 60000) / 1000).toFixed(0);
     let display = document.getElementById('timer_countdown_'+localCartItemData[index]['variant_id']);
    //display.innerHTML = time;
-   let duration = parseInt(1) * 60;
+   let duration = Math.floor(diffTime / 60000) * 60;
    startTimer(duration, display);
     
   }

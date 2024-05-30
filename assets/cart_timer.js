@@ -19,8 +19,7 @@ function startTimer(duration, display) {
       seconds = timer % 60;
 
       minutes = minutes < 10 ? '0' + minutes.toFixed(2) : minutes.toFixed(2);
-      seconds = seconds < 10 ? '0' + seconds : seconds;
-
+      seconds = seconds < 10 ? '0' + seconds.toFixed(2) : seconds.toFixed(2);
       display.textContent = minutes + ':' + seconds;
       timer++;
   }, 1000);

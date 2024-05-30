@@ -1,34 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
   var localCartItemData = JSON.parse(localStorage.getItem('cartTimerData'));
   for (let index = 0; index < localCartItemData.length; index++) {
-    var localDateTime = localCartItemData[index]['added_time'];
-    const date2 = new Date();
-    const diffTime = Math.abs(date2 - new Date(localDateTime));
-    alert(Math.floor(diffTime / 60000));
+    // let duration = parseInt(1) * 60;
     // let display = document.getElementById('timer_countdown_'+localCartItemData[index]['variant_id']);
-    // display.innerHTML = duration;
+    // let interval;
+    // function startTimer(duration, display) {
+    //     let timer = duration, minutes, seconds;
+
+    //     interval = setInterval(function() {
+    //         minutes = Math.floor(timer / 60);
+    //         seconds = timer % 60;
+
+    //         minutes = minutes < 10 ? '0' + minutes : minutes;
+    //         seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    //         display.textContent = minutes + ':' + seconds;
+
+    //         if (--timer < 0) {
+    //           clearInterval(interval);
+    //           startTimer(duration, display);
+    //         }
+    //     }, 1000);
+    // }
+    // startTimer(duration, display);
   }
-
-  // let interval;
-  // function startTimer(duration, display) {
-  //     let timer = duration, minutes, seconds;
-
-  //     interval = setInterval(function() {
-  //         minutes = Math.floor(timer / 60);
-  //         seconds = timer % 60;
-
-  //         minutes = minutes < 10 ? '0' + minutes : minutes;
-  //         seconds = seconds < 10 ? '0' + seconds : seconds;
-
-  //         display.textContent = minutes + ':' + seconds;
-
-  //         if (--timer < 0) {
-  //           clearInterval(interval);
-  //           startTimer(duration, display);
-  //         }
-  //     }, 1000);
-  // }
-  // startTimer(duration, display);
 });
 
 function checkCartData(){

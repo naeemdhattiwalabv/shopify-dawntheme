@@ -1,32 +1,65 @@
+// document.addEventListener('DOMContentLoaded', function() {
+//   var localCartItemData = JSON.parse(localStorage.getItem('cartTimerData'));
+//   for (let index = 0; index < localCartItemData.length; index++) {
+//     var localDateTime = localCartItemData[index]['added_time'];
+//     const currentDateTime = new Date();
+//     const diffTime = Math.abs(currentDateTime - new Date(localDateTime));
+//     let display = document.getElementById('timer_countdown_'+localCartItemData[index]['variant_id']);
+//     let duration = (diffTime / 60000) * 60;
+//     showTimer(duration.toFixed(2), display);
+//   }
+// });
+
+// function showTimer(duration, display) {
+//   console.log('duration : '+duration);
+ 
+//   let timer = duration, minutes, seconds;
+
+//   console.log('timer : '+timer);
+
+//   interval = setInterval(function() {
+//       minutes = (Math.floor(timer / 60));
+//       seconds = Math.round((timer % 60).toFixed(2));
+//       console.log('minutes : '+minutes);
+//       console.log('seconds : '+seconds);
+
+//       minutes = minutes < 10 ? '0' + minutes : minutes;
+//       seconds = seconds < 10 ? '0' + seconds : seconds;
+//       display.textContent = minutes + ':' + seconds;
+//       timer++;
+//   }, 1000);
+// }
+
 document.addEventListener('DOMContentLoaded', function() {
   var localCartItemData = JSON.parse(localStorage.getItem('cartTimerData'));
+
   for (let index = 0; index < localCartItemData.length; index++) {
-    var localDateTime = localCartItemData[index]['added_time'];
-    const currentDateTime = new Date();
-    const diffTime = Math.abs(currentDateTime - new Date(localDateTime));
-    let display = document.getElementById('timer_countdown_'+localCartItemData[index]['variant_id']);
-    let duration = (diffTime / 60000) * 60;
-    showTimer(duration.toFixed(2), display);
+      var localDateTime = localCartItemData[index]['added_time'];
+      const currentDateTime = new Date();
+      const diffTime = Math.abs(currentDateTime - new Date(localDateTime));
+      let display = document.getElementById('timer_countdown_' + localCartItemData[index]['variant_id']);
+      let duration = Math.max(20 - (diffTime / 1000), 0); // Subtract elapsed seconds from 20 seconds
+      showTimer(duration, display);
   }
 });
 
 function showTimer(duration, display) {
-  console.log('duration : '+duration);
- 
   let timer = duration, minutes, seconds;
-
-  console.log('timer : '+timer);
-
-  interval = setInterval(function() {
-      minutes = (Math.floor(timer / 60));
-      seconds = Math.round((timer % 60).toFixed(2));
-      console.log('minutes : '+minutes);
-      console.log('seconds : '+seconds);
+  let interval = setInterval(function() {
+      minutes = Math.floor(timer / 60);
+      seconds = Math.floor(timer % 60);
 
       minutes = minutes < 10 ? '0' + minutes : minutes;
       seconds = seconds < 10 ? '0' + seconds : seconds;
+
       display.textContent = minutes + ':' + seconds;
-      timer++;
+
+      if (timer <= 0) {
+          clearInterval(interval);
+          alert('Time is up!');
+      }
+
+      timer--;
   }, 1000);
 }
 

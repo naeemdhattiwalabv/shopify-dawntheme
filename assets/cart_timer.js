@@ -38,7 +38,7 @@ function checkCartData(){
     const date2 = new Date();
     const diffTime = Math.abs(date2 - new Date(localDateTime));
     if(Math.floor(diffTime / 60000) >= 1) {
-     removeCartData(localCartItemData[index]['variant_id']);
+     //removeCartData(localCartItemData[index]['variant_id']);
     }
   }
 }

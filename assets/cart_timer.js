@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let display = document.getElementById('timer_countdown_'+localCartItemData[index]['variant_id']);
     display.innerHTML = time;
     
-    let duration = 1 * 60;
+    let duration = Math.floor(diffTime / 60000) * 60;
     let timer = duration, minutes, seconds;
     interval = setInterval(function() {
         minutes = Math.floor(timer / 60);

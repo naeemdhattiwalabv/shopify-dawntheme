@@ -22,11 +22,6 @@ function startTimer(duration, display) {
       seconds = seconds < 10 ? '0' + seconds : seconds;
 
       display.textContent = minutes + ':' + seconds;
-
-      if (++timer < 0) {
-        clearInterval(interval);
-        startTimer(duration, display);
-      }
   }, 1000);
 }
 startTimer(duration, display);
@@ -42,7 +37,7 @@ function checkCartData(){
     const date2 = new Date();
     const diffTime = Math.abs(date2 - new Date(localDateTime));
     if(Math.floor(diffTime / 60000) >= 1) {
-     // removeCartData(localCartItemData[index]['variant_id']);
+     removeCartData(localCartItemData[index]['variant_id']);
     }
   }
 }
@@ -71,8 +66,8 @@ function removeCartData(variant_id){
   });
 }
 
-// var intervalId = window.setInterval(function(){
-//   if(JSON.parse(localStorage.getItem('cartTimerData'))) {
-//     checkCartData();
-//   }
-// }, 5000);
+var intervalId = window.setInterval(function(){
+  if(JSON.parse(localStorage.getItem('cartTimerData'))) {
+    checkCartData();
+  }
+}, 5000);

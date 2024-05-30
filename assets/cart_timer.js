@@ -25,7 +25,6 @@ function startTimer(duration, display) {
       timer++;
   }, 1000);
 }
-startTimer(duration, display);
 
 function checkCartData(){
   if(JSON.parse(localStorage.getItem('cartTimerData')).length == 0) {

@@ -1,67 +1,35 @@
-// document.addEventListener('DOMContentLoaded', function() {
-//   var localCartItemData = JSON.parse(localStorage.getItem('cartTimerData'));
-//   for (let index = 0; index < localCartItemData.length; index++) {
-//     var localDateTime = localCartItemData[index]['added_time'];
-//     const date2 = new Date();
-//     const diffTime = Math.abs(date2 - new Date(localDateTime));
-//     let display = document.getElementById('timer_countdown_'+localCartItemData[index]['variant_id']);
-//     let duration = (diffTime / 60000) * 60;
-//     startTimer(duration.toFixed(2), display);
-//   }
-// });
-
-// function startTimer(duration, display) {
-//   console.log('duration : '+duration);
- 
-//   let timer = duration, minutes, seconds;
-
-//   console.log('timer : '+timer);
-
-//   interval = setInterval(function() {
-//       minutes = (Math.floor(timer / 60));
-//       seconds = Math.round((timer % 60).toFixed(2));
-//       console.log('minutes : '+minutes);
-//       console.log('seconds : '+seconds);
-
-//       minutes = minutes < 10 ? '0' + minutes : minutes;
-//       seconds = seconds < 10 ? '0' + seconds : seconds;
-//       display.textContent = minutes + ':' + seconds;
-//       timer++;
-//   }, 1000);
-// }
-
-document.addEventListener('DOMContentLoaded', function () {
-  var countdownTimers = document.querySelectorAll('.timer_countdown');
-
-  countdownTimers.forEach(function (timer) {
-    var variantId = timer.dataset.variantId;
-    var cartTimerData = JSON.parse(localStorage.getItem('cartTimerData')) || [];
-    var cartItemData = cartTimerData.find((item) => item.variant_id.toString() === variantId);
-    //console.log(cartItemData.expiration_time);
-    if (cartItemData && cartItemData.expiration_time) {
-      var expirationTime = new Date(cartItemData.expiration_time);
-
-      function updateCountdown() {
-        var now = new Date().getTime();
-        var distance = expirationTime - now;
-
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        timer.textContent = `${minutes}m ${seconds}s`;
-
-        if (distance < 0) {
-          clearInterval(countdownInterval);
-          timer.textContent = 'Expired';
-          removeCartData(variantId);
-        }
-      }
-
-      var countdownInterval = setInterval(updateCountdown, 1000);
-      updateCountdown();
-    }
-  });
+document.addEventListener('DOMContentLoaded', function() {
+  var localCartItemData = JSON.parse(localStorage.getItem('cartTimerData'));
+  for (let index = 0; index < localCartItemData.length; index++) {
+    var localDateTime = localCartItemData[index]['added_time'];
+    const date2 = new Date();
+    const diffTime = Math.abs(date2 - new Date(localDateTime));
+    let display = document.getElementById('timer_countdown_'+localCartItemData[index]['variant_id']);
+    let duration = (diffTime / 60000) * 60;
+    startTimer(duration.toFixed(2), display);
+  }
 });
+
+function startTimer(duration, display) {
+  console.log('duration : '+duration);
+ 
+  let timer = duration, minutes, seconds;
+
+  console.log('timer : '+timer);
+
+  interval = setInterval(function() {
+      minutes = (Math.floor(timer / 60));
+      seconds = Math.round((timer % 60).toFixed(2));
+      console.log('minutes : '+minutes);
+      console.log('seconds : '+seconds);
+
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+      display.textContent = minutes + ':' + seconds;
+      timer++;
+  }, 1000);
+}
+
 function checkCartData(){
   if(JSON.parse(localStorage.getItem('cartTimerData')).length == 0) {
     clearInterval(intervalId);

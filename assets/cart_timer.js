@@ -4,26 +4,21 @@ document.addEventListener('DOMContentLoaded', function() {
     var localDateTime = localCartItemData[index]['added_time'];
     const date2 = new Date();
     const diffTime = Math.abs(date2 - new Date(localDateTime));
-    var time = Math.floor(diffTime / 60000);
+    var time = Math.floor(diffTime / 60000) + ((diffTime % 60000) / 1000).toFixed(0);
     let display = document.getElementById('timer_countdown_'+localCartItemData[index]['variant_id']);
-    display.innerHTML = time+":00";
-    let duration = 1 * 60;
-    let timer = duration, minutes, seconds;
+    display.innerHTML = time;
+    
+    // let duration = 1 * 60;
+    // let timer = duration, minutes, seconds;
+    // interval = setInterval(function() {
+    //     minutes = Math.floor(timer / 60);
+    //     seconds = timer % 60;
 
-        interval = setInterval(function() {
-            minutes = Math.floor(timer / 60);
-            seconds = timer % 60;
+    //     minutes = minutes < 10 ? '0' + minutes : minutes;
+    //     seconds = seconds < 10 ? '0' + seconds : seconds;
 
-            minutes = minutes < 10 ? '0' + minutes : minutes;
-            seconds = seconds < 10 ? '0' + seconds : seconds;
-
-            display.textContent = minutes + ':' + seconds;
-
-            if (--timer < 0) {
-                clearInterval(interval);
-                alert('Time is up!');
-            }
-        }, 1000);
+    //     display.textContent = minutes + ':' + seconds;
+    // }, 1000);
   }
 });
 

@@ -6,19 +6,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const diffTime = Math.abs(date2 - new Date(localDateTime));
     var time = Math.floor(diffTime / 60000) + ":" + ((diffTime % 60000) / 1000).toFixed(0);
     let display = document.getElementById('timer_countdown_'+localCartItemData[index]['variant_id']);
-   //display.innerHTML = time; 
-    let duration = 1 * 60;
-    let timer = duration, minutes, seconds;
-    interval = setInterval(function() {
-      alert(timer);
-        minutes = Math.floor(timer / 60);
-        seconds = timer % 60;
+   //display.innerHTML = time;
+   let duration = parseInt(1) * 60;
+    let interval;
+    function startTimer(duration, display) {
+        let timer = duration, minutes, seconds;
 
-        minutes = minutes < 10 ? '0' + minutes : minutes;
-        seconds = seconds < 10 ? '0' + seconds : seconds;
-        
-        display.innerHTML = minutes + ':' + seconds;
-    }, 1000);
+        interval = setInterval(function() {
+            minutes = Math.floor(timer / 60);
+            seconds = timer % 60;
+
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            display.textContent = minutes + ':' + seconds;
+
+            if (--timer < 0) {
+              clearInterval(interval);
+              startTimer(duration, display);
+            }
+        }, 1000);
+    }
+    startTimer(duration, display);
   }
 });
 

@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             display.innerHTML + ':' + seconds;
 
-            if (--timer < 0) {
-              clearInterval(interval);
-              startTimer(duration, display);
-            }
+            // if (--timer < 0) {
+            //   clearInterval(interval);
+            //   startTimer(duration, display);
+            // }
         }, 1000);
     }
     startTimer(duration, display);

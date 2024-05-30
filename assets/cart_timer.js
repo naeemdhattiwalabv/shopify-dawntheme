@@ -38,8 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const currentDateTime = new Date();
       const diffTime = Math.abs(currentDateTime - new Date(localDateTime));
       let display = document.getElementById('timer_countdown_' + localCartItemData[index]['variant_id']);
-      let duration = Math.max(60 - (diffTime / 1000), 0); // Subtract elapsed seconds from 20 seconds
-      showTimer(duration, display);
+      let duration = Math.max(60 - (diffTime / 1000), 0);
+      let variant_id = localCartItemData[index]['added_time']
+      showTimer(duration, display, variant_id);
   }
 });
 
@@ -56,7 +57,7 @@ function showTimer(duration, display) {
 
       if (timer <= 0) {
           clearInterval(interval);
-          alert('Time is up!');
+          removeCartData(variant_id);
       }
 
       timer--;

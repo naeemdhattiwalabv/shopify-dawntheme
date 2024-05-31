@@ -2,16 +2,18 @@ document.addEventListener("DOMContentLoaded", function () {
   new Timer();
 });
 
-class Timer {
+class Timer extends HTMLElement {
   constructor() {
+    super();
+    
     this.localCartItemData = JSON.parse(localStorage.getItem("cartTimerData"));
     this.init();
   }
-  
+
   init() {
     for (let index = 0; index < this.localCartItemData.length; index++) {
       let localStorageDateTime = this.localCartItemData[index]["added_time"];
-      let variantId =  this.localCartItemData[index]["variant_id"];
+      let variantId = this.localCartItemData[index]["variant_id"];
       let diffTime = Math.abs(new Date() - new Date(localStorageDateTime));
       let display = document.getElementById("timer_countdown_" + variantId);
       let duration = Math.max(60 - diffTime / 1000, 0);
@@ -50,7 +52,7 @@ class Timer {
         return response.json();
       })
       .then((data) => {
-        var cartData =  this.localCartItemData;
+        var cartData = this.localCartItemData;
         const updatedData = cartData.filter(
           (cartData) => cartData.variant_id != variantId
         );

@@ -37,18 +37,18 @@ function removeCartData(variant_id) {
     },
     body: JSON.stringify({ id: variant_id.toString(), quantity: 0 }),
   })
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      cartData = JSON.parse(localStorage.getItem("cartTimerData"));
-      const updatedData = cartData.filter(
-        (cartData) => cartData.variant_id != variant_id
-      );
-      localStorage.setItem("cartTimerData", JSON.stringify(updatedData));
-      location.reload();
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    cartData = JSON.parse(localStorage.getItem("cartTimerData"));
+    const updatedData = cartData.filter(
+      (cartData) => cartData.variant_id != variant_id
+    );
+    localStorage.setItem("cartTimerData", JSON.stringify(updatedData));
+    location.reload();
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
 }

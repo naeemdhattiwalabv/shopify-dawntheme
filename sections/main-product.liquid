@@ -35,6 +35,7 @@
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'wishlist.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'cart_timer.js' | asset_url }}" defer="defer"></script>
   {%- if product.quantity_price_breaks_configured? -%}
     <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
@@ -67,11 +68,6 @@
   {%- endif -%}
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
-  {% for variant in product.variants %}
-    {% for image in variant.images %}
-        {% assign variant_images = variant_images | append: image | append: ',' %}
-    {% endfor %}
-  {% endfor %}
   <div class="page-width">
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
@@ -677,28 +673,26 @@
         </div>
       {%- endif -%}
     </div>
-    {% comment %} 
-      <div class="product_extra_information">
-        {% for products_items in product.metafields.custom.more_information.value -%}
-          <p>
-            <span>
-              {{ 'Brand: ' -}}
-              {{- products_items.brand_name -}}
-            </span>
-          </p>
-          <p>
-            {{ 'Brand Logo: ' -}}
-            {{- products_items.brand_image | image_url: width: 400 | image_tag: width: 300 }}
-          </p>
-          <p>
-            <span>
-              {{- 'Valtage: ' }}
-              {{ products_items.vaultage -}}
-            </span>
-          </p>
-        {%- endfor -%}
-      </div> 
-    {% endcomment %}
+    <div class="product_extra_information">
+      {% for products_items in product.metafields.custom.more_information.value -%}
+        <p>
+          <span>
+            {{ 'Brand: ' -}}
+            {{- products_items.brand_name -}}
+          </span>
+        </p>
+        <p>
+          {{ 'Brand Logo: ' -}}
+          {{- products_items.brand_image | image_url: width: 400 | image_tag: width: 300 }}
+        </p>
+        <p>
+          <span>
+            {{- 'Valtage: ' }}
+            {{ products_items.vaultage -}}
+          </span>
+        </p>
+      {%- endfor -%}
+    </div>
     {% render 'product-media-modal', variant_images: variant_images %}
 
     {% assign popups = section.blocks | where: 'type', 'popup' %}

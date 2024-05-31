@@ -36,7 +36,6 @@ class Timer {
       timer--;
     }, 1000);
   }
-  }
 
 
   removeCartData(variant_id) {

@@ -23,7 +23,7 @@ class Timer {
     let timer = duration,
       minutes,
       seconds;
-    let interval = setInterval(function () {
+      let interval = setInterval(() => {
       minutes = Math.floor(timer / 60);
       seconds = Math.floor(timer % 60);
       minutes = minutes < 10 ? "0" + minutes : minutes;

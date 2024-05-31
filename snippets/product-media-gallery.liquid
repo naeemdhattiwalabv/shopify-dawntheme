@@ -99,6 +99,7 @@
       {% endfor %}
       {% assign all_images = product_images | split: ',' | concat: variant_images | split: ',' %}
       {%- for media in all_images -%}
+        <img src="{{ media.src | img_url: 'large' }}" alt="{{ image.alt }}">
         {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
           <li
             id="Slide-{{ section.id }}-{{ media.id }}{{ id_append }}"

@@ -1,34 +1,68 @@
-class CartTimer {
-  constructor(variantId, addedTime) {
-    this.variantId = variantId;
-    this.addedTime = addedTime;
-    this.duration = this.calculateDuration();
-    this.displayElement = document.getElementById("timer_countdown_" + variantId);
-    this.intervalId = null;
+document.addEventListener("DOMContentLoaded", function () {
+  var localCartItemData = JSON.parse(localStorage.getItem("cartTimerData"));
+
+  for (let index = 0; index < localCartItemData.length; index++) {
+    new Timer(localCartItemData[index]);
+  }
+});
+
+class Timer {
+  constructor(cartItem) {
+    this.variantId = cartItem.variant_id;
+    this.addedTime = cartItem.added_time;
+    this.display = document.getElementById("timer_countdown_" + this.variantId);
+    this.init();
   }
 
-  calculateDuration() {
-    const diffTime = Math.abs(new Date() - new Date(this.addedTime));
-    return Math.max(60 - diffTime / 1000, 0);
+  init() {
+    const currentDateTime = new Date();
+    const diffTime = Math.abs(currentDateTime - new Date(this.addedTime));
+    let duration = Math.max(60 - diffTime / 1000, 0); // 60 seconds - elapsed time in seconds
+    this.showTimer(duration);
   }
 
-  startTimer() {
-    const timer = this.duration;
-    this.intervalId = setInterval(() => {
-      const minutes = Math.floor(timer / 60);
-      const seconds = Math.floor(timer % 60);
-      this.displayElement.textContent = `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+  showTimer(duration) {
+    let timer = duration,
+      minutes,
+      seconds;
+    this.interval = setInterval(() => {
+      minutes = Math.floor(timer / 60);
+      seconds = Math.floor(timer % 60);
+
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+
+      this.display.textContent = minutes + ":" + seconds;
+
       if (timer <= 0) {
-        this.stopTimer();
-        this.displayElement.textContent = "Expired";
-        removeCartData(this.variantId);
+        clearInterval(this.interval);
+        this.display.textContent = "Expired";
+        this.removeCartData(this.variantId);
       }
-      this.duration--;
+
+      timer--;
     }, 1000);
   }
 
-  stopTimer() {
-    clearInterval(this.intervalId);
-    this.intervalId = null;
+  removeCartData(variantId) {
+    fetch(window.Shopify.routes.root + "cart/change.js", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id: variantId.toString(), quantity: 0 }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        let cartData = JSON.parse(localStorage.getItem("cartTimerData"));
+        const updatedData = cartData.filter(
+          (item) => item.variant_id != variantId
+        );
+        localStorage.setItem("cartTimerData", JSON.stringify(updatedData));
+        location.reload();
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   }
 }

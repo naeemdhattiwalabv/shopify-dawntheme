@@ -88,10 +88,8 @@
           %}
         </li>
       {%- endif -%}
-      {% for variant in product.variants %}
-        <img src="{{ variant.image.src | img_url: 'master' }}" alt="{{ variant.title }}">
-      {% endfor %}
-      {%- for media in product.media + product.variants -%}
+      {% assign productMedia = product.media %} }
+      {%- for media in productMedia -%}
         {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
           <li
             id="Slide-{{ section.id }}-{{ media.id }}{{ id_append }}"

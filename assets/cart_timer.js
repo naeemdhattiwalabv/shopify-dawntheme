@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 class Timer {
-  constructor() {
+  constructor(localCartItemData) {
     this.localCartItemData = JSON.parse(localStorage.getItem("cartTimerData"));
     this.init();
   }

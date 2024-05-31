@@ -120,7 +120,7 @@
         {%- endunless -%}
       {%- endfor -%}
     </ul>
-    {%- unless is_duplicate -%}
+    {% comment %} {%- unless is_duplicate -%}
       <div class="slider-buttons no-js-hidden quick-add-hidden{% if hide_mobile_slider %} small-hide{% endif %}">
         <button
           type="button"
@@ -145,7 +145,7 @@
           {% render 'icon-caret' %}
         </button>
       </div>
-    {%- endunless -%}
+    {%- endunless -%} {% endcomment %}
   </slider-component>
   {%- if first_3d_model -%}
     <button

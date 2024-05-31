@@ -6,7 +6,7 @@ class Timer {
   constructor() {
     this.init();
   }
-  
+
   init() {
     var localCartItemData = JSON.parse(localStorage.getItem("cartTimerData"));
     for (let index = 0; index < localCartItemData.length; index++) {
@@ -40,26 +40,6 @@ class Timer {
 
 
   removeCartItem(variantId) {
-    fetch(window.Shopify.routes.root + "cart/change.js", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ id: variantId.toString(), quantity: 0 }),
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        cartData = JSON.parse(localStorage.getItem("cartTimerData"));
-        const updatedData = cartData.filter(
-          (cartData) => cartData.variant_id != variant_id
-        );
-        localStorage.setItem("cartTimerData", JSON.stringify(updatedData));
-        location.reload();
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+    console.log(variantId);
   }
 }

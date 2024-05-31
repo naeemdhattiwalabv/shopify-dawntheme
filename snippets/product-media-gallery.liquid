@@ -93,7 +93,7 @@
         assign variant_images = ""
       
         for variant in product.variants
-            assign variant_images = variant_images | append: image
+            assign variant_images = variant_images
           endfor
       
         assign combined_images = product_images | concat: variant_images

@@ -35,7 +35,6 @@
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'wishlist.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'cart_timer.js' | asset_url }}" defer="defer"></script>
   {%- if product.quantity_price_breaks_configured? -%}
     <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
@@ -673,7 +672,7 @@
         </div>
       {%- endif -%}
     </div>
-    <div class="product_extra_information">
+    {% comment %} <div class="product_extra_information">
       {% for products_items in product.metafields.custom.more_information.value -%}
         <p>
           <span>
@@ -692,7 +691,7 @@
           </span>
         </p>
       {%- endfor -%}
-    </div>
+    </div> {% endcomment %}
     {% render 'product-media-modal', variant_images: variant_images %}
 
     {% assign popups = section.blocks | where: 'type', 'popup' %}

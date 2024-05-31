@@ -90,7 +90,7 @@
       {%- endif -%}
       {%- liquid
         assign product_images = product.media
-        assign variant_images = ""
+        assign variant_images = roduct.variants
       
         for variant in product.variants
             assign variant_images = variant_images

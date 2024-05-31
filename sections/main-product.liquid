@@ -672,7 +672,28 @@
         </div>
       {%- endif -%}
     </div>
-    </div>
+    {% comment %} 
+      <div class="product_extra_information">
+        {% for products_items in product.metafields.custom.more_information.value -%}
+          <p>
+            <span>
+              {{ 'Brand: ' -}}
+              {{- products_items.brand_name -}}
+            </span>
+          </p>
+          <p>
+            {{ 'Brand Logo: ' -}}
+            {{- products_items.brand_image | image_url: width: 400 | image_tag: width: 300 }}
+          </p>
+          <p>
+            <span>
+              {{- 'Valtage: ' }}
+              {{ products_items.vaultage -}}
+            </span>
+          </p>
+        {%- endfor -%}
+      </div> 
+    {% endcomment %}
     {% render 'product-media-modal', variant_images: variant_images %}
 
     {% assign popups = section.blocks | where: 'type', 'popup' %}

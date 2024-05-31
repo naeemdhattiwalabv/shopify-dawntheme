@@ -101,7 +101,7 @@
         endfor
       
         assign combined_images = product_images | concat: variant_images
-        assign combined_images = combined_images | uniq
+        
       -%}
       {%- for media in combined_images -%}
         {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}

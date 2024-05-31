@@ -96,6 +96,7 @@
       -%}
       {{ combined_images }}
       {%- for media in combined_images -%}
+        <img src="{{ media.image.src | img_url: 'master' }}" alt="{{ variant.title }}">
         {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
           <li
             id="Slide-{{ section.id }}-{{ media.id }}{{ id_append }}"

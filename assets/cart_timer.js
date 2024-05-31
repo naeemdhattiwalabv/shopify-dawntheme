@@ -53,7 +53,7 @@ class Timer {
       .then((data) => {
         var cartData = JSON.parse(localStorage.getItem("cartTimerData"));
         const updatedData = cartData.filter(
-          (cartData) => cartData.variant_id != variant_id
+          (cartData) => cartData.variant_id != variantId
         );
         console.log(updatedData);
         localStorage.setItem("cartTimerData", JSON.stringify(updatedData));

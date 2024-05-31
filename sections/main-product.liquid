@@ -69,9 +69,7 @@
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   {% for variant in product.variants %}
     {% for image in variant.images %}
-      {% unless product_images contains image %}
         {% assign variant_images = variant_images | append: image | append: ',' %}
-      {% endunless %}
     {% endfor %}
   {% endfor %}
   <div class="page-width">

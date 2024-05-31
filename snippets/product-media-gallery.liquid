@@ -89,12 +89,9 @@
         </li>
       {%- endif -%}
       <pre>
-        {{ product.media }}
+        {{ product.images }}
         </pre>
       {%- for media in product.media -%}
-        <pre>
-        {{ media }}
-        </pre>
         {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
           <li
             id="Slide-{{ section.id }}-{{ media.id }}{{ id_append }}"

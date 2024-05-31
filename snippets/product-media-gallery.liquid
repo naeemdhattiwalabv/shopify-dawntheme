@@ -94,7 +94,7 @@
       
         
       
-        assign combined_images = product_images | concat: variant_images
+       
         assign combined_images = combined_images | uniq
       -%}
       {%- for media in product_images -%}

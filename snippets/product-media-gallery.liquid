@@ -103,7 +103,7 @@
         assign combined_images = product_images | concat: variant_images
         
       -%}
-      {%- for media in combined_images -%}
+      {%- for media in variant_images -%}
         {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
           <li
             id="Slide-{{ section.id }}-{{ media.id }}{{ id_append }}"

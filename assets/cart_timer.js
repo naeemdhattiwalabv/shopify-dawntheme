@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 class Timer {
   constructor() {
-    super();
     this.localCartItemData = JSON.parse(localStorage.getItem("cartTimerData"));
     this.init();
   }

@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   var localCartItemData = JSON.parse(localStorage.getItem("cartTimerData"));
   for (let index = 0; index < localCartItemData.length; index++) {
-    var localStorageDateTime = localCartItemData[index]["added_time"];
+    let localStorageDateTime = localCartItemData[index]["added_time"];
     let variantId = localCartItemData[index]["variant_id"];
-    const currentDateTime = new Date();
-    const diffTime = Math.abs(currentDateTime - new Date(localStorageDateTime));
+    let diffTime = Math.abs(new Date() - new Date(localStorageDateTime));
     let display = document.getElementById("timer_countdown_" + variantId);
     let duration = Math.max(60 - diffTime / 1000, 0);
     showTimer(duration, display, variantId);

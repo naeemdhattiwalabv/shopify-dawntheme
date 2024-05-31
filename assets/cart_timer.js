@@ -20,7 +20,7 @@ class Timer {
   }
 
   showTimer(duration, display, variantId) {
-    if (variantId) {
+    if (variantId != null) {
       let timer = duration,
         minutes,
         seconds;

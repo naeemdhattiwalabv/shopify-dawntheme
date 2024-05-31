@@ -38,13 +38,13 @@ class Timer {
   }
 
 
-  removeCartData(variant_id) {
+  removeCartData(variantId) {
     fetch(window.Shopify.routes.root + "cart/change.js", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ id: variant_id.toString(), quantity: 0 }),
+      body: JSON.stringify({ id: variantId.toString(), quantity: 0 }),
     })
       .then((response) => {
         return response.json();

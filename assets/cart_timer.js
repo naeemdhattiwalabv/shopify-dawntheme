@@ -4,12 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 class Timer {
   constructor() {
+    this.localCartItemData = JSON.parse(localStorage.getItem("cartTimerData"));
     this.init();
   }
   
   init() {
-    var localCartItemData = JSON.parse(localStorage.getItem("cartTimerData"));
-    for (let index = 0; index < localCartItemData.length; index++) {
+    for (let index = 0; index < this.localCartItemData.length; index++) {
       let localStorageDateTime = localCartItemData[index]["added_time"];
       let variantId = localCartItemData[index]["variant_id"];
       let diffTime = Math.abs(new Date() - new Date(localStorageDateTime));

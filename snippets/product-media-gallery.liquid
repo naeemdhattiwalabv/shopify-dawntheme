@@ -91,11 +91,6 @@
       {%- liquid
         assign product_images = product.media
         assign variant_images = ""
-      
-        
-      
-       
-        assign combined_images = combined_images | uniq
       -%}
       {%- for media in product_images -%}
         {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}

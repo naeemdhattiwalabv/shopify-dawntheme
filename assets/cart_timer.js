@@ -37,8 +37,8 @@ class Timer {
       timer--;
     }, 1000);
   }
-  
-  removeCartItem(variantId) {
+
+  function removeCartItem(variantId) {
     console.log(variantId);
   }
 }

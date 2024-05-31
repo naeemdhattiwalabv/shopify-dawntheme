@@ -20,24 +20,23 @@ class Timer {
   }
 
   showTimer(duration, display, variantId) {
-    if (duration != null) {
-      let timer = duration,
-        minutes,
-        seconds;
-      let interval = setInterval(() => {
-        minutes = Math.floor(timer / 60);
-        seconds = Math.floor(timer % 60);
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-        display.textContent = minutes + ":" + seconds;
-        if (timer <= 0) {
-          clearInterval(interval);
-          display.textContent = variantId;
-          this.removeCartItem(variantId);
-        }
-        timer--;
-      }, 1000);
-    }
+    console.log(variantId);
+    let timer = duration,
+      minutes,
+      seconds;
+    let interval = setInterval(() => {
+      minutes = Math.floor(timer / 60);
+      seconds = Math.floor(timer % 60);
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+      display.textContent = minutes + ":" + seconds;
+      if (timer <= 0) {
+        clearInterval(interval);
+        display.textContent = variantId;
+        this.removeCartItem(variantId);
+      }
+      timer--;
+    }, 1000);
   }
 
   removeCartItem(variantId) {

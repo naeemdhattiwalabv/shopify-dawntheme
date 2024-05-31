@@ -52,17 +52,17 @@ class Timer {
       },
       body: JSON.stringify({ id: variantId.toString(), quantity: 0 }),
     })
-      .then((response) => response.json())
-      .then((data) => {
-        let cartData = JSON.parse(localStorage.getItem("cartTimerData"));
-        const updatedData = cartData.filter(
-          (item) => item.variant_id != variantId
-        );
-        localStorage.setItem("cartTimerData", JSON.stringify(updatedData));
-        location.reload();
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+    .then((response) => response.json())
+    .then((data) => {
+      let cartData = JSON.parse(localStorage.getItem("cartTimerData"));
+      const updatedData = cartData.filter(
+        (item) => item.variant_id != variantId
+      );
+      localStorage.setItem("cartTimerData", JSON.stringify(updatedData));
+      location.reload();
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
   }
 }

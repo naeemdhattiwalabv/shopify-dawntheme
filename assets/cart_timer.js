@@ -23,7 +23,7 @@ class Timer {
     let timer = duration,
       minutes,
       seconds;
-      let interval = setInterval(() => {
+    let interval = setInterval(() => {
       minutes = Math.floor(timer / 60);
       seconds = Math.floor(timer % 60);
       minutes = minutes < 10 ? "0" + minutes : minutes;
@@ -38,7 +38,28 @@ class Timer {
     }, 1000);
   }
 
+
   removeCartItem(variantId) {
-    console.log(variantId);
+    fetch(window.Shopify.routes.root + "cart/change.js", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id: variantId.toString(), quantity: 0 }),
+    })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      cartData = JSON.parse(localStorage.getItem("cartTimerData"));
+      const updatedData = cartData.filter(
+        (cartData) => cartData.variant_id != variant_id
+      );
+      localStorage.setItem("cartTimerData", JSON.stringify(updatedData));
+      location.reload();
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
   }
 }

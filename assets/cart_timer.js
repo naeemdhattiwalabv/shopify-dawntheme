@@ -31,14 +31,14 @@ class Timer {
       if (timer <= 0) {
         clearInterval(interval);
         display.textContent = "Expired";
-        this.removeCartData(variantId);
+        this.removeCartItem(variantId);
       }
       timer--;
     }, 1000);
   }
 
 
-  removeCartData(variantId) {
+  removeCartItem(variantId) {
     fetch(window.Shopify.routes.root + "cart/change.js", {
       method: "POST",
       headers: {

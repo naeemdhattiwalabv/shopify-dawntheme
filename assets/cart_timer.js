@@ -6,7 +6,7 @@ class Timer {
   constructor() {
     this.init();
   }
-
+  
   init() {
     var localCartItemData = JSON.parse(localStorage.getItem("cartTimerData"));
     for (let index = 0; index < localCartItemData.length; index++) {
@@ -20,7 +20,6 @@ class Timer {
   }
 
   showTimer(duration, display, variantId) {
-    console.log(variantId);
     let timer = duration,
       minutes,
       seconds;
@@ -55,7 +54,6 @@ class Timer {
         const updatedData = cartData.filter(
           (cartData) => cartData.variant_id != variantId
         );
-        console.log(updatedData);
         localStorage.setItem("cartTimerData", JSON.stringify(updatedData));
         location.reload();
       })

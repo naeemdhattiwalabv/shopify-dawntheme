@@ -14,7 +14,7 @@ class Timer {
       let diffTime = Math.abs(new Date() - new Date(localStorageDateTime));
       let display = document.getElementById("timer_countdown_" + variantId);
       let duration = Math.max(60 - diffTime / 1000, 0);
-      showTimer(duration, display, variantId);
+      this.showTimer(duration, display, variantId);
     }
   }
 

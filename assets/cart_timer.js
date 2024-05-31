@@ -50,9 +50,9 @@ class Timer {
         return response.json();
       })
       .then((data) => {
-        var getCartData =  this.localCartItemData;
-        const updatedData = getCartData.filter(
-          (getCartData) => getCartData.variant_id != variantId
+        var cartData =  this.localCartItemData;
+        const updatedData = cartData.filter(
+          (cartData) => cartData.variant_id != variantId
         );
         localStorage.setItem("cartTimerData", JSON.stringify(updatedData));
         location.reload();

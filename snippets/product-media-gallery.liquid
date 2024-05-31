@@ -88,7 +88,7 @@
           %}
         </li>
       {%- endif -%}
-      {% assign productMedia = productMedia | concat:  product.variants %}
+      {% assign productMedia = product.media | concat:  product.variants %}
       {%- for media in productMedia -%}
         {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
           <li
@@ -215,7 +215,7 @@
             {%- endcapture -%}
             <button
               class="thumbnail global-media-settings global-media-settings--no-shadow"
-              aria-label="{%- if featured_media.media_type == 'image' -%}{{ 'products.productMedia.load_image' | t: index: media_index }}{%- elsif featured_media.media_type == 'model' -%}{{ 'products.productMedia.load_model' | t: index: media_index }}{%- elsif featured_media.media_type == 'video' or featured_media.media_type == 'external_video' -%}{{ 'products.productMedia.load_video' | t: index: media_index }}{%- endif -%}"
+              aria-label="{%- if featured_media.media_type == 'image' -%}{{ 'products.product.media.load_image' | t: index: media_index }}{%- elsif featured_media.media_type == 'model' -%}{{ 'products.product.media.load_model' | t: index: media_index }}{%- elsif featured_media.media_type == 'video' or featured_media.media_type == 'external_video' -%}{{ 'products.product.media.load_video' | t: index: media_index }}{%- endif -%}"
               aria-current="true"
               aria-controls="GalleryViewer-{{ section.id }}{{ id_append }}"
               aria-describedby="{{ thumbnail_id }}"
@@ -234,7 +234,7 @@
             </button>
           </li>
         {%- endif -%}
-        {%- for media in productMedia -%}
+        {%- for media in product.media -%}
           {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
             {%- liquid
               capture media_index

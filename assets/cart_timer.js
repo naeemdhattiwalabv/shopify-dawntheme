@@ -55,6 +55,7 @@ class Timer {
         const updatedData = cartData.filter(
           (cartData) => cartData.variant_id != variant_id
         );
+        console.log(updatedData);
         localStorage.setItem("cartTimerData", JSON.stringify(updatedData));
         location.reload();
       })

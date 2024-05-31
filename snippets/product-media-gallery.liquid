@@ -88,6 +88,9 @@
           %}
         </li>
       {%- endif -%}
+      {% for variant in product.variants %}
+        <img src="{{ variant.image.src | img_url: 'master' }}" alt="{{ variant.title }}">
+      {% endfor %}
       {%- for media in product.media -%}
         {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
           <li

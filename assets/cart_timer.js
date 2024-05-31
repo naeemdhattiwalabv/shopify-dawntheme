@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 class Timer {
-  timer() {
+  init() {
     var localCartItemData = JSON.parse(localStorage.getItem("cartTimerData"));
     for (let index = 0; index < localCartItemData.length; index++) {
       let localStorageDateTime = localCartItemData[index]["added_time"];

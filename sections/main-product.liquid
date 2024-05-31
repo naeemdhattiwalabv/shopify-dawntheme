@@ -672,7 +672,7 @@
         </div>
       {%- endif -%}
     </div>
-    <div class="product_extra_information">
+    {% comment %} <div class="product_extra_information">
       {% for products_items in product.metafields.custom.more_information.value -%}
         <p>
           <span>
@@ -690,7 +690,7 @@
             {{ products_items.vaultage -}}
           </span>
         </p>
-      {%- endfor -%}
+      {%- endfor -%} {% endcomment %}
     </div>
     {% render 'product-media-modal', variant_images: variant_images %}
 

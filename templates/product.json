@@ -56,6 +56,13 @@
             "text": "<strong>Warrenty<\/strong>  {{ product.metafields.custom.warrenty.value }}",
             "text_style": "body"
           }
+        },
+        "wishlist_nYnir6": {
+          "type": "wishlist",
+          "settings": {
+            "show_wishlist": true,
+            "wishlist_text": "Add to Wishlist"
+          }
         }
       },
       "block_order": [
@@ -67,7 +74,8 @@
         "buy_buttons",
         "description",
         "share",
-        "text_ycMk4r"
+        "text_ycMk4r",
+        "wishlist_nYnir6"
       ],
       "settings": {
         "enable_sticky_info": true,

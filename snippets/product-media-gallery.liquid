@@ -90,16 +90,12 @@
       {%- endif -%}
       {%- liquid
         assign product_images = product.media
-        assign variant_images = roduct.variants
-      
-        for variant in product.variants
-            assign variant_images = variant_images
-          endfor
+        assign variant_images = product.variants
       
         assign combined_images = product_images | concat: variant_images
         assign combined_images = combined_images | uniq
       -%}
-      {{ variant_images }}
+      {{ combined_images }}
       {%- for media in combined_images -%}
         {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
           <li

@@ -36,7 +36,8 @@ class Timer {
       timer--;
     }, 1000);
   }
-}
+  }
+
 
   removeCartData(variant_id) {
     fetch(window.Shopify.routes.root + "cart/change.js", {

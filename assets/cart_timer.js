@@ -2,10 +2,11 @@ document.addEventListener("DOMContentLoaded", function () {
   new Timer();
   class Timer extends HTMLElement {
     constructor() {
-
       super();
 
-      this.localCartItemData = JSON.parse(localStorage.getItem("cartTimerData"));
+      this.localCartItemData = JSON.parse(
+        localStorage.getItem("cartTimerData")
+      );
       this.init();
     }
 

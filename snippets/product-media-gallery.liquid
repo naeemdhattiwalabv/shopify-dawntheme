@@ -91,8 +91,19 @@
       {%- liquid
         assign product_images = product.media
         assign variant_images = ""
+      
+        for variant in product.variants
+          for image in variant.media
+            unless product_images contains image
+              assign variant_images = variant_images | append: image
+            endunless
+          endfor
+        endfor
+      
+        assign combined_images = product_images | concat: variant_images
+        assign combined_images = combined_images | uniq
       -%}
-      {%- for media in product.media -%}
+      {%- for media in combined_images -%}
         {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
           <li
             id="Slide-{{ section.id }}-{{ media.id }}{{ id_append }}"

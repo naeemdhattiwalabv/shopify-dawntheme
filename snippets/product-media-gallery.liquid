@@ -101,9 +101,9 @@
         endfor
       
         assign combined_images = product_images | concat: variant_images
-        
+        assign combined_images = combined_images | uniq
       -%}
-      {%- for media in variant_images -%}
+      {%- for media in product_images -%}
         {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
           <li
             id="Slide-{{ section.id }}-{{ media.id }}{{ id_append }}"

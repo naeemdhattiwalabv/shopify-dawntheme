@@ -32,7 +32,7 @@ class Timer {
       if (timer <= 0) {
         clearInterval(interval);
         display.textContent = variantId;
-        this.removeCartItem(this, variantId);
+        this.removeCartItem(variantId);
       }
       timer--;
     }, 1000);

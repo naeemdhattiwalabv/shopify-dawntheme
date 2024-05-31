@@ -32,7 +32,7 @@ class Timer {
       display.textContent = minutes + ":" + seconds;
       if (timer <= 0) {
         clearInterval(interval);
-        display.textContent = variantId;
+        display.textContent = "Expired";
         this.removeCartItem(variantId);
       }
       timer--;

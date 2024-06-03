@@ -42,7 +42,6 @@
     assign id_append = '-duplicate'
   endif
 -%}
-{{ product.selected_variant.id }}
 <media-gallery
   id="MediaGallery-{{ section.id }}{{ id_append }}"
   role="region"
@@ -313,10 +312,4 @@
     </slider-component>
   {%- endif -%}
 </media-gallery>
-<script>
 
-  document.querySelector('input[type="hidden"][name="id"]').addEventListener('change', () => {
-
-    document.querySelector('.selectedVariant').innerHTML = input.innerText;
-  });
-</script>

@@ -307,10 +307,9 @@
       <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
     </ul>
     <script>
-
       document.querySelector('input[type="hidden"][name="id"]').addEventListener('change', () => {
         alert('test');
-        document.querySelector('.selectedVariant').innerHTML = input.innerText;
+        document.querySelector('.selectedVariant').innerHTML = {{ product.selected_variant.id }};
       });
     </script>
     <script>

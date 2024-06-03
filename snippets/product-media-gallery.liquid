@@ -100,14 +100,6 @@
         {% endfor %}
       {% endfor %}
 
-      {% assign all_images = product_images | split: ',' | concat: variant_images | split: ',' %}
-
-      <div class="product-images 1">
-        {% for image in all_images %}
-          {{ image.src | img_url: 'master' | image_tag }}
-        {% endfor %}
-      </div>
-
       {%- for media in product.media -%}
         {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
           <li

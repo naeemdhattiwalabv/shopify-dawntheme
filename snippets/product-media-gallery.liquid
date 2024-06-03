@@ -325,6 +325,7 @@
 
   document.querySelector('input[type="hidden"][name="id"]').addEventListener('change', () => {
     const input = document.querySelector('fieldset input:checked').nextSibling.nextSibling;
+    alert('test');
 
     document.querySelector('.selectedVariant').innerHTML = input.innerText;
   });

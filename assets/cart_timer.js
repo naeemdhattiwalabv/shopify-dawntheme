@@ -66,7 +66,7 @@ class Timer {
         console.error("Error:", error);
       });
   }
-
+  
   clearCart() {
     fetch(window.Shopify.routes.root + "cart/clear.js", {
       method: "POST",
@@ -75,10 +75,8 @@ class Timer {
       },
     })
       .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
         location.reload();
+        return response.json();
       })
       .catch((error) => {
         console.error("Error:", error);

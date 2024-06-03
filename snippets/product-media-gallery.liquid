@@ -42,6 +42,7 @@
     assign id_append = '-duplicate'
   endif
 -%}
+{{ product.selected_variant.id }}
 <media-gallery
   id="MediaGallery-{{ section.id }}{{ id_append }}"
   role="region"
@@ -90,7 +91,6 @@
 
       {% assign variant_images = '' %}
       {% for variant in product.variants %}
-
         {% for image in variant.images %}
           {% assign variant_images = variant_images %}
         {% endfor %}
@@ -255,7 +255,7 @@
               assign media_index = media_index | plus: 1
             -%}
             <li
-              id="Slide-Thumbnails-{{ section.id }}-{{ forloop.index }}{{ id_append }}-test1-{{ product.selected_variant.id }}"
+              id="Slide-Thumbnails-{{ section.id }}-{{ forloop.index }}{{ id_append }}"
               class="thumbnail-list__item slider__slide{% if section.settings.hide_variants and variant_images contains media.src %} thumbnail-list_item--variant{% endif %}"
               data-target="{{ section.id }}-{{ media.id }}"
               data-media-position="{{ media_index }}"
@@ -313,4 +313,3 @@
     </slider-component>
   {%- endif -%}
 </media-gallery>
-

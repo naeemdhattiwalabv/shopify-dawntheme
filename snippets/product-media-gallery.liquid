@@ -104,7 +104,7 @@
 
       <div class="product-images">
         {% for image in product.media %}
-          {{ image.src | image_url: | image_tag: loading: lazy }}
+          {{ image.src | img_url:  | image_tag }}
         {% endfor %}
       </div>
 

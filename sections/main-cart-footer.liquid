@@ -82,7 +82,16 @@
                     {{ 'sections.cart.update' | t }}
                   </button>
                 </noscript>
-
+                <button
+                  id="clear_checkout"
+                  class="cart__checkout-button button"
+                  name="clear_checkout"
+                  {% if cart == empty %}
+                    disabled
+                  {% endif %}
+                >
+                  Clear Cart
+                </button>
                 <button
                   type="submit"
                   id="checkout"
@@ -104,16 +113,6 @@
               {%- endif -%}
           {%- endcase -%}
         {% endfor %}
-        <button
-          id="clear_checkout"
-          class="cart__checkout-button button"
-          name="clear_checkout"
-          {% if cart == empty %}
-            disabled
-          {% endif %}
-        >
-          Clear Cart
-        </button>
         <div id="cart-errors"></div>
       </div>
     </div>

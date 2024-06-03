@@ -966,7 +966,7 @@ class VariantSelects extends HTMLElement {
       this.setUnavailable();
     } else {
       this.updateMedia();
-      this.updateURL();
+      this.filterImgVarinat();
       this.updateVariantInput();
       this.renderProductInfo();
       this.updateShareUrl();

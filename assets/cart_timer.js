@@ -20,7 +20,19 @@ class Timer {
     document
       .getElementById("clear_checkout")
       .addEventListener("click", function () {
-        this.clearCart();
+        fetch(window.Shopify.routes.root + "cart/clear.js", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((response) => {
+            location.reload();
+            return response.json();
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
       });
   }
 
@@ -61,22 +73,6 @@ class Timer {
         );
         localStorage.setItem("cartTimerData", JSON.stringify(updatedData));
         location.reload();
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  }
-  
-  clearCart() {
-    fetch(window.Shopify.routes.root + "cart/clear.js", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => {
-        location.reload();
-        return response.json();
       })
       .catch((error) => {
         console.error("Error:", error);

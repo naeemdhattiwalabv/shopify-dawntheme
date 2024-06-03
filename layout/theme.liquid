@@ -308,7 +308,7 @@
     </ul>
     <script>
       document.querySelector('input[type="hidden"][name="id"]').addEventListener('change', () => {
-        console.log({{ product.selected_variant.id }});
+        console.log({{ product['variants'][forloop.index]['id'] }});
       });
     </script>
     <script>

@@ -313,3 +313,8 @@
     </slider-component>
   {%- endif -%}
 </media-gallery>
+<script>
+  document.querySelector('input[type="hidden"][name="id"]').addEventListener('change', () => {
+    alert('test');
+  });
+</script>

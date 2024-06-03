@@ -1137,7 +1137,7 @@ class VariantSelects extends HTMLElement {
         .forEach(img => (img.style.display = "block"));
     } else {
       document
-        .querySelector("[thumbnail.alt]")
+        .querySelector("thumbnail.alt")
         .forEach(img => (img.style.display = "block"));
     }
   }

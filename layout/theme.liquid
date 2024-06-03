@@ -308,7 +308,7 @@
     </ul>
     <script>
       document.querySelector('input[type="hidden"][name="id"]').addEventListener('change', () => {
-        alert('test');
+        alert({{ product.selected_variant.id }});
         document.querySelector('.selectedVariant').innerHTML = {{ product.selected_variant.id }};
       });
     </script>

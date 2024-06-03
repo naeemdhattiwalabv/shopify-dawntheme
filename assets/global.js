@@ -960,21 +960,22 @@ class VariantSelects extends HTMLElement {
     this.updatePickupAvailability();
     this.removeErrorMessage();
     this.updateVariantStatuses();
+    this.updateVariantImage();
 
     if (!this.currentVariant) {
       this.toggleAddButton(true, '', true);
       this.setUnavailable();
     } else {
       this.updateMedia();
-      this.filterImgVariant();
+      this.updateURL();
       this.updateVariantInput();
       this.renderProductInfo();
       this.updateShareUrl();
     }
   }
 
-  filterImgVariant() {
-    console.log('data : ' + this.currentVariant);
+  updateVariantImage() {
+    console.log(this.currentVariant);
   }
 
   updateOptions() {

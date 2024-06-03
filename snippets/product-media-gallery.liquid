@@ -254,6 +254,7 @@
               endcapture
               assign media_index = media_index | plus: 1
             -%}
+            {% increment variant_num %}
             <li
               id="Slide-Thumbnails-{{ section.id }}-{{ forloop.index }}{{ id_append }}"
               class="thumbnail-list__item slider__slide{% if section.settings.hide_variants and variant_images contains media.src %} thumbnail-list_item--variant{% endif %}"
@@ -261,7 +262,7 @@
               data-media-position="{{ media_index }}"
               name="{{ product['variants'][variant_num]['id'] }}"
             >
-              {{  increment variant_num }}
+              
 
               {%- if media.media_type == 'model' -%}
                 <span class="thumbnail__badge" aria-hidden="true">

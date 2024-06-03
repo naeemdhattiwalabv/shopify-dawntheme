@@ -17,9 +17,11 @@ class Timer {
       let duration = Math.max(300 - diffTime / 1000, 0);
       this.showTimer(duration, display, variantId);
     }
-    document.getElementById("clear_checkout").addEventListener("click", function() {
-      this.clearCart();
-    });
+    document
+      .getElementById("clear_checkout")
+      .addEventListener("click", function () {
+        this.clearCart();
+      });
   }
 
   showTimer(duration, display, variantId) {
@@ -58,6 +60,24 @@ class Timer {
           (cartData) => cartData.variant_id != variantId
         );
         localStorage.setItem("cartTimerData", JSON.stringify(updatedData));
+        location.reload();
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }
+
+  clearCart() {
+    fetch(window.Shopify.routes.root + "cart/clear.js", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
         location.reload();
       })
       .catch((error) => {

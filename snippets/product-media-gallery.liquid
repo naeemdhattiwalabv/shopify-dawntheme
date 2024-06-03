@@ -314,7 +314,18 @@
   {%- endif -%}
 </media-gallery>
 <script>
+  const label = document.querySelector('legend.form__label');
+
+  const customShowVariant = () => {
+    const input = document.querySelector('fieldset input:checked').nextSibling.nextSibling;
+
+    label.innerHTML += `   : <span class="selectedVariant">${input.innerText}</span>`;
+  };
+  customShowVariant();
+
   document.querySelector('input[type="hidden"][name="id"]').addEventListener('change', () => {
-    alert('test');
+    const input = document.querySelector('fieldset input:checked').nextSibling.nextSibling;
+
+    document.querySelector('.selectedVariant').innerHTML = input.innerText;
   });
 </script>

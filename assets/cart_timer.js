@@ -17,7 +17,7 @@ class Timer {
       let duration = Math.max(300 - diffTime / 1000, 0);
       this.showTimer(duration, display, variantId);
     }
-    document.getElementById("clear_checkout").click(() => {
+    document.getElementById("clear_checkout").addEventListener("click", function() {
       alert('test');
     });
   }

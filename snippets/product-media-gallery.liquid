@@ -89,12 +89,12 @@
         </li>
       {%- endif -%}
 
-      {% comment %} {% assign variant_images = '' %}
+      {% assign variant_images = '' %}
       {% for variant in product.variants %}
         {% for image in variant.images %}
           {% assign variant_images = variant_images %}
         {% endfor %}
-      {% endfor %} {% endcomment %}
+      {% endfor %}
 
       {%- for media in product.media -%}
         {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
@@ -314,3 +314,10 @@
     </slider-component>
   {%- endif -%}
 </media-gallery>
+<script>
+  document.getElementById('variantSelector').addEventListener('change', function () {
+    const selectedVariant = this.value; // Assuming the value attribute holds the ID
+    console.log('Selected Variant ID:', selectedVariant);
+    // You can use the selectedVariant ID for further processing
+  });
+</script>

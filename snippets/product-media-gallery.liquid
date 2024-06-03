@@ -239,6 +239,7 @@
             </button>
           </li>
         {%- endif -%}
+        {{ assign i =0 }}
         {%- for media in product.media -%}
           {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
             {%- liquid
@@ -254,7 +255,7 @@
               assign media_index = media_index | plus: 1
             -%}
             {{ 'tesrt' }}
-            {{ product['variants'][0]['id'] }}
+            {{ product['variants'][i++]['id'] }}
             <li
               id="Slide-Thumbnails-{{ section.id }}-{{ forloop.index }}{{ id_append }}-test{{ section.variant.id }}"
               class="thumbnail-list__item slider__slide{% if section.settings.hide_variants and variant_images contains media.src %} thumbnail-list_item--variant{% endif %}"

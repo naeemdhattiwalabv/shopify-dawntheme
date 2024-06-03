@@ -93,7 +93,7 @@
 
       {% for variant in product.variants %}
         {% for image in variant.images %}
-            {% assign variant_images = variant_images | append: image | append: ',' %}
+            {% assign variant_images = variant_images %}
         {% endfor %}
       {% endfor %}
 

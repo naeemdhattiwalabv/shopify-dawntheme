@@ -314,15 +314,9 @@
   {%- endif -%}
 </media-gallery>
 <script>
-  const label = document.querySelector('legend.form__label');
-
-  const customShowVariant = () => {
-  };
-  customShowVariant();
 
   document.querySelector('input[type="hidden"][name="id"]').addEventListener('change', () => {
-    alert('test');
 
-    document.querySelector('.selectedVariant').innerHTML = 'S';
+    document.querySelector('.selectedVariant').innerHTML = input.innerText;
   });
 </script>

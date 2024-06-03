@@ -14,7 +14,7 @@ class Timer {
       let variantId = this.localCartItemData[index]["variant_id"];
       let diffTime = Math.abs(new Date() - new Date(localStorageDateTime));
       let display = document.getElementById("timer_countdown_" + variantId);
-      let duration = Math.max(3000 - diffTime / 1000, 0);
+      let duration = Math.max(300 - diffTime / 1000, 0);
       this.showTimer(duration, display, variantId);
     }
   }

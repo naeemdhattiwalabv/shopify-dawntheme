@@ -306,22 +306,7 @@
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
       <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
     </ul>
-    <script>
-      const label = document.querySelector('legend.form__label');
 
-      const customShowVariant = () => {
-        const input = document.querySelector('fieldset input:checked').nextSibling.nextSibling;
-
-        label.innerHTML += `   : <span class="selectedVariant">${input.innerText}</span>`;
-      };
-      customShowVariant();
-
-      document.querySelector('input[type="hidden"][name="id"]').addEventListener('change', () => {
-        const input = document.querySelector('fieldset input:checked').nextSibling.nextSibling;
-        console.log(document.querySelector('fieldset input:checked').value);
-        document.querySelector('.selectedVariant').innerHTML = input.innerText;
-      });
-    </script>
     <script>
       window.shopUrl = '{{ request.origin }}';
       window.routes = {

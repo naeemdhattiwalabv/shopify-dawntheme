@@ -105,7 +105,7 @@
 
         <div class="product-images">
           {% for image in all_images %}
-            {{ image.src | img_url: | image_tag | escape }}
+            {{ image.src | img_url: | image_tag }}
           {% endfor %}
         </div>
 

@@ -259,7 +259,7 @@
               class="thumbnail-list__item slider__slide{% if section.settings.hide_variants and variant_images contains media.src %} thumbnail-list_item--variant{% endif %}"
               data-target="{{ section.id }}-{{ media.id }}"
               data-media-position="{{ media_index }}"
-              name="{{ product['variants'][increment variant_num]['id'] }}"
+              name="{{ product['variants'][variant_num]['id'] }}"
             >
               {% increment variant_num %}
 

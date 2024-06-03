@@ -89,14 +89,11 @@
         </li>
       {%- endif -%}
 
-      {% assign product_images = product.media %}
       {% assign variant_images = '' %}
 
       {% for variant in product.variants %}
         {% for image in variant.images %}
-          {% unless product_images contains image %}
             {% assign variant_images = variant_images | append: image | append: ',' %}
-          {% endunless %}
         {% endfor %}
       {% endfor %}
 

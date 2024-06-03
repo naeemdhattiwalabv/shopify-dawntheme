@@ -89,10 +89,14 @@
         </li>
       {%- endif -%}
 
+      {% assign variant_images = '' %}
+
       {% for variant in product.variants %}
-        {% assign variant_images = variant_images %}
+        {% for image in variant.images %}
+            {% assign variant_images = variant_images %}
+        {% endfor %}
       {% endfor %}
-      
+
       {%- for media in product.media -%}
         {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
           <li

@@ -104,7 +104,7 @@
 
       <div class="product-images">
         {% for image in product.media %}
-          {{ image.src | img_url:  | image_tag }}
+          {{ image.src | img_url | image_tag }}
         {% endfor %}
       </div>
 

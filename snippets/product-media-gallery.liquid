@@ -104,7 +104,11 @@
 
       <div class="product-images">
         {% for image in product.media %}
-          {{ image.src | img_url: 'master' | image_tag }}
+          {{ image.src | image_url: width: 1946 | image_tag:
+            loading: lazy,
+            sizes: sizes,
+            widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
+          }}
         {% endfor %}
       </div>
 

@@ -90,7 +90,7 @@
       {%- endif -%}
 
       
-      {% assign product_images = product.images %}
+      {% assign product_images = product.media %}
         {% assign variant_images = '' %}
 
         {% for variant in product.variants %}
@@ -104,7 +104,7 @@
         {% assign all_images = product_images | split: ',' | concat: variant_images | split: ',' %}
 
         <div class="product-images">
-          {% for image in product_images %}
+          {% for image in all_images %}
             {{ image.src | img_url: 'master' | image_tag }}
           {% endfor %}
         </div>

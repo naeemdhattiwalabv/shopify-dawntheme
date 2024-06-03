@@ -966,11 +966,15 @@ class VariantSelects extends HTMLElement {
       this.setUnavailable();
     } else {
       this.updateMedia();
-      this.filterImgVarinat();
+      this.filterImgVariant();
       this.updateVariantInput();
       this.renderProductInfo();
       this.updateShareUrl();
     }
+  }
+
+  filterImgVariant() {
+    console.log('data : ' + this.currentVariant);
   }
 
   updateOptions() {

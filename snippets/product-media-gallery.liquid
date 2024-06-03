@@ -261,7 +261,7 @@
               data-media-position="{{ media_index }}"
               name="{{ product['variants'][variant_num]['id'] }}"
             >
-              {% increment variant_num %}
+              {{ forloop.index }}
 
               {%- if media.media_type == 'model' -%}
                 <span class="thumbnail__badge" aria-hidden="true">

@@ -18,7 +18,7 @@ class Timer {
       this.showTimer(duration, display, variantId);
     }
     document.getElementById("clear_checkout").addEventListener("click", function() {
-      clearCart();
+      this.clearCart();
     });
   }
 

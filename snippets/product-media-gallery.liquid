@@ -99,7 +99,7 @@
       {%- for media in product.media -%}
         {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
           <li
-            {% if product.selected_or_first_available_variantfeatured_media.featured_media.alt != media.alt %}
+            {% if product.selected_or_first_available_variant.featured_media.alt != media.alt %}
               style="display:none;"
             {% endif %}
             id="Slide-{{ section.id }}-{{ media.id }}{{ id_append }}"

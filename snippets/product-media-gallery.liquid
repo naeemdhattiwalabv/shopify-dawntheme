@@ -253,14 +253,13 @@
               endcapture
               assign media_index = media_index | plus: 1
             -%}
-            {% assign counter = media_index | minus: 2 %}
             
             <li
               id="Slide-Thumbnails-{{ section.id }}-{{ forloop.index }}{{ id_append }}"
               class="thumbnail-list__item slider__slide{% if section.settings.hide_variants and variant_images contains media.src %} thumbnail-list_item--variant{% endif %}"
               data-target="{{ section.id }}-{{ media.id }}"
               data-media-position="{{ media_index }}"
-              name="{{ product['variants'][counter]['id'] }}"
+              name="{{ product['variants'][media_index]['id'] }}"
             >
               
 

@@ -66,4 +66,20 @@ class Timer {
         console.error("Error:", error);
       });
   }
+
+  clearCart(){
+    fetch(window.Shopify.routes.root + "cart/clear.js", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        location.reload();
+        return response.json();
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }
 }

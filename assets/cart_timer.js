@@ -20,7 +20,7 @@ class Timer {
     document
       .getElementById("clear_checkout")
       .addEventListener("click", function () {
-          clearCart();
+        clearCart();
       });
   }
 
@@ -67,7 +67,7 @@ class Timer {
       });
   }
 
-  clearCart(){
+  clearCart() {
     fetch(window.Shopify.routes.root + "cart/clear.js", {
       method: "POST",
       headers: {

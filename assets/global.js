@@ -1128,16 +1128,16 @@ class VariantSelects extends HTMLElement {
       this.currentVariant.featured_image.alt
     ) {
       document
-        .querySelectorAll("[thumbnail.alt]")
+        .querySelectorAll("[thumbnail-alt]")
         .forEach(img => (img.style.display = "none"));
       const imageAlt = this.currentVariant.featured_image.alt;
-      const thumbnailAlt = `[thumbnail.alt = ` + imageAlt + `] `;
+      const thumbnailAlt = `[thumbnail-alt = ` + imageAlt + `] `;
       document
         .querySelectorAll(thumbnailAlt)
         .forEach(img => (img.style.display = "block"));
     } else {
       document
-        .querySelectorAll('[thumbnail.alt]')
+        .querySelectorAll('[thumbnail-alt]')
         .forEach(img => (img.style.display = "block"));
     }
   }

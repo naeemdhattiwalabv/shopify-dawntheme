@@ -1139,7 +1139,7 @@ class VariantSelects extends HTMLElement {
     } else {
       document
         .querySelectorAll('[thumbnail-alt]')
-        .forEach(img => (img.style.display = "none"));
+        .forEach(img => (img.style.display = "block"));
     }
   }
 

@@ -1128,6 +1128,7 @@ class VariantSelects extends HTMLElement {
       this.currentVariant.featured_image ==
       this.currentVariant.featured_image.alt
     ) {
+      console.log('sucess');
       document
         .querySelectorAll("[thumbnail-alt]")
         .forEach(img => (img.style.display = "none"));
@@ -1137,6 +1138,7 @@ class VariantSelects extends HTMLElement {
         .querySelectorAll(thumbnailAlt)
         .forEach(img => (img.style.display = "block"));
     } else {
+      console.log('failed');
       document
         .querySelectorAll('[thumbnail-alt]')
         .forEach(img => (img.style.display = "block"));

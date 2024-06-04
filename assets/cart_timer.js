@@ -20,7 +20,7 @@ class Timer {
     document
       .getElementById("clear_checkout")
       .addEventListener("click", function () {
-        clearCart();
+        this.clearCart();
       });
   }
 

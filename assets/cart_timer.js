@@ -19,7 +19,7 @@ class Timer {
     }
     document
       .querySelectorAll("#clear_checkout")
-      .addEventListener("click", function () {
+      .addEventListener("click", () => {
         clearCart.call(this);
       });
   }

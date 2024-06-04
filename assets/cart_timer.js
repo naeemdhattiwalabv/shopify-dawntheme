@@ -19,9 +19,9 @@ class Timer {
     }
     document
       .querySelectorAll("#clear_checkout")
-      .addEventListener("click", () => {
+      .addEventListener("click", (() => {
         clearCart.call(this);
-      });
+      }));
   }
 
   showTimer(duration, display, variantId) {

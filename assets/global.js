@@ -1135,7 +1135,7 @@ class VariantSelects extends HTMLElement {
       const thumbnailAlt = `[thumbnail-alt = ` + imageAlt + `]`;
       document
         .querySelectorAll(thumbnailAlt)
-        .forEach(img => (img.style.display = "none"));
+        .forEach(img => (img.style.display = "block"));
     } else {
       document
         .querySelectorAll('[thumbnail-alt]')

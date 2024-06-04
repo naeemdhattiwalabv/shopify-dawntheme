@@ -17,11 +17,9 @@ class Timer {
       let duration = Math.max(60 - diffTime / 1000, 0);
       this.showTimer(duration, display, variantId);
     }
-    document
-      .querySelectorAll("#clear_checkout")
-      .addEventListener("click", (() => {
-        clearCart.call(this);
-      }));
+    document.getElementById("clear_checkout").addEventListener("click", () => {
+      this.clearCart();
+    });
   }
 
   showTimer(duration, display, variantId) {

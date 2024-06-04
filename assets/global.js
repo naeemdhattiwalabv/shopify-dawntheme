@@ -1123,6 +1123,7 @@ class VariantSelects extends HTMLElement {
   }
 
   updateVariantImage() {
+    console.log('test');
     if (
       this.currentVariant.featured_image ==
       this.currentVariant.featured_image.alt

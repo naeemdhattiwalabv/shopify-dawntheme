@@ -1123,31 +1123,14 @@ class VariantSelects extends HTMLElement {
   }
 
   updateVariantImage() {
-    console.log('test');
-    if (
-      this.currentVariant.featured_image ==
-      this.currentVariant.featured_image.alt
-    ) {
-      console.log('sucess');
-      document
-        .querySelectorAll("[thumbnail-alt]")
-        .forEach(img => (img.style.display = "none"));
-      const imageAlt = this.currentVariant.featured_image.alt;
-      const thumbnailAlt = `[thumbnail-alt = ` + imageAlt + `]`;
-      document
-        .querySelectorAll(thumbnailAlt)
-        .forEach(img => (img.style.display = "block"));
-    } else {
-      console.log('failed');
-      document
-        .querySelectorAll("[thumbnail-alt]")
-        .forEach(img => (img.style.display = "none"));
-      const imageAlt = this.currentVariant.featured_image.alt;
-      const thumbnailAlt = `[thumbnail-alt = ` + imageAlt + `]`;
-      document
-        .querySelectorAll(thumbnailAlt)
-        .forEach(img => (img.style.display = "block"));
-    }
+    document
+      .querySelectorAll("[thumbnail-alt]")
+      .forEach(img => (img.style.display = "none"));
+    const imageAlt = this.currentVariant.featured_image.alt;
+    const thumbnailAlt = `[thumbnail-alt = ` + imageAlt + `]`;
+    document
+      .querySelectorAll(thumbnailAlt)
+      .forEach(img => (img.style.display = "block"));
   }
 
   updateOptions() {

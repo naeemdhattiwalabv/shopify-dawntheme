@@ -162,8 +162,7 @@
           "slide_6pKtxM",
           "slide_pxAYwP"
         ],
-        "settings": {
-        }
+        "settings": {}
       },
       "custom-footer": {
         "type": "custom-footer",
@@ -172,9 +171,7 @@
         }
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "color_schemes": {
       "scheme-1": {
         "settings": {

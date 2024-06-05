@@ -10,8 +10,8 @@
     "main-wishlist": {
       "type": "main-wishlist",
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "padding_top": 27,
+        "padding_bottom": 27
       }
     }
   },
